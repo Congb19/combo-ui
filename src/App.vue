@@ -1,10 +1,10 @@
 <script setup lang="ts">
-  import { CBButton } from './components/button'
 </script>
 
 <template>
-  <div>combo ui</div>
-  <CBButton></CBButton> 
+  <div>Combo! UI</div>
+  <CButton>cbbutton</CButton> 
+  <CTag></CTag>
 </template>
 
 <style>
