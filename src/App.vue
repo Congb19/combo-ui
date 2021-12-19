@@ -1,9 +1,8 @@
-<script setup lang="ts">
-</script>
+<script setup lang="ts"></script>
 
 <template>
   <div>Combo! UI</div>
-  <CButton>cbbutton</CButton> 
+  <CButton text="123">cbbutton</CButton>
   <CTag></CTag>
 </template>
 

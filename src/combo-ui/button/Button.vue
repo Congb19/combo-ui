@@ -5,15 +5,18 @@ export default {
 </script>
 <script setup lang="ts">
 const props = defineProps({
-  text: String,
   onClick: Function,
 });
+const className = `c-button c-button--regular`;
 const handleClick = () => {
-  console.log('clicked!', props.text);
   if (props.onClick) props.onClick();
 };
 </script>
 
 <template>
-  <Component @click="handleClick"><slot>按钮</slot></Component>
+  <Component :class="className" @click="handleClick">
+    <slot>按钮</slot>
+  </Component>
 </template>
+
+<style lang="scss" src="./button.scss"></style>
