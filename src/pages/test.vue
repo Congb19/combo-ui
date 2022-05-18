@@ -18,6 +18,7 @@
   >
   <CTag size="xl" round>测试标签3</CTag>
   <CTag />
+  <CTabBar />
 </template>
 <script setup lang="ts">
 const clicktest = () => {
