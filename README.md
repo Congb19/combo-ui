@@ -2,7 +2,7 @@
 
 Congb19 的 Vue 3 组件库。Congb19's Vue 3 Component Library.
 
-文档地址：combo.congb19.com
+文档地址：congb19.com/combo
 
 ## 开始 / Start
 
@@ -31,13 +31,13 @@ app.mount('#app');
 
 ```vue
 <template>
-  <CTag round size="large">A Cool Tag!</CTag>
+  <CTag round size="large" @c_click="console.log('click!')">A Cool Tag!</CTag>
 </template>
 ```
 
 ## 设计思路 / Thinking
 
-有人说，每个前端程序员都需要一个自己的组件库。这不无道理，所以先给自己挖个大坑吧！
+给自己挖个大坑了属于是
 
 计划从原子化的小组件写起。
 
@@ -45,6 +45,7 @@ app.mount('#app');
 
 - 移动端特化？
 - 连续，养眼的动画效果
+- 卡通化风格
 - 简单易用
 
 ## 日程表 / Todos

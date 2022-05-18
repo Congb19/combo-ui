@@ -1,7 +1,10 @@
 import { createApp } from 'vue';
 import App from './App.vue';
 
+// dev
 import { create, C } from './combo-ui';
+// prod
+// import { create, C } from '../dist';
 import './combo-ui/index.css'
 
 const app = createApp(App);

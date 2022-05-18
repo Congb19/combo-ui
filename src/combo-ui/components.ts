@@ -1,8 +1,7 @@
-import { default as Button } from './button/Button.vue';
-import { default as Tag } from './tag/Tag.vue';
+import { default as CButton } from './Button/Button.vue';
+import { default as CTag } from './Tag/Tag.vue';
+import { default as CTabBar } from './TabBar/TabBar.vue';
 
-export const All = [Button, Tag];
+export const All = [CButton, CTag, CTabBar];
 
-export {
-  Button, Tag
-}
+export { CButton, CTag, CTabBar };

@@ -1,9 +1,10 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import test from './pages/test.vue'
+</script>
 
 <template>
   <div>Combo! UI</div>
-  <CButton text="123">cbbutton</CButton>
-  <CTag></CTag>
+  <test/>
 </template>
 
 <style>
