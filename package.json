@@ -10,7 +10,6 @@
   },
   "dependencies": {
     "@vitejs/plugin-vue-jsx": "^1.3.10",
-    "plugin-vue-jsx": "link:@vitejs\\plugin-vue-jsx",
     "sass": "^1.45.0",
     "vue": "^3.2.25"
   },
