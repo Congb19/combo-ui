@@ -2,7 +2,7 @@
 
 Congb19 的 Vue 3 组件库。Congb19's Vue 3 Component Library.
 
-文档地址：congb19.com/combo
+文档地址：combo.congb19.com（建设中）
 
 ## 开始 / Start
 
@@ -31,7 +31,7 @@ app.mount('#app');
 
 ```vue
 <template>
-  <CTag round size="large" @c_click="console.log('click!')">A Cool Tag!</CTag>
+  <CTag round size="l" @c_click="console.log('click!')">A Cool Tag!</CTag>
 </template>
 ```
 
@@ -47,6 +47,10 @@ app.mount('#app');
 - 连续，养眼的动画效果
 - 卡通化风格，红黄蓝！
 - 简单易用
+
+### 设计稿 / Designs
+
+https://www.figma.com/file/Y6PKYIz5jh7VRWw6AshYel/combo-ui?node-id=0%3A1 （建设中）
 
 ## 日程表 / Todos
 
