@@ -77,11 +77,8 @@ const resolveSize = (size: string) => {
   }
 };
 const styleVars = {
-  __height: resolveSize(props.size).__height,
-  __fontSize: resolveSize(props.size).__fontSize,
-  __backgroundColor: resolveType(props.type).__backgroundColor,
-  __borderColor: '#ccc',
-  __fontColor: resolveType(props.type).__fontColor,
+  ...resolveSize(props.size),
+  ...resolveType(props.type)
 };
 const style = {
   padding: `
