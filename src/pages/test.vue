@@ -21,6 +21,7 @@
   <CTabBar /> -->
   <div class="test">
     <CTree
+      :height="600"
       :data="treeData"
       :selectedNode="selectedNode"
       @c_expand="expandTest"
@@ -41,12 +42,12 @@
 interface TreeNode {
   id: string;
   name: string;
-  children: TreeNode[] | null;
+  children?: TreeNode[] | null;
 }
 let treeData: TreeNode[] = [];
 let selectedNode: TreeNode[] = [];
 const expandTest = (node: TreeNode) => {
-  console.log("expand", node);
+  console.log('expand', node);
 };
 for (let i = 0; i < 10; i++) {
   let node: TreeNode = {
@@ -64,7 +65,7 @@ for (let i = 0; i < 10; i++) {
       let node2: TreeNode = {
         id: i + 1 + '-' + (j + 1) + '-' + (k + 1),
         name: '节点' + (i + 1) + '-' + (j + 1) + '-' + (k + 1),
-        children: null,
+        // children: null,
       };
       node1.children!.push(node2);
     }
@@ -75,9 +76,9 @@ for (let i = 0; i < 10; i++) {
 </script>
 <style>
 .test {
-  width: 500px;
-  height: 500px;
-  background-color: aquamarine;
-  overflow: scroll;
+  /* width: 500px;
+  height: 500px; */
+  background-color: rgb(167, 251, 223);
+  overflow: hidden;
 }
 </style>
