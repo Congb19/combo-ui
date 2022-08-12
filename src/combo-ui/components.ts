@@ -1,7 +1,7 @@
 import { default as CButton } from './Button/Button.vue';
 import { default as CTag } from './Tag/Tag.vue';
 import { default as CTabBar } from './TabBar/TabBar';
-import { default as CTree } from './Tree/Tree.vue';
+import { default as CTree } from './Tree/Tree_scroll.vue';
 
 export const All = [CButton, CTag, CTabBar, CTree];
 

@@ -49,19 +49,20 @@ let selectedNode: TreeNode[] = [];
 const expandTest = (node: TreeNode) => {
   console.log('expand', node);
 };
-for (let i = 0; i < 10; i++) {
+// 测试数据
+for (let i = 0; i < 7; i++) {
   let node: TreeNode = {
     id: i + 1 + '',
     name: '节点' + (i + 1),
     children: [],
   };
-  for (let j = 0; j < 20; j++) {
+  for (let j = 0; j < 8; j++) {
     let node1: TreeNode = {
       id: i + 1 + '-' + (j + 1),
       name: '节点' + (i + 1) + '-' + (j + 1),
       children: [],
     };
-    for (let k = 0; k < 30; k++) {
+    for (let k = 0; k < 9; k++) {
       let node2: TreeNode = {
         id: i + 1 + '-' + (j + 1) + '-' + (k + 1),
         name: '节点' + (i + 1) + '-' + (j + 1) + '-' + (k + 1),
