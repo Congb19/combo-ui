@@ -1,0 +1,71 @@
+/* Button CButton */
+
+/* 默认 */
+.c-button {
+  position: relative;
+  display: inline-block;
+  box-sizing: border-box;
+  text-align: center;
+  background-color: var(--c-color-primary-1);
+  border-radius: 4px;
+  line-height: 32px;
+  font-size: 14px;
+  height: 32px;
+  padding: 0 16px;
+  color: white;
+}
+.c-button:hover {
+  cursor: pointer;
+}
+
+/* 默认border */
+.c-button__border {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border: 1px var(--c-color-primary-1) solid;
+  border-radius: 4px;
+}
+.c-button-round .c-button__border {
+  border-radius: 4px;
+}
+
+/* 尺寸-l、m、s */
+.c-button-l {
+  line-height: 40px;
+  font-size: 14px;
+  height: 40px;
+  padding: 0 20px;
+}
+.c-button-m {
+  line-height: 32px;
+  font-size: 14px;
+  height: 32px;
+  padding: 0 16px;
+}
+.c-button-s {
+  line-height: 24px;
+  font-size: 14px;
+  height: 24px;
+  padding: 0 12px;
+}
+
+/* 颜色-primary */
+.c-button-primary {
+  background-color: var(--c-color-primary-1);
+}
+.c-button-primary .c-button__border {
+  /* background-color: var(--c-color-primary-1); */
+  border-color: var(--c-color-primary-1);
+}
+
+/* 颜色-success */
+.c-button-success {
+  background-color: var(--c-color-success-1);
+}
+.c-button-success .c-button__border {
+  /* background-color: var(--c-color-success-1); */
+  border-color: var(--c-color-success-1);
+}

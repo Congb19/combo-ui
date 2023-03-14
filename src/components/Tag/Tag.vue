@@ -1,11 +1,11 @@
 <script lang="ts">
 export default {
   name: 'CTag',
-};
+}
 </script>
 <script setup lang="ts">
-import { PropType } from 'vue';
-const emit = defineEmits(['c_click', 'c_mouseover', 'c_close']);
+import { PropType } from 'vue-demi'
+const emit = defineEmits(['c_click', 'c_mouseover', 'c_close'])
 const props = defineProps({
   size: {
     type: String as PropType<'s' | 'm' | 'l'>,
@@ -29,7 +29,7 @@ const props = defineProps({
     type: Boolean,
     default: false,
   },
-});
+})
 const resolveType = (type: string) => {
   switch (type) {
     case 'primary':
@@ -37,85 +37,85 @@ const resolveType = (type: string) => {
         __backgroundColor: 'pink',
         __borderColor: 'red',
         __fontColor: 'red',
-      };
-      break;
+      }
+      break
     case 'info':
       return {
         __backgroundColor: 'pink',
         __borderColor: 'blue',
         __fontColor: 'blue',
-      };
-      break;
+      }
+      break
     case 'success':
       return {
         __backgroundColor: 'pink',
         __borderColor: 'green',
         __fontColor: 'green',
-      };
-      break;
+      }
+      break
     case 'warning':
       return {
         __backgroundColor: 'yellow',
         __borderColor: 'orange',
         __fontColor: 'orange',
-      };
-      break;
+      }
+      break
     case 'error':
       return {
         __backgroundColor: 'pink',
         __borderColor: 'red',
         __fontColor: 'red',
-      };
-      break;
+      }
+      break
     default:
       return {
         __backgroundColor: '#eee',
         __borderColor: '#aaa',
         __fontColor: '#aaa',
-      };
-      break;
+      }
+      break
   }
-};
+}
 const resolveSize = (size: string) => {
   switch (size) {
     case 's':
       return {
         __height: 22,
         __fontSize: 12,
-      };
+      }
     case 'm':
       return {
         __height: 28,
         __fontSize: 14,
-      };
+      }
     case 'l':
       return {
         __height: 34,
         __fontSize: 14,
-      };
+      }
     default:
       return {
         __height: 28,
         __fontSize: 14,
-      };
+      }
   }
-};
+}
 const events = {
   c_click: () => {
-    emit('c_click');
+    emit('c_click')
   },
   c_mouseover: () => {
-    emit('c_mouseover');
+    emit('c_mouseover')
   },
   c_close: (e: Event) => {
-    emit('c_close');
-    e.stopPropagation();
+    emit('c_close')
+    e.stopPropagation()
   },
-};
+}
 const styleVars = {
   ...resolveSize(props.size),
-  ...resolveType(props.type)
-};
+  ...resolveType(props.type),
+}
 const style = {
   padding: `
     ${(styleVars.__height - styleVars.__fontSize) / 2}px 
@@ -124,14 +124,14 @@ const style = {
   fontSize: `${styleVars.__fontSize}px`,
   lineHeight: `${styleVars.__fontSize}px`,
   height: `${styleVars.__height}px`,
-};
+}
 const styleBorder = {
   border: `1px ${styleVars.__borderColor} solid`,
   borderRadius: `${props.round ? styleVars.__height / 2 : 2}px`,
   zIndex: -1,
   backgroundColor: styleVars.__backgroundColor,
-};
-console.log(style);
+}
+console.log(style)
 </script>
 
 <template>

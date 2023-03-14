@@ -1,0 +1,35 @@
+:root {
+  --combo-test-color: #fddd9b;
+
+  /* 
+    color defines
+    from deep to shallow
+  */
+
+  /* text colors(normal) */
+  --c-color-text-1: #303133;
+  --c-color-text-2: #606266;
+  --c-color-text-3: #909399;
+  --c-color-text-4: #a8abb2;
+  --c-color-text-5: #c0c4cc;
+  /* text colors(dark mode) */
+  --c-color-text-dark-1: #fff;
+  --c-color-text-dark-2: #eee;
+  --c-color-text-dark-3: #ddd;
+  --c-color-text-dark-4: #ccc;
+  --c-color-text-dark-5: #bbb;
+  /* primary colors(blue) */
+  --c-color-primary-1: #409eff;
+  --c-color-primary-2: #79bbff;
+  --c-color-primary-3: #9fceff;
+  --c-color-primary-4: #c6e2ff;
+  --c-color-primary-5: #d9ecff;
+  --c-color-primary-6: #ecf5ff;
+  /* success colors(green) */
+  --c-color-success-1: #67c23a;
+  --c-color-success-2: #95d475;
+  --c-color-success-3: #b3e09c;
+  --c-color-success-4: #d1edc4;
+  --c-color-success-5: #e1f3d8;
+  --c-color-success-6: #f0f9eb;
+}
