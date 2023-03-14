@@ -28,11 +28,16 @@ const props = defineProps({
     type: Boolean,
     default: false,
   },
+  clean: {
+    type: Boolean,
+    default: false,
+  },
 })
-const { type, size, round, disabled } = props
+const { type, size, round, disabled, clean } = props
+
 const events = {
   c_click: () => {
-    emit('c_click')
+    if (!disabled) emit('c_click')
   },
 }
 const className = computed(() => {
@@ -42,6 +47,7 @@ const className = computed(() => {
     c-button-${size} 
     ${round ? 'c-button-round' : ''}
     ${disabled ? 'c-button-disabled' : ''}
+    c-button-${clean ? 'clean' : 'dirty'} 
   `
   return name
 })

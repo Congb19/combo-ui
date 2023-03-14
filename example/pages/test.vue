@@ -1,10 +1,15 @@
 <template>
   <CButton>TestBtn0 样式</CButton>
   <CButton @c_click="clicktest">TestBtn1 事件</CButton>
-  <CButton size="m" type="primary">按钮</CButton>
+  <CButton size="s" type="warning" clean>按钮</CButton>
   <CButton size="l" type="success" round>TestBtn1asdasd</CButton>
+  <CButton size="m" type="primary" disabled @c_click="clicktest"
+    >按钮disabled</CButton
+  >
+  <CButton size="m" type="error" clean>error clean</CButton>
+  <CButton size="m" type="error" clean>按钮error</CButton>
   <div></div>
-  <CTag size="s" round type="error">TestTag0 样式</CTag>
+  <!-- <CTag size="s" round type="error">TestTag0 样式</CTag>
   <CTag size="m">TestTag1</CTag>
   <CTag
     size="l"
@@ -18,7 +23,7 @@
   >
   <CTag size="l" round>测试标签3</CTag>
   <c-tag size="l" round>测试标签4</c-tag>
-  <CTag />
+  <CTag /> -->
   <!-- <CTabBar /> -->
 </template>
 <script setup lang="ts">

@@ -32,4 +32,18 @@
   --c-color-success-4: #d1edc4;
   --c-color-success-5: #e1f3d8;
   --c-color-success-6: #f0f9eb;
+  /* warning colors(warning) */
+  --c-color-warning-1: #e6a23c;
+  --c-color-warning-2: #eebe77;
+  --c-color-warning-3: #f2d09d;
+  --c-color-warning-4: #f8e3c5;
+  --c-color-warning-5: #faecd8;
+  --c-color-warning-6: #fcf6ec;
+  /* error colors(error) */
+  --c-color-error-1: #f56c6c;
+  --c-color-error-2: #f89898;
+  --c-color-error-3: #fab5b5;
+  --c-color-error-4: #fcd3d3;
+  --c-color-error-5: #fde2e2;
+  --c-color-error-6: #fef0f0;
 }
