@@ -1,0 +1,32 @@
+{
+  "hash": "b829328f",
+  "browserHash": "4077c4a7",
+  "optimized": {
+    "vue": {
+      "src": "../../../../node_modules/.pnpm/vue@3.2.26/node_modules/vue/dist/vue.runtime.esm-bundler.js",
+      "file": "vue.js",
+      "fileHash": "c7a5f7d7",
+      "needsInterop": false
+    },
+    "@theme/index": {
+      "src": "../../../../node_modules/.pnpm/vitepress@1.0.0-alpha.59_sass@1.45.0/node_modules/vitepress/dist/client/theme-default/index.js",
+      "file": "@theme_index.js",
+      "fileHash": "bcaef3d4",
+      "needsInterop": false
+    },
+    "vue-demi": {
+      "src": "../../../../node_modules/.pnpm/vue-demi@0.13.11_vue@3.2.26/node_modules/vue-demi/lib/index.mjs",
+      "file": "vue-demi.js",
+      "fileHash": "e04a025b",
+      "needsInterop": false
+    }
+  },
+  "chunks": {
+    "chunk-CMXRIKDA": {
+      "file": "chunk-CMXRIKDA.js"
+    },
+    "chunk-JC4IRQUL": {
+      "file": "chunk-JC4IRQUL.js"
+    }
+  }
+}

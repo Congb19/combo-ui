@@ -41,3 +41,10 @@ themeChanger.addEventListener('change', (event) => {
     theme.changeTheme('light')
   }
 })
+
+// docs theme change
+var html = document.getElementsByTagName('html')[0]
+console.log(html)
+html.addEventListener('DOMAttributeNameChanged', (event) => {
+  console.log(event, html.className)
+})
