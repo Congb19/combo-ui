@@ -1,5 +1,14 @@
 /* Button CButton */
 
+.c-button {
+  --c-button-height-s: 24px;
+  --c-button-height-m: 32px;
+  --c-button-height-l: 40px;
+  --c-button-padding-s: 0 12px;
+  --c-button-padding-m: 0 16px;
+  --c-button-padding-l: 0 20px;
+}
+
 /* 默认 */
 .c-button {
   position: relative;
@@ -8,18 +17,23 @@
   text-align: center;
   background-color: var(--c-color-primary-1);
   border-radius: 4px;
-  line-height: 32px;
-  font-size: 14px;
-  height: 32px;
+  line-height: var(--c-button-height-m);
+  font-size: var(--c-font-size-normal);
+  height: var(--c-button-height-m);
   padding: 0 16px;
   color: white;
+  opacity: 1;
   transition: all 0.2s ease-out;
 }
 .c-button:hover {
   cursor: pointer;
 }
 .c-button-dirty:hover {
-  opacity: 0.5;
+  opacity: 0.7;
+}
+.c-button:active {
+  opacity: 0.9;
+  transition: none;
 }
 .c-button__border {
   position: absolute;
@@ -30,33 +44,59 @@
   border: 1px var(--c-color-primary-1) solid;
   border-radius: 4px;
 }
+/* round */
+.c-button-round {
+  border-radius: var(--c-button-height-m);
+}
+.c-button-round .c-button__border {
+  border-radius: var(--c-button-height-m);
+}
 
 /* disabled */
 .c-button-disabled {
   opacity: 0.5;
 }
 .c-button-disabled:hover {
+  opacity: 0.5;
   cursor: not-allowed;
+}
+.c-button-disabled:active {
+  opacity: 0.5;
 }
 
 /* 尺寸-l、m、s */
 .c-button-l {
-  line-height: 40px;
-  font-size: 14px;
-  height: 40px;
-  padding: 0 20px;
+  line-height: var(--c-button-height-l);
+  height: var(--c-button-height-l);
+  padding: var(--c-button-padding-l);
+}
+.c-button-l.c-button-round {
+  border-radius: var(--c-button-height-l);
+}
+.c-button-l.c-button-round .c-button__border {
+  border-radius: var(--c-button-height-l);
 }
 .c-button-m {
-  line-height: 32px;
-  font-size: 14px;
-  height: 32px;
-  padding: 0 16px;
+  line-height: var(--c-button-height-m);
+  height: var(--c-button-height-m);
+  padding: var(--c-button-padding-m);
+}
+.c-button-m.c-button-round {
+  border-radius: var(--c-button-height-m);
+}
+.c-button-m.c-button-round .c-button__border {
+  border-radius: var(--c-button-height-m);
 }
 .c-button-s {
-  line-height: 24px;
-  font-size: 14px;
-  height: 24px;
-  padding: 0 12px;
+  line-height: var(--c-button-height-s);
+  height: var(--c-button-height-s);
+  padding: var(--c-button-padding-s);
+}
+.c-button-s.c-button-round {
+  border-radius: var(--c-button-height-s);
+}
+.c-button-s.c-button-round .c-button__border {
+  border-radius: var(--c-button-height-s);
 }
 
 /* 颜色-primary */
@@ -74,6 +114,10 @@
   color: white;
   background-color: var(--c-color-primary-1);
 }
+.c-button-primary.c-button-clean.c-button-disabled:hover {
+  color: var(--c-color-primary-1);
+  background-color: var(--c-color-primary-6);
+}
 
 /* 颜色-success */
 .c-button-success {
@@ -89,6 +133,10 @@
 .c-button-success.c-button-clean:hover {
   color: white;
   background-color: var(--c-color-success-1);
+}
+.c-button-success.c-button-clean.c-button-disabled:hover {
+  color: var(--c-color-success-1);
+  background-color: var(--c-color-success-6);
 }
 
 /* 颜色-warning */
@@ -106,6 +154,10 @@
   color: white;
   background-color: var(--c-color-warning-1);
 }
+.c-button-warning.c-button-clean.c-button-disabled:hover {
+  color: var(--c-color-warning-1);
+  background-color: var(--c-color-warning-6);
+}
 
 /* 颜色-error */
 .c-button-error {
@@ -121,4 +173,8 @@
 .c-button-error.c-button-clean:hover {
   color: white;
   background-color: var(--c-color-error-1);
+}
+.c-button-warning.c-button-clean.c-button-disabled:hover {
+  color: var(--c-color-warning-1);
+  background-color: var(--c-color-warning-6);
 }

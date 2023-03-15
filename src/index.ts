@@ -1,12 +1,15 @@
 import { App } from 'vue-demi'
 
-import './styles/colors.css'
-// import './styles/index.css'
+// global vars
+import './styles/index.css'
+// theme system
+export { useTheme } from './components/Theme'
 
+// all components
 export * as C from './components/'
 export * from './components/'
-// export { C }
 
+// global register
 export const create = (components?: any[]) => {
   const registerComponent = (app: App, name: string, component: any) => {
     const registered = app.component(name)
@@ -16,7 +19,8 @@ export const create = (components?: any[]) => {
     if (components?.length && components.length > 0)
       components.forEach((component) => {
         const { name } = component
-        if (import.meta.env.DEV) console.log('component registered, ', name)
+        if (import.meta.env.DEV)
+          console.log('component registered globally, ', name)
         registerComponent(app, name, component)
       })
   }

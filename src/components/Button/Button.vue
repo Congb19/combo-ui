@@ -5,10 +5,10 @@ export default {
 </script>
 <script setup lang="ts">
 import { computed, PropType } from 'vue-demi'
-// import '../../styles/index.css'
+import './index.css'
 // props & events
 // ------------------------------------------------------------------------------
-const emit = defineEmits(['c_click', 'c_mouseover', 'c_close'])
+const emit = defineEmits(['c_click'])
 const props = defineProps({
   size: {
     type: String as PropType<'s' | 'm' | 'l'>,
@@ -43,7 +43,7 @@ const events = {
 const className = computed(() => {
   let name = `
     c-button 
-    ${type ? 'c-button-' + type : ''} 
+    c-button-${type ? type : 'primary'} 
     c-button-${size} 
     ${round ? 'c-button-round' : ''}
     ${disabled ? 'c-button-disabled' : ''}
@@ -56,7 +56,7 @@ const className = computed(() => {
 <template>
   <div :class="className" @click="events.c_click">
     <div class="c-button__border"></div>
-    <slot>按钮</slot>
+    <slot>Button</slot>
   </div>
 </template>
-<style src="./index.css"></style>
+<!-- <style src="./index.css"></style> -->
