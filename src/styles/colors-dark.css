@@ -1,30 +1,32 @@
 html.dark {
+  background-color: #1e1e20;
   --combo-test-color: #5a4e37;
-  transition: color 0.2s ease-out;
+  transition: all 0.2s ease-out;
 
   /* 
     color defines(default light theme)
   */
 
-  /* text colors(normal) */
-  --c-color-text-1: #303133;
-  --c-color-text-2: #606266;
-  --c-color-text-3: #909399;
-  --c-color-text-4: #a8abb2;
-  --c-color-text-5: #c0c4cc;
-  /* text colors(dark mode) */
-  --c-color-text-dirty-1: #fff;
-  --c-color-text-dirty-2: #eee;
-  --c-color-text-dirty-3: #ddd;
-  --c-color-text-dirty-4: #ccc;
-  --c-color-text-dirty-5: #bbb;
+  /* text colors(clean) */
+  --c-color-text-1: #ddd;
+  --c-color-text-2: #ccc;
+  --c-color-text-3: #bbb;
+  --c-color-text-4: #aaa;
+  --c-color-text-5: #999;
+  /* text colors(dirty) */
+  --c-color-text-dirty-1: #ffffff;
+  --c-color-text-dirty-2: #eeeeee;
+  --c-color-text-dirty-3: #dddddd;
+  --c-color-text-dirty-4: #cccccc;
+  --c-color-text-dirty-5: #bbbbbb;
   /* primary colors(blue) */
-  --c-color-primary-1: #409eff;
+  --c-color-primary-1: #40a0ff;
   --c-color-primary-2: #79bbff;
   --c-color-primary-3: #9fceff;
   --c-color-primary-4: #c6e2ff;
   --c-color-primary-5: #d9ecff;
   --c-color-primary-6: #ecf5ff;
+  --c-color-primary-0: #40a0ff1a;
   /* success colors(green) */
   --c-color-success-1: #67c23a;
   --c-color-success-2: #95d475;
@@ -32,6 +34,7 @@ html.dark {
   --c-color-success-4: #d1edc4;
   --c-color-success-5: #e1f3d8;
   --c-color-success-6: #f0f9eb;
+  --c-color-success-0: #67c23a1a;
   /* warning colors(warning) */
   --c-color-warning-1: #e6a23c;
   --c-color-warning-2: #eebe77;
@@ -39,6 +42,7 @@ html.dark {
   --c-color-warning-4: #f8e3c5;
   --c-color-warning-5: #faecd8;
   --c-color-warning-6: #fcf6ec;
+  --c-color-warning-0: #e6a23c1a;
   /* error colors(error) */
   --c-color-error-1: #f56c6c;
   --c-color-error-2: #f89898;
@@ -46,4 +50,5 @@ html.dark {
   --c-color-error-4: #fcd3d3;
   --c-color-error-5: #fde2e2;
   --c-color-error-6: #fef0f0;
+  --c-color-error-0: #f56c6c1a;
 }

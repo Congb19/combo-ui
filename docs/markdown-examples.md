@@ -1,18 +1,3 @@
-<script setup>
-import { CButton, useMsg, useTheme } from '../src'
-const msg = useMsg()
-const { currentTheme, changeTheme } = useTheme()
-</script>
-
--------------------切换主题测试
-<br />
-<CButton @c_click="changeTheme('dark')">changetheme-dark</CButton>
-<CButton @c_click="changeTheme('light')">changetheme-light</CButton>
-
-<div style="color: var(--combo-test-color); transition: all 0.2s ease-out">
-  {{ currentTheme }}
-</div>
-
 # Markdown Extension Examples
 
 This page demonstrates some of the built-in markdown extensions provided by VitePress.

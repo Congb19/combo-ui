@@ -108,7 +108,7 @@
 }
 .c-button-primary.c-button-clean {
   color: var(--c-color-primary-1);
-  background-color: var(--c-color-primary-6);
+  background-color: var(--c-color-primary-0);
 }
 .c-button-primary.c-button-clean:hover {
   color: var(--c-color-text-dirty-1);
@@ -116,7 +116,7 @@
 }
 .c-button-primary.c-button-clean.c-button-disabled:hover {
   color: var(--c-color-primary-1);
-  background-color: var(--c-color-primary-6);
+  background-color: var(--c-color-primary-0);
 }
 
 /* 颜色-success */
@@ -128,7 +128,7 @@
 }
 .c-button-success.c-button-clean {
   color: var(--c-color-success-1);
-  background-color: var(--c-color-success-6);
+  background-color: var(--c-color-success-0);
 }
 .c-button-success.c-button-clean:hover {
   color: var(--c-color-text-dirty-1);
@@ -136,7 +136,7 @@
 }
 .c-button-success.c-button-clean.c-button-disabled:hover {
   color: var(--c-color-success-1);
-  background-color: var(--c-color-success-6);
+  background-color: var(--c-color-success-0);
 }
 
 /* 颜色-warning */
@@ -148,7 +148,7 @@
 }
 .c-button-warning.c-button-clean {
   color: var(--c-color-warning-1);
-  background-color: var(--c-color-warning-6);
+  background-color: var(--c-color-warning-0);
 }
 .c-button-warning.c-button-clean:hover {
   color: var(--c-color-text-dirty-1);
@@ -156,7 +156,7 @@
 }
 .c-button-warning.c-button-clean.c-button-disabled:hover {
   color: var(--c-color-warning-1);
-  background-color: var(--c-color-warning-6);
+  background-color: var(--c-color-warning-0);
 }
 
 /* 颜色-error */
@@ -168,7 +168,7 @@
 }
 .c-button-error.c-button-clean {
   color: var(--c-color-error-1);
-  background-color: var(--c-color-error-6);
+  background-color: var(--c-color-error-0);
 }
 .c-button-error.c-button-clean:hover {
   color: var(--c-color-text-dirty-1);
@@ -176,5 +176,5 @@
 }
 .c-button-warning.c-button-clean.c-button-disabled:hover {
   color: var(--c-color-warning-1);
-  background-color: var(--c-color-warning-6);
+  background-color: var(--c-color-warning-0);
 }
