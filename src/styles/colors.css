@@ -1,5 +1,6 @@
-:root {
+html:not(.dark) {
   --combo-test-color: #fddd9b;
+  transition: color 0.2s ease-out;
 
   /* 
     color defines(default light theme)
@@ -12,11 +13,11 @@
   --c-color-text-4: #a8abb2;
   --c-color-text-5: #c0c4cc;
   /* text colors(dark mode) */
-  --c-color-text-dark-1: #fff;
-  --c-color-text-dark-2: #eee;
-  --c-color-text-dark-3: #ddd;
-  --c-color-text-dark-4: #ccc;
-  --c-color-text-dark-5: #bbb;
+  --c-color-text-dirty-1: #fff;
+  --c-color-text-dirty-2: #eee;
+  --c-color-text-dirty-3: #ddd;
+  --c-color-text-dirty-4: #ccc;
+  --c-color-text-dirty-5: #bbb;
   /* primary colors(blue) */
   --c-color-primary-1: #409eff;
   --c-color-primary-2: #79bbff;

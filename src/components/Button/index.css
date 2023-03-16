@@ -21,7 +21,7 @@
   font-size: var(--c-font-size-normal);
   height: var(--c-button-height-m);
   padding: 0 16px;
-  color: white;
+  color: var(--c-color-text-dirty-1);
   opacity: 1;
   transition: all 0.2s ease-out;
 }
@@ -111,7 +111,7 @@
   background-color: var(--c-color-primary-6);
 }
 .c-button-primary.c-button-clean:hover {
-  color: white;
+  color: var(--c-color-text-dirty-1);
   background-color: var(--c-color-primary-1);
 }
 .c-button-primary.c-button-clean.c-button-disabled:hover {
@@ -131,7 +131,7 @@
   background-color: var(--c-color-success-6);
 }
 .c-button-success.c-button-clean:hover {
-  color: white;
+  color: var(--c-color-text-dirty-1);
   background-color: var(--c-color-success-1);
 }
 .c-button-success.c-button-clean.c-button-disabled:hover {
@@ -151,7 +151,7 @@
   background-color: var(--c-color-warning-6);
 }
 .c-button-warning.c-button-clean:hover {
-  color: white;
+  color: var(--c-color-text-dirty-1);
   background-color: var(--c-color-warning-1);
 }
 .c-button-warning.c-button-clean.c-button-disabled:hover {
@@ -171,7 +171,7 @@
   background-color: var(--c-color-error-6);
 }
 .c-button-error.c-button-clean:hover {
-  color: white;
+  color: var(--c-color-text-dirty-1);
   background-color: var(--c-color-error-1);
 }
 .c-button-warning.c-button-clean.c-button-disabled:hover {
