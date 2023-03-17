@@ -1,6 +1,6 @@
 html:not(.dark) {
   background-color: #fff;
-  --combo-test-color: #fddd9b;
+  --combo-test-color: #443c2a;
   transition: all 0.2s ease-out;
 
   /* 

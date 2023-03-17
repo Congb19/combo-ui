@@ -19,9 +19,7 @@ const props = defineProps({
     default: false,
   },
   type: {
-    type: String as PropType<
-      '' | 'primary' | 'info' | 'success' | 'warning' | 'error'
-    >,
+    type: String as PropType<'' | 'primary' | 'success' | 'warning' | 'error'>,
     default: '',
   },
   disabled: {

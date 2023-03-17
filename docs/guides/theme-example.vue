@@ -1,18 +1,15 @@
 <template>
   <CThemeProvider>
-    -------------------切换主题测试
     <br />
-    <CButton @c_click="click('dark')">changetheme-dark</CButton>
-    <CButton @c_click="click('light')">changetheme-light</CButton>
-
-    <div style="color: var(--combo-test-color)">1234</div>
+    <CButton clean @c_click="click('light')">ToLight</CButton>&nbsp;
+    <CButton clean @c_click="click('dark')">ToDark</CButton>
+    <!-- <div style="color: var(--combo-test-color)">1234</div> -->
+    <br />
   </CThemeProvider>
 </template>
 
 <script setup>
-import { onMounted } from 'vue-demi'
-import { CButton, useMsg, CThemeProvider, useTheme } from '../../src'
-const msg = useMsg()
+import { CButton, CThemeProvider } from '../../src'
 let click = (theme) => {
   document.getElementsByTagName('html')[0].className = theme
 }

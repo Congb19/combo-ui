@@ -5,7 +5,7 @@ layout: home
 hero:
   name: 'Combo UI'
   text: Congb19's Vue3 Components Library
-  tagline: 早上好！
+  tagline: 早上好喵！
   actions:
     - theme: brand
       text: Get started 开始使用

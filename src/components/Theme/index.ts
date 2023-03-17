@@ -8,7 +8,7 @@ let systemTheme: Ref<string> = ref('light')
 let global: HTMLElement
 let themeProvider: HTMLElement
 
-// make sure to use in or after beforeMounted
+// make sure to use in or after beforeMounted if SSR
 export const useTheme = () => {
   // init
   isSystemDark = window.matchMedia('(prefers-color-scheme: dark)').matches

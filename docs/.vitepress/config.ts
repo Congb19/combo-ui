@@ -19,14 +19,14 @@ export default defineConfig({
           { text: 'Intro 介绍', link: '/guides/intro' },
           { text: 'Install 安装', link: '/guides/install' },
           { text: 'Theme 主题', link: '/guides/theme' },
-          { text: 'markdown-examples', link: '/markdown-examples' },
-          { text: 'Runtime API Examples', link: '/api-examples' },
         ],
       },
       {
         text: 'Components 组件',
         items: [{ text: 'Button 按钮', link: '/components/button' }],
       },
+      { text: 'markdown-examples', link: '/markdown-examples' },
+      { text: 'Runtime API Examples', link: '/api-examples' },
     ],
 
     socialLinks: [
