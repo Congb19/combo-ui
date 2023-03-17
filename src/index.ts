@@ -2,8 +2,10 @@ import { App } from 'vue-demi'
 
 // global vars
 import './styles/index.css'
-// theme system
-export { useTheme } from './components/Theme'
+
+// composables
+export { useTheme } from './components' // include color vars
+export { useMsg } from './components'
 
 // all components
 export * as C from './components/'

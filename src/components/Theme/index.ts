@@ -5,10 +5,10 @@ import '../../styles/colors-dark.css'
 let isSystemDark: boolean = false
 let currentTheme: Ref<string> = ref('light')
 let systemTheme: Ref<string> = ref('light')
-let theme: any = null
 let global: HTMLElement
 let themeProvider: HTMLElement
 
+// make sure to use in or after beforeMounted
 export const useTheme = () => {
   // init
   isSystemDark = window.matchMedia('(prefers-color-scheme: dark)').matches
@@ -16,6 +16,7 @@ export const useTheme = () => {
   systemTheme.value = isSystemDark ? 'dark' : 'light'
   global = document.getElementsByTagName('html')[0]
   themeProvider = document.createElement('style')
+
   themeProvider.id = 'c-theme-provider'
   document.head.appendChild(themeProvider)
 
@@ -24,10 +25,10 @@ export const useTheme = () => {
   themeChanger.addEventListener('change', (event) => {
     if (currentTheme.value == 'custom') return
     if (event.matches) {
-      theme.changeTheme('dark')
+      changeTheme('dark')
       systemTheme.value = 'dark'
     } else {
-      theme.changeTheme('light')
+      changeTheme('light')
       systemTheme.value = 'light'
     }
   })
@@ -35,6 +36,15 @@ export const useTheme = () => {
   // watch other theme change(手动赋予html class="dark" 等操作)
   const isDark = () => {
     return global.className.indexOf('dark') > -1
+  }
+  const getDocsTheme = () => {
+    return localStorage.getItem('vitepress-theme-appearance')
+  }
+  const setDocsTheme = (theme: string) => {
+    localStorage.setItem('vitepress-theme-appearance', theme)
+  }
+  const isAuto = () => {
+    return getDocsTheme() == 'auto'
   }
   const observer = new MutationObserver((mutationsList, observer) => {
     for (let mutation of mutationsList) {
@@ -54,21 +64,31 @@ export const useTheme = () => {
     let darkIndex = global.className.indexOf('dark')
     if (theme == 'light') {
       currentTheme.value = theme
-      if (darkIndex > -1)
+      setDocsTheme('light')
+      if (darkIndex > -1) {
         global.className =
           global.className.substring(0, darkIndex) +
           global.className.substring(darkIndex + 4)
+      }
     } else if (theme == 'dark') {
       currentTheme.value = theme
-      if (darkIndex < 0) global.className += ' dark'
+      setDocsTheme('dark')
+      if (darkIndex < 0) {
+        global.className += ' dark'
+      }
     } else {
       currentTheme.value = 'custom'
       themeProvider.innerHTML = theme
     }
   }
 
-  // change theme with system
-  changeTheme(systemTheme.value)
+  // init theme with system
+  // unless exist dark
+  if (isAuto()) changeTheme(systemTheme.value)
+  else changeTheme(getDocsTheme() || 'light')
+  // 清除localstorage里的缓存后，首次进入文档，vitepress可能会存一个auto值
+  // 这时调用changethem的过程中将其覆盖掉成了具体的light或dark
+  // 相当于接管了文档站的主题控制
 
   return {
     currentTheme,
