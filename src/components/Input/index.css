@@ -1,0 +1,66 @@
+.c-input {
+  --c-input-height-s: 24px;
+  --c-input-height-m: 32px;
+  --c-input-height-l: 40px;
+  --c-input-padding-s: 0 7px;
+  --c-input-padding-m: 0 11px;
+  --c-input-padding-l: 0 15px;
+}
+
+/* 默认 */
+.c-input {
+  position: relative;
+  display: inline-block;
+  box-sizing: border-box;
+  border: 1px #aaa solid;
+  text-align: left;
+  border-radius: 4px;
+  opacity: 1;
+  transition: all 0.3s ease-out;
+}
+.c-input input {
+  display: inline-block;
+  padding: var(--c-input-padding-m);
+  border: none;
+  outline: none;
+  border-radius: 4px;
+  color: var(--c-color-text-1);
+  height: var(--c-input-height-m);
+  line-height: var(--c-input-height-m);
+  font-size: var(--c-font-size-m);
+  background-color: #00000000;
+}
+
+/* disabled */
+.c-input-disabled input {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+/* 鼠标悬浮和点击状态 */
+.c-input-hover {
+  border-color: var(--c-color-primary-1);
+}
+.c-input-focus {
+  border-color: var(--c-color-primary-1);
+}
+
+/* 尺寸 */
+.c-input-s input {
+  padding: var(--c-input-padding-s);
+  height: var(--c-input-height-s);
+  line-height: var(--c-input-height-s);
+  font-size: var(--c-font-size-s);
+}
+.c-input-m input {
+  padding: var(--c-input-padding-m);
+  height: var(--c-input-height-m);
+  line-height: var(--c-input-height-m);
+  font-size: var(--c-font-size-m);
+}
+.c-input-l input {
+  padding: var(--c-input-padding-l);
+  height: var(--c-input-height-l);
+  line-height: var(--c-input-height-l);
+  font-size: var(--c-font-size-l);
+}

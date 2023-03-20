@@ -18,7 +18,7 @@
   background-color: var(--c-color-primary-1);
   border-radius: 4px;
   line-height: var(--c-button-height-m);
-  font-size: var(--c-font-size-normal);
+  font-size: var(--c-font-size-m);
   height: var(--c-button-height-m);
   padding: 0 16px;
   color: var(--c-color-text-dirty-1);

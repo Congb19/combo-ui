@@ -1,7 +1,7 @@
 <template>
   <CThemeProvider>
     <CMessageProvider>
-      default
+      ---------------------button---------------------- default
       <CButton>Btn 默认</CButton>
       <br />
       size
@@ -32,7 +32,7 @@
       <CButton @c_click="clicktest">Btn 事件</CButton>
 
       <br />
-      -------------------切换主题测试
+      -------------------切换主题测试---------------------
       <br />
       <CButton @c_click="changeTheme('dark')">changetheme-dark</CButton>
       <CButton @c_click="changeTheme('light')">changetheme-light</CButton>
@@ -59,12 +59,30 @@
   <c-tag size="l" round>测试标签4</c-tag>
   <CTag /> -->
       <!-- <CTabBar /> -->
+      <br />
+      ------------------input-------------------
+      <br />
+      {{ inputvalue }}
+      <CInput v-model:value="inputvalue" />
+      <br />
+      size
+      <br />
+      <CInput v-model:value="inputvalue" size="s" />
+      <CInput v-model:value="inputvalue" size="m" />
+      <CInput v-model:value="inputvalue" size="l" />
+      <br />
+      disabled
+      <br />
+      <CInput v-model:value="inputvalue" disabled />
+      <br />
     </CMessageProvider>
   </CThemeProvider>
 </template>
 <script setup lang="ts">
+import { ref } from 'vue'
 import {
   CTag,
+  CInput,
   CMessageProvider,
   CThemeProvider,
   useMsg,
@@ -85,4 +103,5 @@ const mouseovertest = () => {
 const closetest = () => {
   console.log('close')
 }
+const inputvalue = ref('123')
 </script>
