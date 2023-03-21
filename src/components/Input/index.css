@@ -76,17 +76,26 @@
 /* .c-input-s {
   height: var(--c-input-height-s);
 } */
+.c-input-s {
+  line-height: calc(var(--c-input-height-s) - 0px);
+}
 .c-input-s input {
   padding: var(--c-input-padding-s);
   height: var(--c-input-height-s);
   line-height: calc(var(--c-input-height-s) - 0px);
   font-size: var(--c-font-size-s);
 }
+.c-input-m {
+  line-height: calc(var(--c-input-height-m) - 0px);
+}
 .c-input-m input {
   padding: var(--c-input-padding-m);
   height: var(--c-input-height-m);
   line-height: var(--c-input-height-m);
   font-size: var(--c-font-size-m);
+}
+.c-input-l {
+  line-height: calc(var(--c-input-height-l) - 0px);
 }
 .c-input-l input {
   padding: var(--c-input-padding-l);
