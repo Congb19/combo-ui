@@ -2,7 +2,7 @@
 
 Congb19 的 Vue 3 组件库。Congb19's Vue 3 Component Library.
 
-## 起因 / Thinking
+### 起因 / Thinking
 
 从初学前端算起，已经写了好多好多年了，包括学校项目和工作项目，几乎都沉浸在业务页面，用着别人的造好的各种轮子，对自己没有什么提升，简历上都摆不出什么值得一谈的项目内容来。于是自从 20 年 Vue3 出现开始，萌生了这个 Combo UI 的 idea。
 
@@ -25,12 +25,13 @@ Congb19 的 Vue 3 组件库。Congb19's Vue 3 Component Library.
 
 先尝试组件实现，基础组件设计方面参考 Element Plus
 
-## 日程表 / Todos
+### 日程表 / Todos
 
 - 通用组件
 
   - 按钮 Button
   - 标签 Tag
+  - 输入框 Input
 
 - 组合式函数
 

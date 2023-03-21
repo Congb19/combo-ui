@@ -8,7 +8,8 @@ html:not(.dark) {
   */
 
   /* line colors(like border、table) */
-  --c-color-line-1: #606266;
+  --c-color-line-1: #b4b8c2;
+  --c-color-line-2: #d4dae4;
 
   /* text colors(clean) */
   --c-color-text-1: #303133;

@@ -7,9 +7,6 @@ const value = ref('test')
 
 # Input 输入框
 
-<!-- <input-example></input-example> -->
+简简单单输入框
 
-<div>
-  <CInput v-model:value="value" />
-  <div>{{ value }}</div>
-</div>
+<input-example></input-example>

@@ -31,21 +31,20 @@ const props = defineProps({
     default: false,
   },
 })
-const { type, size, round, disabled, clean } = props
 
 const events = {
   c_click: () => {
-    if (!disabled) emit('c_click')
+    if (!props.disabled) emit('c_click')
   },
 }
 const className = computed(() => {
   let name = `
     c-button 
-    c-button-${type ? type : 'primary'} 
-    c-button-${size} 
-    ${round ? 'c-button-round' : ''}
-    ${disabled ? 'c-button-disabled' : ''}
-    c-button-${clean ? 'clean' : 'dirty'} 
+    c-button-${props.type ? props.type : 'primary'} 
+    c-button-${props.size} 
+    ${props.round ? 'c-button-round' : ''}
+    ${props.disabled ? 'c-button-disabled' : ''}
+    c-button-${props.clean ? 'clean' : 'dirty'} 
   `
   return name
 })

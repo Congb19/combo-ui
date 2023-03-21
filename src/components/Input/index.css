@@ -5,6 +5,7 @@
   --c-input-padding-s: 0 7px;
   --c-input-padding-m: 0 11px;
   --c-input-padding-l: 0 15px;
+  --c-input-padding-textarea: 5px 11px;
 }
 
 /* 默认 */
@@ -12,7 +13,8 @@
   position: relative;
   display: inline-block;
   box-sizing: border-box;
-  border: 1px #aaa solid;
+  border: 1px var(--c-color-line-1) solid;
+  /* height: var(--c-input-height-m); */
   text-align: left;
   border-radius: 4px;
   opacity: 1;
@@ -29,12 +31,30 @@
   line-height: var(--c-input-height-m);
   font-size: var(--c-font-size-m);
   background-color: #00000000;
+  vertical-align: bottom;
+}
+.c-input textarea {
+  display: inline-block;
+  padding: var(--c-input-padding-textarea);
+  border: none;
+  outline: none;
+  border-radius: 4px;
+  color: var(--c-color-text-1);
+  /* height: var(--c-input-height-m); */
+  /* line-height: var(--c-input-height-m); */
+  font-size: var(--c-font-size-m);
+  background-color: #00000000;
+  vertical-align: bottom;
+  min-height: 40px;
 }
 
 /* disabled */
+.c-input-disabled {
+  background-color: var(--c-color-line-2);
+  opacity: 0.5;
+}
 .c-input-disabled input {
   cursor: not-allowed;
-  opacity: 0.5;
 }
 
 /* 鼠标悬浮和点击状态 */
@@ -43,9 +63,19 @@
 }
 .c-input-focus {
   border-color: var(--c-color-primary-1);
+  box-shadow: 0px 0px 0px 1.5px var(--c-color-primary-4);
+}
+.c-input-focus input {
+  background-color: var(--c-color-primary-0);
+}
+.c-input-focus textarea {
+  background-color: var(--c-color-primary-0);
 }
 
 /* 尺寸 */
+/* .c-input-s {
+  height: var(--c-input-height-s);
+} */
 .c-input-s input {
   padding: var(--c-input-padding-s);
   height: var(--c-input-height-s);
@@ -64,3 +94,5 @@
   line-height: var(--c-input-height-l);
   font-size: var(--c-font-size-l);
 }
+
+/* align */

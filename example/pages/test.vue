@@ -1,7 +1,13 @@
 <template>
   <CThemeProvider>
     <CMessageProvider>
-      ---------------------button---------------------- default
+      <CButton :type="typetest" clean @c_click="typeclick">
+        prop change test
+      </CButton>
+      <br />
+      ---------------------button----------------------
+      <br />
+      default
       <CButton>Btn 默认</CButton>
       <br />
       size
@@ -63,7 +69,9 @@
       ------------------input-------------------
       <br />
       {{ inputvalue }}
+      <br />
       <CInput v-model:value="inputvalue" />
+      <CInput placeholder="input!" />
       <br />
       size
       <br />
@@ -74,6 +82,19 @@
       disabled
       <br />
       <CInput v-model:value="inputvalue" disabled />
+      <br />
+      password
+      <br />
+      <CInput v-model:value="inputvalue" type="password" />
+      <br />
+      textarea
+      <br />
+      <CInput v-model:value="inputvalue" type="textarea" />
+      <br />
+      maxlength
+      <br />
+      <CInput v-model:value="inputvalue" :max-length="12" />
+      <CInput v-model:value="inputvalue" :max-length="12" type="textarea" />
       <br />
     </CMessageProvider>
   </CThemeProvider>
@@ -95,6 +116,7 @@ const changeTheme2 = (theme: string) => {
 }
 const clicktest = () => {
   console.log('click')
+  alert('click')
   msg.error('test msg', 4000)
 }
 const mouseovertest = () => {
@@ -103,5 +125,9 @@ const mouseovertest = () => {
 const closetest = () => {
   console.log('close')
 }
-const inputvalue = ref('123')
+const inputvalue = ref('input测试')
+const typetest = ref('warning')
+const typeclick = () => {
+  typetest.value = 'error'
+}
 </script>

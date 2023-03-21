@@ -8,7 +8,8 @@ html.dark {
   */
 
   /* line colors(like border、table) */
-  --c-color-line-1: #989ca3;
+  --c-color-line-1: #606368;
+  --c-color-line-2: #47494d;
 
   /* text colors(clean) */
   --c-color-text-1: #ddd;
@@ -24,34 +25,34 @@ html.dark {
   --c-color-text-dirty-5: #bbbbbb;
   /* primary colors(blue) */
   --c-color-primary-1: #40a0ff;
-  --c-color-primary-2: #79bbff;
-  --c-color-primary-3: #9fceff;
-  --c-color-primary-4: #c6e2ff;
-  --c-color-primary-5: #d9ecff;
-  --c-color-primary-6: #ecf5ff;
+  --c-color-primary-2: #3287dd;
+  --c-color-primary-3: #2c70b8;
+  --c-color-primary-4: #21568f;
+  --c-color-primary-5: #1b4f83;
+  --c-color-primary-6: #183c65;
   --c-color-primary-0: #40a0ff10;
   /* success colors(green) */
   --c-color-success-1: #67c23a;
-  --c-color-success-2: #95d475;
-  --c-color-success-3: #b3e09c;
-  --c-color-success-4: #d1edc4;
-  --c-color-success-5: #e1f3d8;
-  --c-color-success-6: #f0f9eb;
+  --c-color-success-2: #549e2f;
+  --c-color-success-3: #417d23;
+  --c-color-success-4: #36711b;
+  --c-color-success-5: #34671b;
+  --c-color-success-6: #2d5716;
   --c-color-success-0: #67c23a10;
   /* warning colors(warning) */
   --c-color-warning-1: #e6a23c;
-  --c-color-warning-2: #eebe77;
-  --c-color-warning-3: #f2d09d;
-  --c-color-warning-4: #f8e3c5;
-  --c-color-warning-5: #faecd8;
-  --c-color-warning-6: #fcf6ec;
+  --c-color-warning-2: #c88e38;
+  --c-color-warning-3: #a9782d;
+  --c-color-warning-4: #835b23;
+  --c-color-warning-5: #745221;
+  --c-color-warning-6: #674b1a;
   --c-color-warning-0: #e6a23c10;
   /* error colors(error) */
   --c-color-error-1: #f56c6c;
-  --c-color-error-2: #f89898;
-  --c-color-error-3: #fab5b5;
-  --c-color-error-4: #fcd3d3;
-  --c-color-error-5: #fde2e2;
-  --c-color-error-6: #fef0f0;
+  --c-color-error-2: #d15f5f;
+  --c-color-error-3: #9c4545;
+  --c-color-error-4: #833737;
+  --c-color-error-5: #682c2c;
+  --c-color-error-6: #532222;
   --c-color-error-0: #f56c6c10;
 }

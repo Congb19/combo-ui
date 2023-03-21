@@ -20,11 +20,6 @@ const props = defineProps({
   },
   maxLength: {
     type: Number,
-    default: false,
-  },
-  align: {
-    type: String as PropType<'left' | 'center' | 'right'>,
-    default: 'left',
   },
   value: {
     type: [String, Number],
@@ -34,8 +29,12 @@ const props = defineProps({
     type: Boolean,
     default: false,
   },
+  placeholder: {
+    type: [String],
+    default: '',
+  },
 })
-const { size, type, maxLength, value, disabled } = props
+// const { size, type, maxLength, value, disabled, placeholder } = props
 
 const c_input = ref()
 const lock = ref(false)
@@ -52,10 +51,10 @@ onMounted(() => {
   })
 })
 
-const currentValue = ref(value)
+const currentValue = ref(props.value)
 const handleInput = (event: any) => {
   if (lock.value) return
-  console.log('input,', event, event.target)
+  // console.log('input,', event, event.target)
   currentValue.value = event.target.value
   emit('update:value', currentValue.value)
   emit('c_change')
@@ -63,10 +62,10 @@ const handleInput = (event: any) => {
 
 const status = ref('default')
 const mouseenter = () => {
-  if (status.value !== 'focus' && !disabled) status.value = 'hover'
+  if (status.value !== 'focus' && !props.disabled) status.value = 'hover'
 }
 const mouseleave = () => {
-  if (status.value !== 'focus' && !disabled) status.value = 'default'
+  if (status.value !== 'focus' && !props.disabled) status.value = 'default'
 }
 
 const events = {
@@ -87,8 +86,8 @@ const className = computed(() => {
   return `
     c-input
     c-input-${status.value}
-    c-input-${size} 
-    ${disabled ? 'c-input-disabled' : ''}
+    c-input-${props.size} 
+    ${props.disabled ? 'c-input-disabled' : ''}
   `
 })
 </script>
@@ -98,10 +97,12 @@ const className = computed(() => {
     <!-- <div class="c-input__border"></div> -->
     <input
       ref="c_input"
-      v-if="type !== 'textarea'"
-      type="text"
-      :disabled="disabled"
+      v-if="props.type !== 'textarea'"
+      :type="props.type"
+      :disabled="props.disabled"
       :value="currentValue"
+      :placeholder="props.placeholder"
+      :maxlength="props.maxLength ? props.maxLength : undefined"
       @focus="events.c_focus"
       @blur="events.c_blur"
       @mouseenter="mouseenter"
@@ -109,5 +110,23 @@ const className = computed(() => {
       @input="handleInput"
     />
     <!-- <slot>Button</slot> -->
+    <textarea
+      ref="c_input"
+      v-else
+      name=""
+      id=""
+      cols="30"
+      rows="2 "
+      :disabled="props.disabled"
+      :value="currentValue"
+      :placeholder="props.placeholder"
+      :maxlength="props.maxLength ? props.maxLength : undefined"
+      @focus="events.c_focus"
+      @blur="events.c_blur"
+      @mouseenter="mouseenter"
+      @mouseleave="mouseleave"
+      @input="handleInput"
+    >
+    </textarea>
   </div>
 </template>
