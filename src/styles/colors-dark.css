@@ -23,6 +23,14 @@ html.dark {
   --c-color-text-dirty-3: #dddddd;
   --c-color-text-dirty-4: #cccccc;
   --c-color-text-dirty-5: #bbbbbb;
+  /* default colors(grey) */
+  --c-color-default-1: #acacac;
+  --c-color-default-2: #999898;
+  --c-color-default-3: #7f7f7f;
+  --c-color-default-4: #696969;
+  --c-color-default-5: #5e5e5e;
+  --c-color-default-6: #4f4f4f;
+  --c-color-default-0: #acacac10;
   /* primary colors(blue) */
   --c-color-primary-1: #40a0ff;
   --c-color-primary-2: #3287dd;

@@ -15,7 +15,7 @@
   display: inline-block;
   box-sizing: border-box;
   text-align: center;
-  background-color: var(--c-color-primary-1);
+  background-color: var(--c-color-default-1);
   border-radius: 4px;
   line-height: var(--c-button-height-m);
   font-size: var(--c-font-size-m);
@@ -41,7 +41,7 @@
   right: 0;
   bottom: 0;
   left: 0;
-  border: 1px var(--c-color-primary-1) solid;
+  border: 1px var(--c-color-default-1) solid;
   border-radius: 4px;
 }
 /* round */
@@ -97,6 +97,26 @@
 }
 .c-button-s.c-button-round .c-button__border {
   border-radius: var(--c-button-height-s);
+}
+
+/* 颜色-default */
+.c-button-default {
+  background-color: var(--c-color-default-1);
+}
+.c-button-default .c-button__border {
+  border-color: var(--c-color-default-1);
+}
+.c-button-default.c-button-clean {
+  color: var(--c-color-default-1);
+  background-color: var(--c-color-default-0);
+}
+.c-button-default.c-button-clean:hover {
+  color: var(--c-color-text-dirty-1);
+  background-color: var(--c-color-default-1);
+}
+.c-button-default.c-button-clean.c-button-disabled:hover {
+  color: var(--c-color-default-1);
+  background-color: var(--c-color-default-0);
 }
 
 /* 颜色-primary */

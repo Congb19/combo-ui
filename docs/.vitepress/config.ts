@@ -26,6 +26,7 @@ export default defineConfig({
         text: 'Components 组件',
         items: [
           { text: 'Button 按钮', link: '/components/button' },
+          { text: 'Tag 按钮', link: '/components/tag' },
           { text: 'Input 输入框', link: '/components/input' },
         ],
       },

@@ -19,8 +19,10 @@ const props = defineProps({
     default: false,
   },
   type: {
-    type: String as PropType<'' | 'primary' | 'success' | 'warning' | 'error'>,
-    default: '',
+    type: String as PropType<
+      'default' | 'primary' | 'success' | 'warning' | 'error'
+    >,
+    default: 'default',
   },
   disabled: {
     type: Boolean,
@@ -40,7 +42,7 @@ const events = {
 const className = computed(() => {
   let name = `
     c-button 
-    c-button-${props.type ? props.type : 'primary'} 
+    c-button-${props.type ? props.type : 'default'} 
     c-button-${props.size} 
     ${props.round ? 'c-button-round' : ''}
     ${props.disabled ? 'c-button-disabled' : ''}

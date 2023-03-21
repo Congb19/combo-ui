@@ -4,12 +4,14 @@ const clicktest = () => alert('clicked')
 </script>
 <template>
   <CButton clean>Button1</CButton>&nbsp;
+  <CButton clean type="primary">Button1</CButton>&nbsp;
   <CButton clean type="success">Button1</CButton>&nbsp;
   <CButton clean type="warning">Button1</CButton>&nbsp;
   <CButton clean type="error">Button1</CButton>&nbsp;
   <div></div>
   <br />
   <CButton>Button1</CButton>&nbsp;
+  <CButton type="primary">Button1</CButton>&nbsp;
   <CButton type="success">Button1</CButton>&nbsp;
   <CButton type="warning">Button1</CButton>&nbsp;
   <CButton type="error">Button1</CButton>&nbsp;
@@ -20,5 +22,12 @@ const clicktest = () => alert('clicked')
   <CButton clean type="error" size="l">Button1</CButton>&nbsp;
   <div></div>
   <br />
-  <CButton type="success" @c_click="clicktest">Click!</CButton>&nbsp;
+  <CButton @c_click="clicktest">Click!</CButton>&nbsp;
+  <div></div>
+  <br />
+  <CButton disabled>Button1</CButton>&nbsp;
+  <CButton type="primary" disabled>Button1</CButton>&nbsp;
+  <CButton type="success" disabled>Button1</CButton>&nbsp;
+  <CButton type="warning" disabled>Button1</CButton>&nbsp;
+  <CButton type="error" disabled>Button1</CButton>&nbsp;
 </template>

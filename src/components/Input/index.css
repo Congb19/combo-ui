@@ -1,7 +1,7 @@
 .c-input {
-  --c-input-height-s: 24px;
-  --c-input-height-m: 32px;
-  --c-input-height-l: 40px;
+  --c-input-height-s: 22px;
+  --c-input-height-m: 30px;
+  --c-input-height-l: 38px;
   --c-input-padding-s: 0 7px;
   --c-input-padding-m: 0 11px;
   --c-input-padding-l: 0 15px;
@@ -79,7 +79,7 @@
 .c-input-s input {
   padding: var(--c-input-padding-s);
   height: var(--c-input-height-s);
-  line-height: var(--c-input-height-s);
+  line-height: calc(var(--c-input-height-s) - 0px);
   font-size: var(--c-font-size-s);
 }
 .c-input-m input {

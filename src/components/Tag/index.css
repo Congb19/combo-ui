@@ -1,0 +1,169 @@
+.c-tag {
+  --c-tag-height-s: 16px;
+  --c-tag-height-m: 24px;
+  --c-tag-height-l: 32px;
+  --c-tag-padding-s: 0 8px;
+  --c-tag-padding-m: 0 10px;
+  --c-tag-padding-l: 0 12px;
+}
+
+/* 默认 */
+.c-tag {
+  position: relative;
+  display: inline-block;
+  box-sizing: border-box;
+  text-align: center;
+  background-color: var(--c-color-default-1);
+  border: 1px var(--c-color-default-1) solid;
+  border-radius: 2px;
+  line-height: calc(var(--c-tag-height-m) - 2px);
+  font-size: var(--c-font-size-s);
+  height: var(--c-tag-height-m);
+  padding: var(--c-tag-padding-m);
+  color: var(--c-color-text-dirty-1);
+  opacity: 1;
+  transition: all 0.2s ease-out;
+  vertical-align: bottom;
+}
+.c-tag .c-tag__border {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border: 1px var(--c-color-default-1) solid;
+  border-radius: 2px;
+}
+.c-tag .c-tag__close {
+  cursor: pointer;
+  /* z-index: 99; */
+}
+
+.c-tag-clean {
+  background-color: var(--c-color-default-0);
+  color: var(--c-color-text-1);
+}
+
+/* 尺寸 */
+
+/* 尺寸-l、m、s */
+.c-tag-l {
+  line-height: calc(var(--c-tag-height-l) - 2px);
+  height: var(--c-tag-height-l);
+  padding: var(--c-tag-padding-l);
+  font-size: var(--c-font-size-m);
+}
+.c-tag-l.c-tag-round {
+  border-radius: var(--c-tag-height-l);
+}
+.c-tag-l.c-tag-round .c-tag__border {
+  border-radius: var(--c-tag-height-l);
+}
+.c-tag-m {
+  line-height: calc(var(--c-tag-height-m) - 2px);
+  height: var(--c-tag-height-m);
+  padding: var(--c-tag-padding-m);
+  font-size: var(--c-font-size-s);
+}
+.c-tag-m.c-tag-round {
+  border-radius: var(--c-tag-height-m);
+}
+.c-tag-m.c-tag-round .c-tag__border {
+  border-radius: var(--c-tag-height-m);
+}
+.c-tag-s {
+  line-height: calc(var(--c-tag-height-s) - 2px);
+  height: var(--c-tag-height-s);
+  padding: var(--c-tag-padding-s);
+  font-size: var(--c-font-size-s);
+}
+.c-tag-s.c-tag-round {
+  border-radius: var(--c-tag-height-s);
+}
+.c-tag-s.c-tag-round .c-tag__border {
+  border-radius: var(--c-tag-height-s);
+}
+
+/* 颜色-primary */
+.c-tag-primary {
+  background-color: var(--c-color-primary-1);
+  border-color: var(--c-color-primary-1);
+}
+.c-tag-primary .c-tag__border {
+  border-color: var(--c-color-primary-1);
+}
+.c-tag-primary.c-tag-clean {
+  color: var(--c-color-primary-1);
+  background-color: var(--c-color-primary-0);
+}
+/* .c-tag-primary.c-tag-clean:hover {
+  color: var(--c-color-text-dirty-1);
+  background-color: var(--c-color-primary-1);
+}
+.c-tag-primary.c-tag-clean.c-tag-disabled:hover {
+  color: var(--c-color-primary-1);
+  background-color: var(--c-color-primary-0);
+} */
+
+/* 颜色-success */
+.c-tag-success {
+  background-color: var(--c-color-success-1);
+  border-color: var(--c-color-success-1);
+}
+.c-tag-success .c-tag__border {
+  border-color: var(--c-color-success-1);
+}
+.c-tag-success.c-tag-clean {
+  color: var(--c-color-success-1);
+  background-color: var(--c-color-success-0);
+}
+/* .c-tag-success.c-tag-clean:hover {
+  color: var(--c-color-text-dirty-1);
+  background-color: var(--c-color-success-1);
+}
+.c-tag-success.c-tag-clean.c-tag-disabled:hover {
+  color: var(--c-color-success-1);
+  background-color: var(--c-color-success-0);
+} */
+
+/* 颜色-warning */
+.c-tag-warning {
+  background-color: var(--c-color-warning-1);
+  border-color: var(--c-color-warning-1);
+}
+.c-tag-warning .c-tag__border {
+  border-color: var(--c-color-warning-1);
+}
+.c-tag-warning.c-tag-clean {
+  color: var(--c-color-warning-1);
+  background-color: var(--c-color-warning-0);
+}
+/* .c-tag-warning.c-tag-clean:hover {
+  color: var(--c-color-text-dirty-1);
+  background-color: var(--c-color-warning-1);
+}
+.c-tag-warning.c-tag-clean.c-tag-disabled:hover {
+  color: var(--c-color-warning-1);
+  background-color: var(--c-color-warning-0);
+} */
+
+/* 颜色-error */
+.c-tag-error {
+  background-color: var(--c-color-error-1);
+  border-color: var(--c-color-error-1);
+}
+.c-tag-error .c-tag__border {
+  border-color: var(--c-color-error-1);
+}
+.c-tag-error.c-tag-clean {
+  color: var(--c-color-error-1);
+  background-color: var(--c-color-error-0);
+}
+/* .c-tag-error.c-tag-clean:hover {
+  color: var(--c-color-text-dirty-1);
+  background-color: var(--c-color-error-1);
+}
+.c-tag-warning.c-tag-clean.c-tag-disabled:hover {
+  color: var(--c-color-warning-1);
+  background-color: var(--c-color-warning-0);
+} */

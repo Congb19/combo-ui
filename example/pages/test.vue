@@ -24,7 +24,7 @@
       <CButton type="warning">Btn warning</CButton>
       <CButton type="error">Btn error</CButton>
       <br />
-      clean
+      clean=false
       <CButton type="primary" clean>primary clean</CButton>
       <CButton type="success" clean>success clean</CButton>
       <CButton type="warning" clean>warning clean</CButton>
@@ -76,8 +76,8 @@
       size
       <br />
       <CInput v-model:value="inputvalue" size="s" />
-      <CInput v-model:value="inputvalue" size="m" />
-      <CInput v-model:value="inputvalue" size="l" />
+      <!-- <CInput v-model:value="inputvalue" size="m" />
+      <CInput v-model:value="inputvalue" size="l" /> -->
       <br />
       disabled
       <br />
@@ -96,6 +96,50 @@
       <CInput v-model:value="inputvalue" :max-length="12" />
       <CInput v-model:value="inputvalue" :max-length="12" type="textarea" />
       <br />
+      event （c_focus, c_blur, c_change）
+      <br />
+
+      <CInput
+        v-model:value="inputvalue"
+        @c_focus="focustest"
+        @c_blur="blurtest"
+        @c_change="changetest"
+      />
+      <br />
+      ------------------tag-------------------
+      <br />
+      默认
+      <CTag>123</CTag>
+      <CTag type="primary">标签</CTag>
+      <CTag type="success">123</CTag>
+      <CTag type="warning">标签</CTag>
+      <CTag type="error">123</CTag>
+      <CTag clean>123</CTag>
+      <CTag type="primary" clean>标签</CTag>
+      <CTag type="success" clean>123</CTag>
+      <CTag type="warning" clean>标签</CTag>
+      <CTag type="error" clean>123</CTag>
+      <br />
+      尺寸
+      <CTag type="primary" size="s">标签</CTag>
+      <CTag type="success" size="m">标签</CTag>
+      <CTag type="warning" size="l">标签</CTag>
+      <CTag type="primary" size="s" clean>标签</CTag>
+      <CTag type="success" size="m" clean>标签</CTag>
+      <CTag type="warning" size="l" clean>标签</CTag>
+      <br />
+      round
+      <CTag type="primary" size="s" round>round</CTag>
+      <CTag type="success" size="m" round>round</CTag>
+      <CTag type="warning" size="l" round>round</CTag>
+      <CTag type="primary" size="s" round clean>标签</CTag>
+      <CTag type="success" size="m" round clean>标签</CTag>
+      <CTag type="warning" size="l" round clean>标签</CTag>
+      <br />
+      closable
+      <CTag type="success" size="m" closable>closable</CTag>
+      <CTag type="success" size="m" closable clean>closable</CTag>
+      <CTag type="success" size="m" closable round>closable</CTag>
     </CMessageProvider>
   </CThemeProvider>
 </template>
@@ -130,4 +174,7 @@ const typetest = ref('warning')
 const typeclick = () => {
   typetest.value = 'error'
 }
+const focustest = () => console.log('focus')
+const blurtest = () => console.log('blur')
+const changetest = () => console.log('change')
 </script>

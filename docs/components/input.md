@@ -9,4 +9,6 @@ const value = ref('test')
 
 简简单单输入框
 
+---
+
 <input-example></input-example>

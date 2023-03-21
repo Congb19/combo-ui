@@ -4,7 +4,8 @@ export default {
 }
 </script>
 <script setup lang="ts">
-import { PropType } from 'vue-demi'
+import { computed, PropType, ref } from 'vue-demi'
+import './index.css'
 const emit = defineEmits(['c_click', 'c_mouseover', 'c_close'])
 const props = defineProps({
   size: {
@@ -21,7 +22,7 @@ const props = defineProps({
   },
   type: {
     type: String as PropType<
-      'default' | 'primary' | 'info' | 'success' | 'warning' | 'error'
+      'default' | 'primary' | 'success' | 'warning' | 'error'
     >,
     default: 'default',
   },
@@ -29,77 +30,12 @@ const props = defineProps({
     type: Boolean,
     default: false,
   },
+  clean: {
+    type: Boolean,
+    default: false,
+  },
 })
-const resolveType = (type: string) => {
-  switch (type) {
-    case 'primary':
-      return {
-        __backgroundColor: 'pink',
-        __borderColor: 'red',
-        __fontColor: 'red',
-      }
-      break
-    case 'info':
-      return {
-        __backgroundColor: 'pink',
-        __borderColor: 'blue',
-        __fontColor: 'blue',
-      }
-      break
-    case 'success':
-      return {
-        __backgroundColor: 'pink',
-        __borderColor: 'green',
-        __fontColor: 'green',
-      }
-      break
-    case 'warning':
-      return {
-        __backgroundColor: 'yellow',
-        __borderColor: 'orange',
-        __fontColor: 'orange',
-      }
-      break
-    case 'error':
-      return {
-        __backgroundColor: 'pink',
-        __borderColor: 'red',
-        __fontColor: 'red',
-      }
-      break
-    default:
-      return {
-        __backgroundColor: '#eee',
-        __borderColor: '#aaa',
-        __fontColor: '#aaa',
-      }
-      break
-  }
-}
-const resolveSize = (size: string) => {
-  switch (size) {
-    case 's':
-      return {
-        __height: 22,
-        __fontSize: 12,
-      }
-    case 'm':
-      return {
-        __height: 28,
-        __fontSize: 14,
-      }
-    case 'l':
-      return {
-        __height: 34,
-        __fontSize: 14,
-      }
-    default:
-      return {
-        __height: 28,
-        __fontSize: 14,
-      }
-  }
-}
+const show = ref(true)
 const events = {
   c_click: () => {
     emit('c_click')
@@ -108,63 +44,34 @@ const events = {
     emit('c_mouseover')
   },
   c_close: (e: Event) => {
+    console.log('close')
+    show.value = false
     emit('c_close')
-    e.stopPropagation()
+    // e.stopPropagation()
   },
 }
-const styleVars = {
-  ...resolveSize(props.size),
-  ...resolveType(props.type),
-}
-const style = {
-  padding: `
-    ${(styleVars.__height - styleVars.__fontSize) / 2}px 
-    ${props.round ? styleVars.__height / 2 : 7}px
-  `,
-  fontSize: `${styleVars.__fontSize}px`,
-  lineHeight: `${styleVars.__fontSize}px`,
-  height: `${styleVars.__height}px`,
-}
-const styleBorder = {
-  border: `1px ${styleVars.__borderColor} solid`,
-  borderRadius: `${props.round ? styleVars.__height / 2 : 2}px`,
-  zIndex: -1,
-  backgroundColor: styleVars.__backgroundColor,
-}
-console.log(style)
+const className = computed(() => {
+  return `
+    c-tag
+    c-tag-${props.clean ? 'clean' : 'dirty'}
+    c-tag-${props.type}
+    c-tag-${props.size}
+    ${props.round ? 'c-tag-round' : ''}
+  `
+})
 </script>
 
 <template>
   <div
-    class="c-tag"
-    :style="style"
+    v-if="show"
+    :class="className"
     @click="events.c_click"
     @mouseover="events.c_mouseover"
   >
+    <!-- <div class="c-tag__border"></div> -->
     <slot>标签</slot>
     <span class="c-tag__close" v-if="closable" @click="events.c_close"> ×</span>
-    <div class="c-tag__border" :style="styleBorder"></div>
   </div>
 </template>
 
-<style scoped>
-.c-tag {
-  position: relative;
-  display: inline-block;
-  box-sizing: border-box;
-  text-align: center;
-}
-.c-tag:hover {
-  cursor: default;
-}
-.c-tag__close {
-  cursor: pointer;
-}
-.c-tag__border {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-}
-</style>
+<style scoped></style>
