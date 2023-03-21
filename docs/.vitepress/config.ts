@@ -8,13 +8,14 @@ export default defineConfig({
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: 'Home', link: '/' },
-      { text: 'Get Started', link: '/guides/intro' },
+      { text: 'Guides', link: '/guides/intro' },
       { text: 'Components', link: '/components/button' },
+      { text: 'Others', link: '/others/about' },
     ],
 
     sidebar: [
       {
-        text: 'Get Started 开始',
+        text: 'Guides 开始',
         items: [
           { text: 'Intro 介绍', link: '/guides/intro' },
           { text: 'Install 安装', link: '/guides/install' },
@@ -27,6 +28,10 @@ export default defineConfig({
           { text: 'Button 按钮', link: '/components/button' },
           { text: 'Input 输入框', link: '/components/input' },
         ],
+      },
+      {
+        text: 'Others 其他',
+        items: [{ text: 'About 关于', link: '/others/about' }],
       },
       { text: 'markdown-examples', link: '/markdown-examples' },
       { text: 'Runtime API Examples', link: '/api-examples' },
