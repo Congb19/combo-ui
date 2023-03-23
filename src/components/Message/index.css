@@ -1,5 +1,6 @@
 .c-message-wrapper {
   background-color: var(--background-color);
+  border-radius: 4px;
 }
 .c-message {
   /* position: absolute; */

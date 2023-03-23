@@ -1,8 +1,9 @@
 <template>
   <CThemeProvider>
     <br />
-    <CButton clean @c_click="click('light')">ToLight</CButton>&nbsp;
-    <CButton clean @c_click="click('dark')">ToDark</CButton>
+    <CButton clean type="primary" @c_click="click('light')">ToLight</CButton
+    >&nbsp;
+    <CButton clean type="primary" @c_click="click('dark')">ToDark</CButton>
     <!-- <div style="color: var(--combo-test-color)">1234</div> -->
     <br />
   </CThemeProvider>
