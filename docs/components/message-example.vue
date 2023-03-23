@@ -2,7 +2,7 @@
 import { CMessageProvider, useMsg, CButton } from '../../src'
 const msg = useMsg()
 const msg1 = () => {
-  msg.info('error')
+  msg.info('default')
 }
 const msg2 = () => {
   msg.error({

@@ -1,11 +1,10 @@
 <script setup>
-import { CTag } from '../../src'
 import TagExample from './tag-example.vue'
 </script>
 
 # Tag 标签
 
-给事物打上花花绿绿的标签。
+你可以给一切事物贴上花花绿绿的标签，但最好不要随便给人贴标签。
 
 ---
 

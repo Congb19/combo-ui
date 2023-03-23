@@ -4,7 +4,9 @@ import MessageExample from './message-example.vue'
 
 # Message 消息
 
-全局弹出醒目的消息来。
+在全局弹出醒目的消息来。
+
+如果你的微信弹出了重要的人的消息，一定要记得回复。
 
 ---
 
@@ -15,7 +17,7 @@ import MessageExample from './message-example.vue'
 import { CMessageProvider, useMsg, CButton } from '../../src'
 const msg = useMsg()
 const msg1 = () => {
-  msg.info('error')
+  msg.info('default')
 }
 const msg2 = () => {
   msg.error({

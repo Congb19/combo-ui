@@ -1,8 +1,5 @@
 <script setup>
-import { ref } from 'vue-demi'
-import { CInput } from '../../src'
 import InputExample from './input-example.vue'
-const value = ref('test')
 </script>
 
 # Input 输入框
