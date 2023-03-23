@@ -1,6 +1,14 @@
 :root {
   /* global vars */
+
+  /* font size */
   --c-font-size-s: 12px;
   --c-font-size-m: 14px;
   --c-font-size-l: 16px;
+
+  /* z-index */
+  --c-z-index-message: 999;
+  --c-z-index-button: 1;
+  --c-z-index-input: 1;
+  --c-z-index-tag: 1;
 }

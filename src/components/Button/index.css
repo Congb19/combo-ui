@@ -24,6 +24,8 @@
   color: var(--c-color-text-dirty-1);
   opacity: 1;
   transition: all 0.2s ease-out;
+  user-select: none;
+  z-index: var(--c-z-index-button);
 }
 .c-button:hover {
   cursor: pointer;

@@ -1,0 +1,33 @@
+#c-message-provider {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.c-message-container {
+  position: relative;
+  transition: all 0.4s cubic-bezier(0.2, 0.1, 0.8, 2);
+  /* ${t}: 0px;  */
+  opacity: 1;
+  height: 68px;
+  padding: 20px 20px 0px 20px;
+  box-sizing: border-box;
+  /* flex-grow: 1; */
+}
+
+.c-message-container-hide {
+  position: relative;
+  transition: all 0.4s cubic-bezier(0.2, 0.1, 0.8, 2);
+  /* ${t}: 0px;  */
+  opacity: 0;
+  height: 0px;
+  padding: 0px 20px 0px 20px;
+  box-sizing: border-box;
+  /* flex-grow: 1; */
+}

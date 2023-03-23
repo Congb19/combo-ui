@@ -1,14 +1,18 @@
 <template>
-  <div>
-    <div>{{ msg }}<span @click="() => destroy()"> X </span></div>
+  <div class="c-message">
+    <div>
+      {{ msg }}<span v-if="closable" @click="() => destroy()"> X </span>
+    </div>
   </div>
 </template>
 <script setup lang="ts">
-import { onMounted, onUnmounted } from 'vue-demi'
+import { computed, onMounted, onUnmounted, PropType } from 'vue-demi'
+import './index.css'
 const props = defineProps({
   type: {
-    type: String,
-    required: true,
+    type: String as PropType<'success' | 'warning' | 'info' | 'error'>,
+    default: 'info',
+    // required: true,
   },
   msg: {
     type: String,
@@ -22,7 +26,23 @@ const props = defineProps({
     type: Function,
     required: true,
   },
+  position: {
+    type: String,
+    default: 'top',
+  },
+  closable: {
+    type: Boolean,
+    default: false,
+  },
 })
+
+// const otherStyle = computed(() => {
+//   return props.position.includes('left')
+//     ? { left: '20px' }
+//     : props.position.includes('right')
+//     ? { right: '20px' }
+//     : {}
+// })
 
 onMounted(() => {
   console.log('show message')
@@ -35,8 +55,3 @@ onUnmounted(() => {
   console.log('delete message')
 })
 </script>
-<style>
-.inner {
-  background-color: aquamarine;
-}
-</style>

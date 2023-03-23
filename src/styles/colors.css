@@ -1,5 +1,5 @@
 html:not(.dark) {
-  background-color: #fff;
+  --background-color: #fff;
   --combo-test-color: #443c2a;
   transition: all 0.2s ease-out;
 
@@ -24,13 +24,13 @@ html:not(.dark) {
   --c-color-text-dirty-4: #ccc;
   --c-color-text-dirty-5: #bbb;
   /* default colors(grey) */
-  --c-color-default-1: #6f6f6f;
-  --c-color-default-2: #818181;
-  --c-color-default-3: #979797;
-  --c-color-default-4: #a6a6a6;
-  --c-color-default-5: #cacaca;
-  --c-color-default-6: #ececec;
-  --c-color-default-0: #6f6f6f10;
+  --c-color-default-1: #a1a1a1;
+  --c-color-default-2: #afafaf;
+  --c-color-default-3: #bebebe;
+  --c-color-default-4: #d0d0d0;
+  --c-color-default-5: #e0e0e0;
+  --c-color-default-6: #f0f0f0;
+  --c-color-default-0: #a1a1a110;
   /* primary colors(blue) */
   --c-color-primary-1: #409eff;
   --c-color-primary-2: #79bbff;

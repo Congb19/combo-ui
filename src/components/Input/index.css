@@ -19,6 +19,7 @@
   border-radius: 4px;
   opacity: 1;
   transition: all 0.3s ease-out;
+  z-index: var(--c-z-index-input);
 }
 .c-input input {
   display: inline-block;

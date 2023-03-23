@@ -24,6 +24,8 @@
   opacity: 1;
   transition: all 0.2s ease-out;
   vertical-align: bottom;
+  user-select: none;
+  z-index: var(--c-z-index-tag);
 }
 .c-tag .c-tag__border {
   position: absolute;

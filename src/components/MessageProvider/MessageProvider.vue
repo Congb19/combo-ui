@@ -1,6 +1,10 @@
 <template>
-  <!-- <Transition name="c"> -->
-  <div id="c-message-provider"><slot></slot></div>
+  <!-- <Transition> -->
+  <div id="c-message-provider"></div>
   <!-- </Transition> -->
+  <slot></slot>
 </template>
+<script setup lang="ts">
+import './index.css'
+</script>
 <style></style>

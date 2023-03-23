@@ -3,8 +3,10 @@ import test from './pages/test.vue'
 </script>
 
 <template>
-  <div>Combo! UI</div>
-  <test/>
+  <div style="background-color: var(--background-color)">
+    Combo! UI
+    <test />
+  </div>
 </template>
 
 <style>
@@ -17,6 +19,6 @@ import test from './pages/test.vue'
   margin-top: 60px;
 } */
 body {
-  margin: 0
+  margin: 0;
 }
 </style>
