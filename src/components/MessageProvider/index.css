@@ -3,31 +3,34 @@
   top: 0;
   left: 0;
   width: 100vw;
-  height: 100vh;
-  display: flex;
+  /* height: 100vh; */
+  /* display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  align-items: center;
+  align-items: center; */
+  z-index: var(--c-z-index-message);
 }
 
 .c-message-container {
-  position: relative;
-  transition: all 0.4s cubic-bezier(0.2, 0.1, 0.8, 2);
-  /* ${t}: 0px;  */
+  background-color: transparent;
+
+  position: absolute;
+  transition: opacity 0.3s ease, height 0.3s ease, padding 0.3s ease;
+  /* transition: all 0.3s ease; */
   opacity: 1;
   height: 68px;
   padding: 20px 20px 0px 20px;
   box-sizing: border-box;
-  /* flex-grow: 1; */
+  z-index: var(--c-z-index-message);
 }
 
 .c-message-container-hide {
-  position: relative;
-  transition: all 0.4s cubic-bezier(0.2, 0.1, 0.8, 2);
-  /* ${t}: 0px;  */
+  position: absolute;
+  transition: opacity 0.3s ease, height 0.3s ease, padding 0.3s ease;
+  /* transition: all 0.3s ease; */
   opacity: 0;
   height: 0px;
   padding: 0px 20px 0px 20px;
   box-sizing: border-box;
-  /* flex-grow: 1; */
+  z-index: var(--c-z-index-message);
 }

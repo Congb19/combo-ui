@@ -1,18 +1,39 @@
+.c-message-wrapper {
+  background-color: var(--background-color);
+}
 .c-message {
-  position: relative;
+  /* position: absolute; */
   box-sizing: border-box;
-  width: 100px;
 
-  /* background-color: var(--background-color); */
   background-color: aquamarine;
   color: var(--c-color-text-1);
   height: 48px;
   line-height: 48px;
-  width: 380px;
   border-radius: 4px;
-  /* margin: 20px 20px 0 20px; */
   box-shadow: 2px 2px 6px 0px var(--c-color-default-4);
 
   z-index: var(--c-z-index-message);
   transition: all 0.4s;
+
+  padding: 0 20px;
+}
+.c-message .c-message__close {
+  cursor: pointer;
+}
+
+.c-message-info {
+  border: 1px var(--c-color-primary-1) solid;
+  background-color: var(--c-color-primary-0);
+}
+.c-message-success {
+  border: 1px var(--c-color-success-1) solid;
+  background-color: var(--c-color-success-0);
+}
+.c-message-warning {
+  border: 1px var(--c-color-warning-1) solid;
+  background-color: var(--c-color-warning-0);
+}
+.c-message-error {
+  border: 1px var(--c-color-error-1) solid;
+  background-color: var(--c-color-error-0);
 }

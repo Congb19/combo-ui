@@ -1,7 +1,10 @@
 <template>
-  <div class="c-message">
-    <div>
-      {{ msg }}<span v-if="closable" @click="() => destroy()"> X </span>
+  <div class="c-message-wrapper">
+    <div :class="className">
+      {{ msg }}
+      <span class="c-message__close" v-if="closable" @click="() => destroy()">
+        ×
+      </span>
     </div>
   </div>
 </template>
@@ -44,14 +47,20 @@ const props = defineProps({
 //     : {}
 // })
 
+const className = computed(() => {
+  return `c-message
+    c-message-${props.type}
+  `
+})
+
 onMounted(() => {
-  console.log('show message')
+  // console.log('show message')
   if (props.duration)
     setTimeout(() => {
       props.destroy()
     }, props.duration)
 })
 onUnmounted(() => {
-  console.log('delete message')
+  // console.log('delete message')
 })
 </script>

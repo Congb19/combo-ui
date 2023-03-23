@@ -4,4 +4,4 @@ export interface cMessageOptions {
   position?: string
   closable?: boolean
 }
-export type cMessageTypes = 'error' | 'warning' | 'success'
+export type cMessageTypes = 'info' | 'error' | 'warning' | 'success'

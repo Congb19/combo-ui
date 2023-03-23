@@ -4,9 +4,14 @@
       <CButton :type="typetest" clean @c_click="typeclick">
         prop change test
       </CButton>
-      <CButton type="success" clean @c_click="msgtest1"> msgtest1 </CButton>
-      <CButton type="success" clean @c_click="msgtest2"> msgtest2 </CButton>
-      <CButton type="success" clean @c_click="msgtest3"> msgtest3 </CButton>
+
+      <div style="display: block">
+        ---------------------message----------------------
+        <br />
+        <CButton type="success" clean @c_click="msgtest1"> msgtest1 </CButton>
+        <CButton type="success" clean @c_click="msgtest2"> msgtest2 </CButton>
+        <CButton type="success" clean @c_click="msgtest3"> msgtest3 </CButton>
+      </div>
       <br />
       <div style="display: block">
         ---------------------button----------------------
@@ -63,7 +68,7 @@
       </div>
       <br />
 
-      <div style="display: block">
+      <div style="display: none">
         ------------------input-------------------
         <br />
         {{ inputvalue }}
@@ -104,7 +109,7 @@
         />
         <br />
       </div>
-      <div style="display: block">
+      <div style="display: none">
         ------------------tag-------------------
         <br />
         默认
@@ -144,7 +149,7 @@
   </CThemeProvider>
 </template>
 <script setup lang="ts">
-import { ref } from 'vue'
+import { computed, ref } from 'vue'
 import {
   CTag,
   CInput,
@@ -197,4 +202,20 @@ const msgtest3 = () => {
     closable: true,
   })
 }
+// map响应测试
+let a = { val: ref(1) }
+let map = new Map([[1, a]])
+let b = computed(() => {
+  console.log('computed')
+  let res = 100
+  map.forEach((item, key) => {
+    res += item.val.value
+  })
+  return res
+})
+console.log(b.value)
+// setInterval(() => {
+//   a.val.value++
+//   console.log(b.value)
+// }, 1000)
 </script>
