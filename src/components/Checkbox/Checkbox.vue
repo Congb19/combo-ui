@@ -1,6 +1,6 @@
 <script lang="ts">
 export default {
-  name: 'CSwitch',
+  name: 'CCheckbox',
 }
 </script>
 <script setup lang="ts">
@@ -34,19 +34,20 @@ watch(
 )
 const className = computed(() => {
   return `
-    c-switch
-    c-switch-${props.size}
-    ${props.disabled ? 'c-switch-disabled' : ''}
-    c-switch-${value.value + ''}
+    c-checkbox
+    c-checkbox-${props.size}
+    ${props.disabled ? 'c-checkbox-disabled' : ''}
+    c-checkbox-${value.value + ''}
   `
 })
 const otherStyle = computed(() => ({
-  backgroundColor: value.value ? props.color : 'var(--c-color-default-1)',
+  // backgroundColor: value.value ? props.color : 'var(--c-color-default-1)',
 }))
 const events = {
-  c_change: () => {
+  c_change: (event: any) => {
     if (props.disabled) return
-    value.value = !value.value
+    console.log(event)
+    value.value = event.target.checked
     emit('update:value', value.value)
     emit('c_change')
   },
@@ -54,7 +55,7 @@ const events = {
 </script>
 
 <template>
-  <div :class="className" @click="events.c_change" :style="otherStyle">
-    <div class="c-switch__driver"></div>
+  <div :class="className" :style="otherStyle">
+    <input type="checkbox" :checked="value" @change="events.c_change" />
   </div>
 </template>

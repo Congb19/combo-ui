@@ -1,7 +1,7 @@
 <script setup>
 import { CSwitch } from '../../src'
 import { ref } from 'vue-demi'
-const switchvalue = ref(false)
+const switchvalue = ref(true)
 </script>
 <template>
   <br />

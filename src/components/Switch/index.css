@@ -16,7 +16,7 @@
   background-color: aquamarine;
   border-radius: 80px;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: all 0.4s ease;
 }
 .c-switch__driver {
   position: absolute;
@@ -24,6 +24,8 @@
   left: 2px;
   background-color: white;
   border-radius: 80px;
+  transition: all 0.2s ease;
+  box-shadow: 0.5px 0.5px 2px 0px;
   transition: all 0.2s ease;
 }
 .c-switch-true .c-switch__driver {

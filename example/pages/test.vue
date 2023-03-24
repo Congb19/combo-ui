@@ -1,10 +1,59 @@
 <template>
   <CThemeProvider>
     <CMessageProvider>
-      <CButton :type="typetest" clean @c_click="typeclick">
-        prop change test
-      </CButton>
-
+      <div style="display: block">
+        ------------------单项测试区-------------------
+        <br />
+        <CButton :type="typetest" clean @c_click="typeclick">
+          prop change test
+        </CButton>
+        <input v-model="inputvalue2" />
+        <CInput v-model:value="inputvalue2" />
+      </div>
+      <div style="display: block">
+        ------------------checkbox-------------------
+        <br />
+        <br />
+        {{ checkboxvalue }}
+        <br />
+        默认
+        <br />
+        <CCheckbox v-model:value="checkboxvalue"></CCheckbox>&nbsp;
+        <CCheckbox v-model:value="checkboxvalue" disabled></CCheckbox>&nbsp;
+        <br />
+        颜色
+        <br />
+        <CCheckbox v-model:value="checkboxvalue" color="red"></CCheckbox>&nbsp;
+        <CCheckbox v-model:value="checkboxvalue" color="grey"></CCheckbox>&nbsp;
+        <br />
+        尺寸
+        <br />
+        <CCheckbox v-model:value="checkboxvalue" size="s"></CCheckbox>&nbsp;
+        <CCheckbox v-model:value="checkboxvalue" size="m"></CCheckbox>&nbsp;
+        <CCheckbox v-model:value="checkboxvalue" size="l"></CCheckbox>&nbsp;
+      </div>
+      <div style="display: block">
+        ------------------switch-------------------
+        <br />
+        <br />
+        {{ switchvalue }}
+        <br />
+        默认
+        <br />
+        <CSwitch v-model:value="switchvalue"></CSwitch>&nbsp;
+        <CSwitch v-model:value="switchvalue" disabled></CSwitch>&nbsp;
+        <br />
+        颜色
+        <br />
+        <CSwitch v-model:value="switchvalue" color="red"></CSwitch>&nbsp;
+        <CSwitch v-model:value="switchvalue" color="grey"></CSwitch>&nbsp;
+        <br />
+        尺寸
+        <br />
+        <CSwitch v-model:value="switchvalue" size="s"></CSwitch>&nbsp;
+        <CSwitch v-model:value="switchvalue" size="m"></CSwitch>&nbsp;
+        <CSwitch v-model:value="switchvalue" size="l"></CSwitch>&nbsp;
+      </div>
       <div style="display: block">
         ---------------------message----------------------
         <br />
@@ -68,7 +117,7 @@
       </div>
       <br />
 
-      <div style="display: none">
+      <div style="display: block">
         ------------------input-------------------
         <br />
         {{ inputvalue }}
@@ -109,7 +158,7 @@
         />
         <br />
       </div>
-      <div style="display: none">
+      <div style="display: block">
         ------------------tag-------------------
         <br />
         默认
@@ -145,27 +194,9 @@
         <CTag type="success" size="m" closable clean>closable</CTag>
         <CTag type="success" size="m" closable round>closable</CTag>
       </div>
-      <div style="display: block">
-        ------------------switch-------------------
-        <br />
-        <br />
-        {{ switchvalue }}
-        <br />
-        默认
-        <CSwitch v-model:value="switchvalue"></CSwitch>&nbsp;
-        <CSwitch v-model:value="switchvalue" disabled></CSwitch>&nbsp;
-        <br />
-        颜色
-        <br />
-        <CSwitch v-model:value="switchvalue" color="red"></CSwitch>&nbsp;
-        <CSwitch v-model:value="switchvalue" color="grey"></CSwitch>&nbsp;
-        <br />
-        尺寸
-        <br />
-        <CSwitch v-model:value="switchvalue" size="s"></CSwitch>&nbsp;
-        <CSwitch v-model:value="switchvalue" size="m"></CSwitch>&nbsp;
-        <CSwitch v-model:value="switchvalue" size="l"></CSwitch>&nbsp;
-      </div>
+      <br />
+      <br />
+      <br />
     </CMessageProvider>
   </CThemeProvider>
 </template>
@@ -175,6 +206,7 @@ import {
   CTag,
   CInput,
   CSwitch,
+  CCheckbox,
   CMessageProvider,
   CThemeProvider,
   useMsg,
@@ -197,7 +229,8 @@ const closetest = () => {
   console.log('close')
 }
 const inputvalue = ref('input测试')
-const switchvalue = ref(false)
+const switchvalue = ref(true)
+const checkboxvalue = ref(true)
 const typetest = ref('warning')
 const typeclick = () => {
   typetest.value = 'error'
@@ -241,4 +274,10 @@ console.log(b.value)
 //   a.val.value++
 //   console.log(b.value)
 // }, 1000)
+
+// prop 变化测试2
+const inputvalue2 = ref('asd')
+setTimeout(() => {
+  inputvalue2.value = 'qwe'
+}, 1000)
 </script>

@@ -4,8 +4,7 @@ export default {
 }
 </script>
 <script setup lang="ts">
-import { computed, onMounted, PropType, Ref, ref } from 'vue-demi'
-
+import { computed, onMounted, PropType, Ref, ref, watch } from 'vue-demi'
 import './index.css'
 
 const emit = defineEmits(['update:value', 'c_change', 'c_blur', 'c_focus'])
@@ -35,9 +34,17 @@ const props = defineProps({
   },
 })
 // const { size, type, maxLength, value, disabled, placeholder } = props
+watch(
+  () => props.value,
+  (val) => {
+    if (props.maxLength)
+      currentValue.value = (val + '').substring(0, props.maxLength)
+    else currentValue.value = val + ''
+  }
+)
 
 const c_input = ref()
-const lock = ref(false)
+const lock = ref(false) // 中文输入
 
 onMounted(() => {
   c_input.value.addEventListener('compositionstart', (event: Event) => {
