@@ -145,6 +145,27 @@
         <CTag type="success" size="m" closable clean>closable</CTag>
         <CTag type="success" size="m" closable round>closable</CTag>
       </div>
+      <div style="display: block">
+        ------------------switch-------------------
+        <br />
+        <br />
+        {{ switchvalue }}
+        <br />
+        默认
+        <CSwitch v-model:value="switchvalue"></CSwitch>&nbsp;
+        <CSwitch v-model:value="switchvalue" disabled></CSwitch>&nbsp;
+        <br />
+        颜色
+        <br />
+        <CSwitch v-model:value="switchvalue" color="red"></CSwitch>&nbsp;
+        <CSwitch v-model:value="switchvalue" color="grey"></CSwitch>&nbsp;
+        <br />
+        尺寸
+        <br />
+        <CSwitch v-model:value="switchvalue" size="s"></CSwitch>&nbsp;
+        <CSwitch v-model:value="switchvalue" size="m"></CSwitch>&nbsp;
+        <CSwitch v-model:value="switchvalue" size="l"></CSwitch>&nbsp;
+      </div>
     </CMessageProvider>
   </CThemeProvider>
 </template>
@@ -153,6 +174,7 @@ import { computed, ref } from 'vue'
 import {
   CTag,
   CInput,
+  CSwitch,
   CMessageProvider,
   CThemeProvider,
   useMsg,
@@ -175,6 +197,7 @@ const closetest = () => {
   console.log('close')
 }
 const inputvalue = ref('input测试')
+const switchvalue = ref(false)
 const typetest = ref('warning')
 const typeclick = () => {
   typetest.value = 'error'

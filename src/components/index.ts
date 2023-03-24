@@ -1,6 +1,7 @@
 import Button from './Button'
 import Tag from './Tag'
 import Input from './Input'
+import Switch from './Switch'
 import MessageProvider from './MessageProvider'
 import ThemeProvider from './ThemeProvider'
 import { useMsg } from './Message'
@@ -10,11 +11,21 @@ import { useTheme } from './Theme'
 export const CButton = Button
 export const CTag = Tag
 export const CInput = Input
+export const CSwitch = Switch
 export const CMessageProvider = MessageProvider
 export const CThemeProvider = ThemeProvider
 
 // create([C.Button, C.Tag])
-export { Button, Tag, Input, MessageProvider, ThemeProvider, useMsg, useTheme }
+export {
+  Button,
+  Tag,
+  Input,
+  Switch,
+  MessageProvider,
+  ThemeProvider,
+  useMsg,
+  useTheme,
+}
 
 // create(C.All)
-export const All = [Button, Tag, Input, MessageProvider, ThemeProvider]
+export const All = [Button, Tag, Input, Switch, MessageProvider, ThemeProvider]

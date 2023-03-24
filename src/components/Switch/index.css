@@ -1,0 +1,74 @@
+.c-switch {
+  --c-tag-height-s: 16px;
+  --c-tag-height-m: 20px;
+  --c-tag-height-l: 24px;
+  --c-tag-width-s: 30px;
+  --c-tag-width-m: 40px;
+  --c-tag-width-l: 50px;
+  --c-tag-driver-s: 12px;
+  --c-tag-driver-m: 16px;
+  --c-tag-driver-l: 20px;
+}
+.c-switch {
+  position: relative;
+  display: inline-block;
+  box-sizing: border-box;
+  background-color: aquamarine;
+  border-radius: 80px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.c-switch__driver {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  background-color: white;
+  border-radius: 80px;
+  transition: all 0.2s ease;
+}
+.c-switch-true .c-switch__driver {
+  left: 22px;
+}
+
+/* disabled  */
+.c-switch-disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+/* 尺寸 */
+.c-switch-s {
+  width: var(--c-tag-width-s);
+  height: var(--c-tag-height-s);
+}
+.c-switch-s .c-switch__driver {
+  width: var(--c-tag-driver-s);
+  height: var(--c-tag-driver-s);
+}
+.c-switch-s.c-switch-true .c-switch__driver {
+  left: 16px;
+}
+
+.c-switch-m {
+  width: var(--c-tag-width-m);
+  height: var(--c-tag-height-m);
+}
+.c-switch-m .c-switch__driver {
+  width: var(--c-tag-driver-m);
+  height: var(--c-tag-driver-m);
+}
+.c-switch-m.c-switch-true .c-switch__driver {
+  left: 22px;
+}
+
+.c-switch-l {
+  width: var(--c-tag-width-l);
+  height: var(--c-tag-height-l);
+}
+.c-switch-l .c-switch__driver {
+  width: var(--c-tag-driver-l);
+  height: var(--c-tag-driver-l);
+}
+.c-switch-l.c-switch-true .c-switch__driver {
+  left: 28px;
+}

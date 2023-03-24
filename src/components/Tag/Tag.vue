@@ -12,10 +12,6 @@ const props = defineProps({
     type: String as PropType<'s' | 'm' | 'l'>,
     default: 'm',
   },
-  color: {
-    type: String,
-    default: '#aa0000',
-  },
   round: {
     type: Boolean,
     default: false,
