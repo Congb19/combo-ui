@@ -1,2 +1,51 @@
 .c-checkbox {
+  --c-checkbox-size-s: 12px;
+  --c-checkbox-size-m: 14px;
+  --c-checkbox-size-l: 16px;
+}
+.c-checkbox {
+  position: relative;
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  border: 1px var(--c-color-default-1) solid;
+  border-radius: 2px;
+  transition: all 0.2s ease;
+}
+.c-checkbox .c-checkbox__inner {
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  transition: all 0.15s ease;
+  display: block;
+}
+
+.c-checkbox-hover {
+  border-color: var(--c-color-checkbox);
+}
+.c-checkbox-true {
+  border-color: var(--c-color-checkbox);
+}
+
+.c-checkbox-disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+.c-checkbox-disabled {
+  border-color: var(--c-color-default-1);
+  background-color: var(--c-color-default-4);
+}
+
+/* 尺寸 */
+.c-checkbox-s {
+  width: var(--c-checkbox-size-s);
+  height: var(--c-checkbox-size-s);
+}
+.c-checkbox-m {
+  width: var(--c-checkbox-size-m);
+  height: var(--c-checkbox-size-m);
+}
+.c-checkbox-l {
+  width: var(--c-checkbox-size-l);
+  height: var(--c-checkbox-size-l);
 }

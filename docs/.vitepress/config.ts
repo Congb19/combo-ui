@@ -26,6 +26,8 @@ export default defineConfig({
         text: 'Components 组件',
         items: [
           { text: 'Button 按钮', link: '/components/button' },
+          { text: 'Checkbox 勾选框', link: '/components/checkbox' },
+          { text: 'Icon 图标', link: '/components/icon' },
           { text: 'Input 输入框', link: '/components/input' },
           { text: 'Message 消息', link: '/components/message' },
           { text: 'Switch 开关', link: '/components/switch' },

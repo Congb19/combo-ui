@@ -1,6 +1,7 @@
 import Button from './Button'
 import Checkbox from './Checkbox'
 import Tag from './Tag'
+import Icon from './Icon'
 import Input from './Input'
 import Switch from './Switch'
 import MessageProvider from './MessageProvider'
@@ -12,6 +13,7 @@ import { useTheme } from './Theme'
 export const CButton = Button
 export const CCheckbox = Checkbox
 export const CTag = Tag
+export const CIcon = Icon
 export const CInput = Input
 export const CSwitch = Switch
 export const CMessageProvider = MessageProvider
@@ -22,6 +24,7 @@ export {
   Button,
   Checkbox,
   Tag,
+  Icon,
   Input,
   Switch,
   MessageProvider,
@@ -35,6 +38,7 @@ export const All = [
   Button,
   Checkbox,
   Tag,
+  Icon,
   Input,
   Switch,
   MessageProvider,

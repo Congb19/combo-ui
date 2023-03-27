@@ -1,0 +1,20 @@
+.c-icon {
+  position: relative;
+  display: inline-block;
+  /* width: 14px;
+  height: 14px; */
+}
+.c-icon svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.c-icon img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  left: calc(-8888px - var(--c-size-icon));
+  filter: drop-shadow(var(--c-color-icon) calc(8888px + var(--c-size-icon)) 0);
+  width: var(--c-size-icon);
+  height: var(--c-size-icon);
+}

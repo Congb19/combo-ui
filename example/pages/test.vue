@@ -2,13 +2,24 @@
   <CThemeProvider>
     <CMessageProvider>
       <div style="display: block">
-        ------------------单项测试区-------------------
+        ------------------特别测试区-------------------
         <br />
+        主题：<CSwitch v-model:value="switchvalue2"></CSwitch>&nbsp;
         <CButton :type="typetest" clean @c_click="typeclick">
           prop change test
         </CButton>
         <input v-model="inputvalue2" />
         <CInput v-model:value="inputvalue2" />
+      </div>
+      <div style="display: block">
+        ------------------icon-------------------
+        <br />
+        <CIcon>
+          <AmericanFootballSharp />
+        </CIcon>
+        <CIcon color="orange">
+          <img src="./test.svg" />
+        </CIcon>
       </div>
       <div style="display: block">
         ------------------checkbox-------------------
@@ -24,13 +35,23 @@
         颜色
         <br />
         <CCheckbox v-model:value="checkboxvalue" color="red"></CCheckbox>&nbsp;
-        <CCheckbox v-model:value="checkboxvalue" color="grey"></CCheckbox>&nbsp;
+        <CCheckbox v-model:value="checkboxvalue" color="green"></CCheckbox
+        >&nbsp;
         <br />
         尺寸
         <br />
         <CCheckbox v-model:value="checkboxvalue" size="s"></CCheckbox>&nbsp;
         <CCheckbox v-model:value="checkboxvalue" size="m"></CCheckbox>&nbsp;
         <CCheckbox v-model:value="checkboxvalue" size="l"></CCheckbox>&nbsp;
+        <br />
+        自定义图标
+        <br />
+        <CCheckbox
+          v-model:value="checkboxvalue"
+          size="l"
+          :icon="AmericanFootballSharp"
+        ></CCheckbox
+        >&nbsp;
       </div>
       <div style="display: block">
         ------------------switch-------------------
@@ -201,22 +222,26 @@
   </CThemeProvider>
 </template>
 <script setup lang="ts">
-import { computed, ref } from 'vue'
+import { computed, ref, watch } from 'vue'
 import {
   CTag,
   CInput,
   CSwitch,
   CCheckbox,
+  CIcon,
   CMessageProvider,
   CThemeProvider,
   useMsg,
   useTheme,
 } from '../../src'
+import { AmericanFootballSharp } from '@vicons/ionicons5'
+// import testSVG from './test.svg'
 const msg = useMsg()
 const { currentTheme, changeTheme } = useTheme()
 const changeTheme2 = (theme: string) => {
   document.getElementsByTagName('html')[0].className = theme ? theme : ''
 }
+
 const clicktest = () => {
   console.log('click')
   alert('click')
@@ -230,6 +255,14 @@ const closetest = () => {
 }
 const inputvalue = ref('input测试')
 const switchvalue = ref(true)
+const switchvalue2 = ref(currentTheme.value == 'light' ? false : true)
+watch(
+  () => switchvalue2.value,
+  (val) => {
+    if (val) changeTheme('dark')
+    else changeTheme('light')
+  }
+)
 const checkboxvalue = ref(true)
 const typetest = ref('warning')
 const typeclick = () => {
@@ -270,10 +303,10 @@ let b = computed(() => {
   return res
 })
 console.log(b.value)
-// setInterval(() => {
-//   a.val.value++
-//   console.log(b.value)
-// }, 1000)
+setTimeout(() => {
+  a.val.value++
+  console.log('effect', b.value)
+}, 1000)
 
 // prop 变化测试2
 const inputvalue2 = ref('asd')
