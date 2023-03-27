@@ -6,13 +6,13 @@ const clicktest = () => alert('clicked')
   <CButton clean>Button1</CButton>&nbsp;
   <CButton clean type="primary">Button1</CButton>&nbsp;
   <CButton clean type="success">Button1</CButton>&nbsp;
-  <CButton clean type="warning">Button1</CButton>&nbsp;
-  <CButton clean type="error">Button1</CButton>&nbsp;
+  <CButton clean type="warning" round>Button1</CButton>&nbsp;
+  <CButton clean type="error" round>Button1</CButton>&nbsp;
   <div></div>
   <br />
   <CButton>Button1</CButton>&nbsp;
-  <CButton type="primary">Button1</CButton>&nbsp;
-  <CButton type="success">Button1</CButton>&nbsp;
+  <CButton type="primary" round>Button1</CButton>&nbsp;
+  <CButton type="success" round>Button1</CButton>&nbsp;
   <CButton type="warning">Button1</CButton>&nbsp;
   <CButton type="error">Button1</CButton>&nbsp;
   <div></div>
@@ -20,6 +20,9 @@ const clicktest = () => alert('clicked')
   <CButton clean type="success" size="s">Button1</CButton>&nbsp;
   <CButton clean type="warning" size="m">Button1</CButton>&nbsp;
   <CButton clean type="error" size="l">Button1</CButton>&nbsp;
+  <CButton clean type="success" size="s" round>Button1</CButton>&nbsp;
+  <CButton clean type="warning" size="m" round>Button1</CButton>&nbsp;
+  <CButton clean type="error" size="l" round>Button1</CButton>&nbsp;
   <div></div>
   <br />
   <CButton @c_click="clicktest">Click!</CButton>&nbsp;

@@ -74,6 +74,11 @@
         <CSwitch v-model:value="switchvalue" size="s"></CSwitch>&nbsp;
         <CSwitch v-model:value="switchvalue" size="m"></CSwitch>&nbsp;
         <CSwitch v-model:value="switchvalue" size="l"></CSwitch>&nbsp;
+        <br />
+        自定义图标
+        <br />
+        <CSwitch v-model:value="switchvalue" :icon="FootballOutline"></CSwitch
+        >&nbsp;
       </div>
       <div style="display: block">
         ---------------------message----------------------
@@ -237,7 +242,7 @@ import {
   useMsg,
   useTheme,
 } from '../../src'
-import { AmericanFootballSharp } from '@vicons/ionicons5'
+import { AmericanFootballSharp, FootballOutline } from '@vicons/ionicons5'
 // import testSVG from './test.svg'
 const msg = useMsg()
 const { currentTheme, changeTheme } = useTheme()

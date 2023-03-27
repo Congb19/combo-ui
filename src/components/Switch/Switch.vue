@@ -5,6 +5,7 @@ export default {
 </script>
 <script setup lang="ts">
 import { computed, PropType, reactive, ref, watch } from 'vue-demi'
+import { CIcon } from '..'
 import './index.css'
 
 const emit = defineEmits(['c_change', 'update:value'])
@@ -24,6 +25,7 @@ const props = defineProps({
     type: Boolean,
     default: false,
   },
+  icon: {},
 })
 const value = ref(props.value)
 const status = ref('normal')
@@ -70,6 +72,14 @@ const blur = () => {
     @focus="focus"
     @blur="blur"
   >
-    <div class="c-switch__driver"></div>
+    <div class="c-switch__driver">
+      <CIcon
+        style="position: absolute; top: 0; left: 0"
+        v-if="props.icon"
+        :size="props.size == 's' ? 12 : props.size == 'm' ? 16 : 20"
+      >
+        <component :is="props.icon"></component>
+      </CIcon>
+    </div>
   </div>
 </template>

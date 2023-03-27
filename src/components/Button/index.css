@@ -23,9 +23,10 @@
   padding: 0 16px;
   color: var(--c-color-text-dirty-1);
   opacity: 1;
-  transition: all 0.2s ease-out;
+  transition: all 0.2s ease;
   user-select: none;
   z-index: var(--c-z-index-button);
+  box-shadow: none;
 }
 .c-button:hover {
   cursor: pointer;
@@ -35,7 +36,7 @@
 }
 .c-button:active {
   opacity: 0.9;
-  transition: none;
+  /* transition: none; */
 }
 .c-button__border {
   position: absolute;
@@ -46,6 +47,7 @@
   border: 1px var(--c-color-default-1) solid;
   border-radius: 4px;
 }
+
 /* round */
 .c-button-round {
   border-radius: var(--c-button-height-m);

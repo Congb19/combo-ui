@@ -16,11 +16,11 @@ const change = (value) => {
   <br />
   <CCheckbox v-model:value="checkboxvalue"></CCheckbox>&nbsp;
   <CCheckbox v-model:value="checkboxvalue" disabled></CCheckbox>&nbsp;
-  <br />
+  <!-- <br />
   颜色
   <br />
   <CCheckbox v-model:value="checkboxvalue" color="red"></CCheckbox>&nbsp;
-  <CCheckbox v-model:value="checkboxvalue" color="green"></CCheckbox>&nbsp;
+  <CCheckbox v-model:value="checkboxvalue" color="green"></CCheckbox>&nbsp; -->
   <br />
   尺寸
   <br />

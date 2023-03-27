@@ -27,11 +27,6 @@ const checkboxvalue = ref(true)
   <CCheckbox v-model:value="checkboxvalue"></CCheckbox>&nbsp;
   <CCheckbox v-model:value="checkboxvalue" disabled></CCheckbox>&nbsp;
   <br />
-  颜色
-  <br />
-  <CCheckbox v-model:value="checkboxvalue" color="red"></CCheckbox>&nbsp;
-  <CCheckbox v-model:value="checkboxvalue" color="green"></CCheckbox>&nbsp;
-  <br />
   尺寸
   <br />
   <CCheckbox v-model:value="checkboxvalue" size="s"></CCheckbox>&nbsp;
