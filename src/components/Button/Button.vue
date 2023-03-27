@@ -4,11 +4,12 @@ export default {
 }
 </script>
 <script setup lang="ts">
-import { computed, PropType } from 'vue-demi'
+import { computed, PropType, ref } from 'vue-demi'
 import './index.css'
 // props & events
 // ------------------------------------------------------------------------------
 const emit = defineEmits(['c_click'])
+const status = ref('normal')
 const props = defineProps({
   size: {
     type: String as PropType<'s' | 'm' | 'l'>,
@@ -47,13 +48,26 @@ const className = computed(() => {
     ${props.round ? 'c-button-round' : ''}
     ${props.disabled ? 'c-button-disabled' : ''}
     c-button-${props.clean ? 'clean' : 'dirty'} 
+    c-button-${status.value} 
   `
   return name
 })
+const focus = () => {
+  status.value = 'focus'
+}
+const blur = () => {
+  status.value = 'normal'
+}
 </script>
 
 <template>
-  <div :class="className" @click="events.c_click">
+  <div
+    :class="className"
+    @click="events.c_click"
+    :tabindex="1"
+    @focus="focus"
+    @blur="blur"
+  >
     <div class="c-button__border"></div>
     <slot>Button</slot>
   </div>

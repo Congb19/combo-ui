@@ -40,6 +40,7 @@ export default defineConfig({
       },
       { text: 'markdown-examples', link: '/markdown-examples' },
       { text: 'Runtime API Examples', link: '/api-examples' },
+      { text: 'Congb19 测试区', link: '/test' },
     ],
 
     socialLinks: [

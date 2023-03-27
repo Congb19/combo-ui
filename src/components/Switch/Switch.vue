@@ -26,6 +26,7 @@ const props = defineProps({
   },
 })
 const value = ref(props.value)
+const status = ref('normal')
 watch(
   () => props.value,
   (val) => {
@@ -38,6 +39,7 @@ const className = computed(() => {
     c-switch-${props.size}
     ${props.disabled ? 'c-switch-disabled' : ''}
     c-switch-${value.value + ''}
+    c-switch-${status.value}
   `
 })
 const otherStyle = computed(() => ({
@@ -51,10 +53,23 @@ const events = {
     emit('c_change')
   },
 }
+const focus = () => {
+  status.value = 'focus'
+}
+const blur = () => {
+  status.value = 'normal'
+}
 </script>
 
 <template>
-  <div :class="className" @click="events.c_change" :style="otherStyle">
+  <div
+    :class="className"
+    @click="events.c_change"
+    :style="otherStyle"
+    :tabindex="1"
+    @focus="focus"
+    @blur="blur"
+  >
     <div class="c-switch__driver"></div>
   </div>
 </template>

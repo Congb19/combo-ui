@@ -15,7 +15,7 @@
   box-shadow: 2px 2px 6px 0px var(--c-color-default-4);
 
   z-index: var(--c-z-index-message);
-  transition: all 0.4s;
+  transition: all 0.4s ease-out;
 
   padding: 0 20px;
 }

@@ -113,7 +113,7 @@ class Msg {
           if (key > this.id) item.recalcTop()
         })
         this.top.value -= 2
-      }, 10)
+      }, 6)
 
       // real destroy
       setTimeout(() => {

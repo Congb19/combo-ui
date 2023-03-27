@@ -7,6 +7,7 @@
   position: relative;
   display: inline-block;
   box-sizing: border-box;
+  outline: none;
   cursor: pointer;
   border: 1px var(--c-color-default-1) solid;
   border-radius: 2px;
@@ -27,13 +28,17 @@
   border-color: var(--c-color-checkbox);
 }
 
+.c-checkbox-focus {
+  border-color: var(--c-color-checkbox);
+  box-shadow: 0px 0px 0px 1.5px var(--c-color-primary-4);
+}
+
 .c-checkbox-disabled {
   cursor: not-allowed;
   opacity: 0.5;
-}
-.c-checkbox-disabled {
   border-color: var(--c-color-default-1);
   background-color: var(--c-color-default-4);
+  box-shadow: none;
 }
 
 /* 尺寸 */

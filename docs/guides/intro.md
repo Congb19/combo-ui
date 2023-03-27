@@ -24,8 +24,10 @@ Congb19 的 Vue 3 组件库。Congb19's Vue 3 Component Library.
   - 按钮 Button ✅
   - 标签 Tag ✅
   - 输入框 Input ✅
-  - 勾选框 Checkbox
-  - 开关 Switch
+  - 图标 Icon ✅
+  - 勾选框 Checkbox ✅
+  - 开关 Switch ✅
+  - ...
 
 - 组合式函数
 

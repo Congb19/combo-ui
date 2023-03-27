@@ -1,1 +1,0 @@
-import{_ as t,c as e,o as a,N as o}from"./chunks/framework.b2b8903b.js";const u=JSON.parse('{"title":"About 关于","description":"","frontmatter":{},"headers":[],"relativePath":"others/about.md"}'),r={name:"others/about.md"},n=o("",4),_=[n];function s(c,p,b,l,h,i){return a(),e("div",null,_)}const f=t(r,[["render",s]]);export{u as __pageData,f as default};

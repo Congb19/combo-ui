@@ -2,7 +2,7 @@
   <CThemeProvider>
     <CMessageProvider>
       <div style="display: block">
-        ------------------特别测试区-------------------
+        ------------------其他-------------------
         <br />
         主题：<CSwitch v-model:value="switchvalue2"></CSwitch>&nbsp;
         <CButton :type="typetest" clean @c_click="typeclick">
@@ -31,12 +31,12 @@
         <br />
         <CCheckbox v-model:value="checkboxvalue"></CCheckbox>&nbsp;
         <CCheckbox v-model:value="checkboxvalue" disabled></CCheckbox>&nbsp;
-        <br />
+        <!-- <br />
         颜色
         <br />
         <CCheckbox v-model:value="checkboxvalue" color="red"></CCheckbox>&nbsp;
         <CCheckbox v-model:value="checkboxvalue" color="green"></CCheckbox
-        >&nbsp;
+        >&nbsp; -->
         <br />
         尺寸
         <br />
@@ -63,11 +63,11 @@
         <br />
         <CSwitch v-model:value="switchvalue"></CSwitch>&nbsp;
         <CSwitch v-model:value="switchvalue" disabled></CSwitch>&nbsp;
-        <br />
+        <!-- <br />
         颜色
         <br />
         <CSwitch v-model:value="switchvalue" color="red"></CSwitch>&nbsp;
-        <CSwitch v-model:value="switchvalue" color="grey"></CSwitch>&nbsp;
+        <CSwitch v-model:value="switchvalue" color="grey"></CSwitch>&nbsp; -->
         <br />
         尺寸
         <br />
@@ -212,7 +212,9 @@
         <br />
         closable
         <CTag type="success" size="m" closable>closable</CTag>
-        <CTag type="success" size="m" closable clean>closable</CTag>
+        <CTag type="success" size="m" closable clean @c_close="closetest"
+          >closable</CTag
+        >
         <CTag type="success" size="m" closable round>closable</CTag>
       </div>
       <br />
@@ -224,6 +226,7 @@
 <script setup lang="ts">
 import { computed, ref, watch } from 'vue'
 import {
+  CButton,
   CTag,
   CInput,
   CSwitch,

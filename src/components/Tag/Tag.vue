@@ -40,7 +40,7 @@ const events = {
     emit('c_mouseover')
   },
   c_close: (e: Event) => {
-    console.log('close')
+    // console.log('close')
     show.value = false
     emit('c_close')
     // e.stopPropagation()

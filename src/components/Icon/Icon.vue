@@ -1,8 +1,8 @@
-<template>
-  <div class="c-icon" :style="otherStyle">
-    <slot></slot>
-  </div>
-</template>
+<script lang="ts">
+export default {
+  name: 'CIcon',
+}
+</script>
 <script setup lang="ts">
 import './index.css'
 const props = defineProps({
@@ -33,3 +33,8 @@ const otherStyle = {
   '--c-color-icon': props.color,
 }
 </script>
+<template>
+  <div class="c-icon" :style="otherStyle">
+    <slot></slot>
+  </div>
+</template>

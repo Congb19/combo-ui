@@ -61,9 +61,17 @@ const events = {
   },
 }
 const mouseEnter = () => {
+  if (status.value == 'focus') return
   status.value = 'hover'
 }
 const mouseLeave = () => {
+  if (status.value == 'focus') return
+  status.value = 'normal'
+}
+const focus = () => {
+  status.value = 'focus'
+}
+const blur = () => {
   status.value = 'normal'
 }
 </script>
@@ -75,6 +83,9 @@ const mouseLeave = () => {
     @click="events.c_change"
     @mouseenter="mouseEnter"
     @mouseleave="mouseLeave"
+    @focus="focus"
+    @blur="blur"
+    tabindex="1"
   >
     <Transition name="icon">
       <CIcon
