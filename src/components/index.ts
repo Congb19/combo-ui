@@ -1,21 +1,24 @@
 import Button from './Button'
 import Checkbox from './Checkbox'
-import Tag from './Tag'
 import Icon from './Icon'
 import Input from './Input'
+import Select from './Select'
 import Switch from './Switch'
+import Tag from './Tag'
+
 import MessageProvider from './MessageProvider'
-import ThemeProvider from './ThemeProvider'
 import { useMsg } from './Message'
+import ThemeProvider from './ThemeProvider'
 import { useTheme } from './Theme'
 
 // 页面内直接 import
 export const CButton = Button
 export const CCheckbox = Checkbox
-export const CTag = Tag
 export const CIcon = Icon
 export const CInput = Input
+export const CSelect = Select
 export const CSwitch = Switch
+export const CTag = Tag
 export const CMessageProvider = MessageProvider
 export const CThemeProvider = ThemeProvider
 
@@ -23,10 +26,11 @@ export const CThemeProvider = ThemeProvider
 export {
   Button,
   Checkbox,
-  Tag,
   Icon,
   Input,
+  Select,
   Switch,
+  Tag,
   MessageProvider,
   ThemeProvider,
   useMsg,
@@ -37,10 +41,11 @@ export {
 export const All = [
   Button,
   Checkbox,
-  Tag,
   Icon,
   Input,
+  Select,
   Switch,
+  Tag,
   MessageProvider,
   ThemeProvider,
 ]

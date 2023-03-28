@@ -11,4 +11,7 @@
   --c-z-index-button: 1;
   --c-z-index-input: 1;
   --c-z-index-tag: 1;
+  --c-z-index-select: 99;
+  --c-z-index-select-options: 99;
+  --c-z-index-select-arrow: 98;
 }

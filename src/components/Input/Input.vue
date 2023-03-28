@@ -64,7 +64,7 @@ const handleInput = (event: any) => {
   // console.log('input,', event, event.target)
   currentValue.value = event.target.value
   emit('update:value', currentValue.value)
-  emit('c_change')
+  emit('c_change', currentValue.value)
 }
 
 const status = ref('default')
@@ -73,6 +73,9 @@ const mouseenter = () => {
 }
 const mouseleave = () => {
   if (status.value !== 'focus' && !props.disabled) status.value = 'default'
+}
+const blur = () => {
+  c_input.value.blur()
 }
 
 const events = {
@@ -88,7 +91,9 @@ const events = {
     emit('c_focus')
   },
 }
-
+const cfocus = () => {
+  c_input.value.focus()
+}
 const className = computed(() => {
   return `
     c-input
@@ -115,6 +120,7 @@ const className = computed(() => {
       @mouseenter="mouseenter"
       @mouseleave="mouseleave"
       @input="handleInput"
+      @mousedown="mousedown"
     />
     <!-- <slot>Button</slot> -->
     <textarea

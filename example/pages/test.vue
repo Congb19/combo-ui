@@ -11,6 +11,26 @@
         <input v-model="inputvalue2" />
         <CInput v-model:value="inputvalue2" />
       </div>
+
+      <div style="display: block">
+        ------------------select-------------------
+        <br />
+        {{ selectvalue }}
+        <br />
+        <CSelect v-model:value="selectvalue" :options="dict"></CSelect>
+        <CSelect
+          v-model:value="selectvalue2"
+          :options="[]"
+          @c_select="selectevent"
+        ></CSelect>
+        <CSelect
+          v-model:value="selectvalue"
+          :options="dict"
+          placement="top"
+        ></CSelect>
+        <CSelect v-model:value="selectvalue" :options="dict" disabled></CSelect>
+      </div>
+
       <div style="display: block">
         ------------------icon-------------------
         <br />
@@ -241,6 +261,7 @@ import {
   CSwitch,
   CCheckbox,
   CIcon,
+  CSelect,
   CMessageProvider,
   CThemeProvider,
   useMsg,
@@ -325,4 +346,16 @@ const inputvalue2 = ref('asd')
 setTimeout(() => {
   inputvalue2.value = 'qwe'
 }, 1000)
+
+// select
+const selectvalue = ref(1)
+const selectvalue2 = ref(null)
+const dict = ref([
+  { value: 1, label: 'test1' },
+  { value: 2, label: 'test2' },
+  { value: 3, label: 'test31231123231asdf23' },
+])
+const selectevent = (value: any) => {
+  console.log('select!!!', value)
+}
 </script>

@@ -1,0 +1,69 @@
+.c-select {
+  --c-select-options-width: 100px;
+  --c-select-options-height: 200px;
+}
+.c-select {
+  display: inline-block;
+  cursor: pointer !important;
+  z-index: var(--c-z-index-select);
+}
+.c-select input {
+  cursor: pointer;
+}
+.c-select-disabled {
+  cursor: not-allowed !important;
+}
+.c-select-disabled input {
+  cursor: not-allowed !important;
+}
+.c-select .c-select__options {
+  /* width: var(--c-select-options-width);
+  height: var(--c-select-options-height); */
+  background-color: var(--background-color);
+  box-shadow: 0px 0px 6px 0px var(--c-color-default-4);
+  border-radius: 4px;
+  z-index: var(--c-z-index-select-options);
+  cursor: pointer;
+}
+.c-select__options__option {
+  position: relative;
+  padding: 0 20px;
+  line-height: 36px;
+  font-size: 14px;
+  border-radius: 4px;
+  color: var(--c-color-text-1);
+  z-index: var(--c-z-index-select-options);
+}
+.c-select__options__option:hover {
+  background-color: var(--c-color-primary-6);
+}
+
+.c-select__options__arrow,
+.c-select__options__arrow::before {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: inherit;
+  z-index: var(--c-z-index-select-arrow);
+}
+.c-select__options__arrow {
+  visibility: hidden;
+}
+.c-select__options__arrow::before {
+  visibility: visible;
+  content: '';
+  transform: rotate(45deg);
+}
+.c-select__options[data-popper-placement^='top'] > .c-select__options__arrow {
+  bottom: -4px;
+}
+.c-select__options[data-popper-placement^='bottom']
+  > .c-select__options__arrow {
+  top: -4px;
+}
+.c-select__options[data-popper-placement^='left'] > .c-select__options__arrow {
+  right: -4px;
+}
+.c-select__options[data-popper-placement^='right'] > .c-select__options__arrow {
+  left: -4px;
+}
