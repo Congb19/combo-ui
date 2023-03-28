@@ -98,13 +98,18 @@ const blur = () => {
         color="var(--c-color-text-dirty-1)"
         :border-radius="2"
       >
-        <component :is="icon" :background-color="props.color"></component>
+        <span v-if="typeof props.icon == 'string'">{{ props.icon }}</span>
+        <component
+          v-else
+          :is="icon"
+          :background-color="props.color"
+        ></component>
         <!-- <CheckmarkSharp :background-color="props.color"></CheckmarkSharp> -->
       </CIcon>
     </Transition>
   </div>
 </template>
-<style>
+<style scoped>
 .icon-enter-active,
 .icon-leave-active {
   transition: opacity 0.1s ease;

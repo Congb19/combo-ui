@@ -25,7 +25,9 @@ const props = defineProps({
     type: Boolean,
     default: false,
   },
-  icon: {},
+  icon: {
+    type: [String, Object],
+  },
 })
 const value = ref(props.value)
 const status = ref('normal')
@@ -78,7 +80,8 @@ const blur = () => {
         v-if="props.icon"
         :size="props.size == 's' ? 12 : props.size == 'm' ? 16 : 20"
       >
-        <component :is="props.icon"></component>
+        <span v-if="typeof props.icon == 'string'">{{ props.icon }}</span>
+        <component v-else :is="props.icon"></component>
       </CIcon>
     </div>
   </div>

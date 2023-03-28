@@ -1,9 +1,27 @@
 .c-icon {
   position: relative;
   display: inline-block;
+  font-size: var(--c-size-icon);
+  line-height: var(--c-size-icon);
+  vertical-align: bottom;
+  user-select: none;
   /* width: 14px;
   height: 14px; */
 }
+.c-icon span {
+  position: relative;
+  display: inline-block;
+  font-size: var(--c-size-icon);
+  line-height: var(--c-size-icon);
+  vertical-align: bottom;
+  user-select: none;
+  /* width: 14px;
+  height: 14px; */
+}
+.c-icon:nth-child(1) {
+  user-select: none;
+}
+
 .c-icon svg {
   position: absolute;
   top: 0;

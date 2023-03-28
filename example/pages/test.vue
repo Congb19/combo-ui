@@ -20,6 +20,8 @@
         <CIcon color="orange">
           <img src="./test.svg" />
         </CIcon>
+        <CIcon color="orange" :size="30" background-color="blue"> 😂 </CIcon>
+        <CIcon color="orange" :size="30" background-color="blue"> 喔 </CIcon>
       </div>
       <div style="display: block">
         ------------------checkbox-------------------
@@ -52,6 +54,7 @@
           :icon="AmericanFootballSharp"
         ></CCheckbox
         >&nbsp;
+        <CCheckbox v-model:value="checkboxvalue" size="l" icon="🏡"></CCheckbox>
       </div>
       <div style="display: block">
         ------------------switch-------------------
@@ -79,6 +82,7 @@
         <br />
         <CSwitch v-model:value="switchvalue" :icon="FootballOutline"></CSwitch
         >&nbsp;
+        <CSwitch v-model:value="switchvalue" size="l" icon="☀️"></CSwitch>
       </div>
       <div style="display: block">
         ---------------------message----------------------

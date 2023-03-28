@@ -36,6 +36,7 @@ const change = (value) => {
     :icon="AmericanFootballSharp"
   ></CCheckbox
   >&nbsp;
+  <CCheckbox v-model:value="checkboxvalue" size="l" icon="🏡"></CCheckbox>
   <br />
   事件
   <br />

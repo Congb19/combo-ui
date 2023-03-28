@@ -16,6 +16,9 @@ import { CCheckbox } from '../../src'
 import { ref } from 'vue-demi'
 import { AmericanFootballSharp } from '@vicons/ionicons5'
 const checkboxvalue = ref(true)
+const change = (value) => {
+  alert('changed', value)
+}
 </script>
 <template>
   <br />
@@ -41,5 +44,10 @@ const checkboxvalue = ref(true)
     :icon="AmericanFootballSharp"
   ></CCheckbox
   >&nbsp;
+  <CCheckbox v-model:value="checkboxvalue" size="l" icon="🏡"></CCheckbox>
+  <br />
+  事件
+  <br />
+  <CCheckbox v-model:value="checkboxvalue" @c_change="change"></CCheckbox>&nbsp;
 </template>
 ```

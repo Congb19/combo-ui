@@ -27,4 +27,5 @@ const switchvalue = ref(true)
   自定义图标
   <br />
   <CSwitch v-model:value="switchvalue" :icon="FootballOutline"></CSwitch>&nbsp;
+  <CSwitch v-model:value="switchvalue" size="l" icon="☀️"></CSwitch>
 </template>
