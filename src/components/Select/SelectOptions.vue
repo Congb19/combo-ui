@@ -19,6 +19,7 @@ const mousedown = (event: any) => {
 }
 const mouseup = (value: any) => {
   // console.log('selectOptions mouseup', value)
+  if (disabled(value)) return
   select(value)
 }
 const className = computed(() => {
@@ -27,6 +28,11 @@ const className = computed(() => {
   `
 })
 const selected = (val: any) => val == props.value
+const disabled = (val: any) => {
+  // let res = props.options.find((i) => i.value == val)
+  return props.options.find((i) => i.value == val).disabled ? true : false
+}
+
 // c - select__options__option - selected
 </script>
 <template>
@@ -36,7 +42,9 @@ const selected = (val: any) => val == props.value
     @mousedown="mousedown"
     @mouseup="mouseup(item.value)"
     :style="
-      selected(item.value)
+      disabled(item.value)
+        ? { cursor: 'not-allowed', opacity: 0.3 }
+        : selected(item.value)
         ? { backgroundColor: 'var(--c-color-primary-5)' }
         : {}
     "

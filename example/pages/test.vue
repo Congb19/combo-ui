@@ -359,6 +359,7 @@ const dict = ref([
   { value: 1, label: 'test1' },
   { value: 2, label: 'test2' },
   { value: 3, label: 'test31231123231affsvefwvlewvevlreaasdf23' },
+  { value: 4, label: 'test4', disabled: true },
 ])
 const selectevent = (value: any) => {
   console.log('select!!!', value)

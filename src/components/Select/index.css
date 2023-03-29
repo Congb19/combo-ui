@@ -24,7 +24,7 @@
   text-overflow: ellipsis;
   line-height: 36px;
   font-size: 14px;
-  border-radius: 4px;
+  /* border-radius: 4px; */
   color: var(--c-color-text-1);
   z-index: var(--c-z-index-select-options);
 }

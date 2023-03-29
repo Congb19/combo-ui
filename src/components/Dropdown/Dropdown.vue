@@ -9,11 +9,23 @@ import './index.css'
 interface Props {
   show: boolean
   parent: any
-  placement?: 'top' | 'bottom' | 'left' | 'right'
+  placement?:
+    | 'top'
+    | 'bottom'
+    | 'left'
+    | 'right'
+    | 'top-start'
+    | 'bottom-start'
+    | 'left-start'
+    | 'right-start'
+    | 'top-end'
+    | 'bottom-end'
+    | 'left-end'
+    | 'right-end'
   maxHeight?: number
 }
 const props = withDefaults(defineProps<Props>(), {
-  placement: 'bottom',
+  placement: 'bottom-start',
 })
 const dropdown = ref()
 let popperInstance: any

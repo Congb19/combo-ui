@@ -22,14 +22,26 @@ interface Props {
   size?: 's' | 'm' | 'l'
   options: any[]
   value: any
-  placement?: 'top' | 'bottom' | 'left' | 'right'
+  placement?:
+    | 'top'
+    | 'bottom'
+    | 'left'
+    | 'right'
+    | 'top-start'
+    | 'bottom-start'
+    | 'left-start'
+    | 'right-start'
+    | 'top-end'
+    | 'bottom-end'
+    | 'left-end'
+    | 'right-end'
   disabled?: boolean
   maxHeight?: number
 }
 const props = withDefaults(defineProps<Props>(), {
   size: 'm',
   value: null,
-  placement: 'bottom',
+  placement: 'bottom-start',
   disabled: false,
   maxHeight: 200,
 })
