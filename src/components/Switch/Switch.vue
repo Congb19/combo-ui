@@ -54,7 +54,7 @@ const events = {
     if (props.disabled) return
     value.value = !value.value
     emit('update:value', value.value)
-    emit('c_change')
+    emit('c_change', value.value)
   },
 }
 const focus = () => {

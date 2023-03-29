@@ -16,6 +16,7 @@ import { CSwitch } from '../../src'
 import { ref } from 'vue-demi'
 import { FootballOutline } from '@vicons/ionicons5'
 const switchvalue = ref(true)
+const change = (val) => alert('changed!!', val)
 </script>
 <template>
   <br />
@@ -36,5 +37,9 @@ const switchvalue = ref(true)
   <br />
   <CSwitch v-model:value="switchvalue" :icon="FootballOutline"></CSwitch>&nbsp;
   <CSwitch v-model:value="switchvalue" size="l" icon="☀️"></CSwitch>
+  <br />
+  事件
+  <br />
+  <CSwitch v-model:value="switchvalue" @c_change="change"></CSwitch>&nbsp;
 </template>
 ```
