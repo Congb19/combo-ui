@@ -58,16 +58,32 @@ const className = computed(() => {
 </script>
 
 <template>
-  <div
-    v-if="show"
-    :class="className"
-    @click="events.c_click"
-    @mouseover="events.c_mouseover"
-  >
-    <!-- <div class="c-tag__border"></div> -->
-    <slot>标签</slot>
-    <span class="c-tag__close" v-if="closable" @click="events.c_close"> ×</span>
-  </div>
+  <Transition name="tag">
+    <div
+      v-if="show"
+      :class="className"
+      @click="events.c_click"
+      @mouseover="events.c_mouseover"
+    >
+      <!-- <div class="c-tag__border"></div> -->
+      <slot>标签</slot>
+      <span class="c-tag__close" v-if="closable" @click="events.c_close">
+        ×</span
+      >
+    </div>
+  </Transition>
 </template>
 
-<style scoped></style>
+<style>
+.tag-enter-active,
+.tag-leave-active {
+  /* transition: all 1s ease; */
+  transition: opacity 0.2s ease;
+}
+
+.tag-enter-from,
+.tag-leave-to {
+  opacity: 0;
+  /* transform: scale(1, 0); */
+}
+</style>

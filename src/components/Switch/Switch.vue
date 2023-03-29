@@ -79,6 +79,7 @@ const blur = () => {
         style="position: absolute; top: 0; left: 0"
         v-if="props.icon"
         :size="props.size == 's' ? 12 : props.size == 'm' ? 16 : 20"
+        color="var(--c-color-text-1)"
       >
         <span v-if="typeof props.icon == 'string'">{{ props.icon }}</span>
         <component v-else :is="props.icon"></component>

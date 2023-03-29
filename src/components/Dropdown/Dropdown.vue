@@ -39,7 +39,7 @@ onMounted(() => {
       ],
     })
     // console.log('popper init', popperInstance)
-  }, 100)
+  }, 50)
 })
 const otherStyleBody = computed(() => {
   return {
@@ -62,11 +62,13 @@ const otherStyleBody = computed(() => {
 <style>
 .dropdown-enter-active,
 .dropdown-leave-active {
-  transition: opacity 0.2s ease;
+  /* transition: all 1s ease; */
+  transition: opacity 0.2s ease, height 0.2s ease;
 }
 
 .dropdown-enter-from,
 .dropdown-leave-to {
   opacity: 0;
+  /* transform: scale(1, 0); */
 }
 </style>
