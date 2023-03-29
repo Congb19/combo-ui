@@ -4,4 +4,4 @@
   import test from '../example/pages/test.vue'
 </script>
 
-<test />
+<!-- <test /> -->
