@@ -1,5 +1,6 @@
 import Button from './Button'
 import Checkbox from './Checkbox'
+import Dropdown from './Dropdown'
 import Icon from './Icon'
 import Input from './Input'
 import Select from './Select'
@@ -14,6 +15,7 @@ import { useTheme } from './Theme'
 // 页面内直接 import
 export const CButton = Button
 export const CCheckbox = Checkbox
+export const CDropdown = Dropdown
 export const CIcon = Icon
 export const CInput = Input
 export const CSelect = Select
@@ -26,6 +28,7 @@ export const CThemeProvider = ThemeProvider
 export {
   Button,
   Checkbox,
+  Dropdown,
   Icon,
   Input,
   Select,
@@ -41,6 +44,7 @@ export {
 export const All = [
   Button,
   Checkbox,
+  Dropdown,
   Icon,
   Input,
   Select,

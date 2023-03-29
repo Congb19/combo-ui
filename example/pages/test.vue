@@ -29,6 +29,11 @@
           placement="top"
         ></CSelect>
         <CSelect v-model:value="selectvalue" :options="dict" disabled></CSelect>
+        <CSelect
+          v-model:value="selectvalue"
+          :options="dict"
+          :max-height="80"
+        ></CSelect>
       </div>
 
       <div style="display: block">
@@ -353,7 +358,7 @@ const selectvalue2 = ref(null)
 const dict = ref([
   { value: 1, label: 'test1' },
   { value: 2, label: 'test2' },
-  { value: 3, label: 'test31231123231asdf23' },
+  { value: 3, label: 'test31231123231affsvefwvlewvevlreaasdf23' },
 ])
 const selectevent = (value: any) => {
   console.log('select!!!', value)

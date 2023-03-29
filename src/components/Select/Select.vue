@@ -4,8 +4,16 @@ export default {
 }
 </script>
 <script setup lang="ts">
-import { computed, nextTick, onMounted, ref, watch } from 'vue-demi'
-import { CInput } from '..'
+import {
+  computed,
+  nextTick,
+  onMounted,
+  ref,
+  watch,
+  getCurrentInstance,
+} from 'vue-demi'
+import { CInput, CDropdown } from '..'
+
 import SelectOptions from './SelectOptions.vue'
 import { createPopper } from '@popperjs/core'
 import './index.css'
@@ -14,14 +22,16 @@ interface Props {
   size?: 's' | 'm' | 'l'
   options: any[]
   value: any
-  placement?: 'bottom' | 'top'
+  placement?: 'top' | 'bottom' | 'left' | 'right'
   disabled?: boolean
+  maxHeight?: number
 }
 const props = withDefaults(defineProps<Props>(), {
   size: 'm',
   value: null,
   placement: 'bottom',
   disabled: false,
+  maxHeight: 200,
 })
 const emit = defineEmits(['c_select', 'update:value'])
 const className = computed(() => {
@@ -40,7 +50,8 @@ watch(
     if (value.value == props.value) return
     else {
       value.value = props.value
-      select(props.value)
+      // select(props.value)
+      tmp.value = label.value
     }
   }
 )
@@ -52,36 +63,21 @@ const tmp = ref(label.value)
 
 const input = ref()
 const cinput = ref()
-const dropdown = ref()
 
-let popperInstance: any
-onMounted(() => {
-  console.log(input, dropdown)
-  popperInstance = createPopper(input.value, dropdown.value, {
-    placement: props.placement,
-    modifiers: [
-      {
-        name: 'offset',
-        options: {
-          offset: [0, 8],
-        },
-      },
-    ],
-  })
-})
+onMounted(() => {})
 const expand = () => {
   if (props.disabled || props.options.length < 1) return
-  console.log('select expand')
+  // console.log('select expand')
   showDropdown.value = true
-  popperInstance.update()
+  // popperInstance.update()
 }
 const collapse = () => {
-  console.log('select collapse')
+  // console.log('select collapse')
   showDropdown.value = false
-  popperInstance.update()
+  // popperInstance.update()
 }
 const blur = () => {
-  console.log('select blur')
+  // console.log('select blur')
   collapse()
 
   if (tmp.value == label.value) return
@@ -99,15 +95,15 @@ const blur = () => {
 }
 const select = (value: any) => {
   // cinput.value.blur()
-  console.log('select select', value)
+  // console.log('select select', value)
   emit('update:value', value)
-  // emit('c_select', 9)
-  emit('c_select', props.options.find((item) => item.value == value).value)
+  emit('c_select', value)
+  // emit('c_select', props.options.find((item) => item.value == value).value)
   collapse()
   tmp.value = label.value
 }
 const customInput = (value: any) => {
-  console.log('select customInput', value)
+  // console.log('select customInput', value)
   tmp.value = value
 }
 </script>
@@ -117,21 +113,26 @@ const customInput = (value: any) => {
       <CInput
         ref="cinput"
         :value="tmp"
+        @c_click="expand"
         @c_blur="blur"
-        @click="expand"
         @c_change="customInput"
         :disabled="props.disabled"
       ></CInput>
     </div>
-    <div class="c-select__options" ref="dropdown" v-show="showDropdown">
-      <div class="c-select__options__arrow" data-popper-arrow></div>
+    <CDropdown
+      :show="showDropdown"
+      :parent="input"
+      :max-height="props.maxHeight"
+      :placement="props.placement"
+    >
       <SelectOptions
         :options="
-          props.placement == 'top' ? props.options.reverse() : props.options
+          props.options
+          // props.placement == 'top' ? props.options.reverse() : props.options
         "
         v-model:value="value"
         @c_select="select"
       ></SelectOptions>
-    </div>
+    </CDropdown>
   </div>
 </template>

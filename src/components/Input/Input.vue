@@ -7,7 +7,13 @@ export default {
 import { computed, onMounted, PropType, Ref, ref, watch } from 'vue-demi'
 import './index.css'
 
-const emit = defineEmits(['update:value', 'c_change', 'c_blur', 'c_focus'])
+const emit = defineEmits([
+  'update:value',
+  'c_change',
+  'c_blur',
+  'c_focus',
+  'c_click',
+])
 const props = defineProps({
   size: {
     type: String as PropType<'s' | 'm' | 'l'>,
@@ -90,6 +96,10 @@ const events = {
     status.value = 'focus'
     emit('c_focus')
   },
+  c_click: () => {
+    c_input.value.focus()
+    emit('c_click')
+  },
 }
 const cfocus = () => {
   c_input.value.focus()
@@ -105,7 +115,7 @@ const className = computed(() => {
 </script>
 
 <template>
-  <div :class="className">
+  <div :class="className" @click="events.c_click">
     <!-- <div class="c-input__border"></div> -->
     <input
       ref="c_input"
@@ -120,7 +130,6 @@ const className = computed(() => {
       @mouseenter="mouseenter"
       @mouseleave="mouseleave"
       @input="handleInput"
-      @mousedown="mousedown"
     />
     <!-- <slot>Button</slot> -->
     <textarea
