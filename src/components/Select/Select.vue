@@ -74,7 +74,6 @@ const label = computed(() => {
 const tmp = ref(label.value)
 
 const input = ref()
-const cinput = ref()
 
 onMounted(() => {})
 const expand = () => {
@@ -106,7 +105,6 @@ const blur = () => {
   }
 }
 const select = (value: any) => {
-  // cinput.value.blur()
   // console.log('select select', value)
   emit('update:value', value)
   emit('c_select', value)
@@ -123,7 +121,6 @@ const customInput = (value: any) => {
   <div :class="className" :style="otherStyle">
     <div ref="input" style="display: block">
       <CInput
-        ref="cinput"
         :value="tmp"
         @c_click="expand"
         @c_blur="blur"

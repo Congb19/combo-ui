@@ -32,7 +32,7 @@ let popperInstance: any
 watch(
   () => props.show,
   (val) => {
-    console.log('show update', val)
+    // console.log('show update', val)
     popperInstance.update()
   }
 )
