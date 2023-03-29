@@ -73,7 +73,7 @@ const className = computed(() => {
 const iconColor = computed(() => {
   return `var(--c-color-${props.type == 'info' ? 'primary' : props.type}-1)`
 })
-const otherStyle = computed(() => ({
+const otherStyle: any = computed(() => ({
   '--c-message-padding': `0 ${props.closable ? '44' : '20'}px 0 44px`,
 }))
 onMounted(() => {

@@ -47,10 +47,9 @@ const className = computed(() => {
     c-checkbox-${status.value}
   `
 })
-const otherStyle = computed(() => ({
-  // backgroundColor: value.value ? props.color : 'var(--c-color-default-1)',
+const otherStyle: any = {
   '--c-color-checkbox': props.color,
-}))
+}
 const events = {
   c_change: (event: any) => {
     if (props.disabled) return

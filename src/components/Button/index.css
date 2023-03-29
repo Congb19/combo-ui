@@ -57,7 +57,7 @@
 }
 
 .c-button-focus {
-  box-shadow: 0px 0px 0px 1.5px var(--c-color-default-4);
+  box-shadow: 0px 0px 0.5px 1.5px var(--c-color-default-4);
 }
 
 /* disabled */
@@ -128,7 +128,7 @@
   background-color: var(--c-color-default-0);
 }
 .c-button-default.c-button-focus {
-  box-shadow: 0px 0px 0px 1.5px var(--c-color-default-4);
+  box-shadow: 0px 0px 0.5px 1.5px var(--c-color-default-4);
 }
 
 /* 颜色-primary */
@@ -151,7 +151,7 @@
   background-color: var(--c-color-primary-0);
 }
 .c-button-primary.c-button-focus {
-  box-shadow: 0px 0px 0px 1.5px var(--c-color-primary-4);
+  box-shadow: 0px 0px 0.5px 1.5px var(--c-color-primary-4);
 }
 
 /* 颜色-success */
@@ -174,7 +174,7 @@
   background-color: var(--c-color-success-0);
 }
 .c-button-success.c-button-focus {
-  box-shadow: 0px 0px 0px 1.5px var(--c-color-success-4);
+  box-shadow: 0px 0px 0.5px 1.5px var(--c-color-success-4);
 }
 
 /* 颜色-warning */
@@ -197,7 +197,7 @@
   background-color: var(--c-color-warning-0);
 }
 .c-button-warning.c-button-focus {
-  box-shadow: 0px 0px 0px 1.5px var(--c-color-warning-4);
+  box-shadow: 0px 0px 0.5px 1.5px var(--c-color-warning-4);
 }
 
 /* 颜色-error */
@@ -220,5 +220,5 @@
   background-color: var(--c-color-error-0);
 }
 .c-button-error.c-button-focus {
-  box-shadow: 0px 0px 0px 1.5px var(--c-color-error-4);
+  box-shadow: 0px 0px 0.5px 1.5px var(--c-color-error-4);
 }

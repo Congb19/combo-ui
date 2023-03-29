@@ -23,7 +23,7 @@ const props = defineProps({
     default: 2,
   },
 })
-const otherStyle = {
+const otherStyle: any = {
   height: props.size + 'px',
   width: props.size + 'px',
   borderRadius: props.borderRadius + 'px',

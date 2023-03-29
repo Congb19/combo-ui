@@ -61,13 +61,11 @@ const closeColor = computed(() => {
   if (!props.clean) return 'var(--c-color-text-dirty-1)'
   return `var(--c-color-${props.type}-1)`
 })
-const otherStyle = computed(() => {
-  return {
-    '--c-tag-padding-s': props.closable ? '0 16px 0 8px' : '0 8px',
-    '--c-tag-padding-m': props.closable ? '0 18px 0 10px' : '0 10px',
-    '--c-tag-padding-l': props.closable ? '0 20px 0 12px' : '0 12px',
-  }
-})
+const otherStyle: any = {
+  '--c-tag-padding-s': props.closable ? '0 16px 0 8px' : '0 8px',
+  '--c-tag-padding-m': props.closable ? '0 18px 0 10px' : '0 10px',
+  '--c-tag-padding-l': props.closable ? '0 20px 0 12px' : '0 12px',
+}
 </script>
 
 <template>

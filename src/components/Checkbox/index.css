@@ -30,7 +30,7 @@
 
 .c-checkbox-focus {
   border-color: var(--c-color-checkbox);
-  box-shadow: 0px 0px 0px 1.5px var(--c-color-primary-4);
+  box-shadow: 0px 0px 0.5px 1.5px var(--c-color-primary-4);
 }
 
 .c-checkbox-disabled {

@@ -7,6 +7,6 @@ declare module '*.vue' {
   const component: DefineComponent<{}, {}, any>
   export default component
 }
-interface HTMLAttributes {
-  style: any
-}
+// interface HTMLAttributes {
+//   style: any
+// }
