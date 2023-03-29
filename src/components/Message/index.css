@@ -3,11 +3,11 @@
   border-radius: 4px;
 }
 .c-message {
-  /* position: absolute; */
+  position: relative;
   box-sizing: border-box;
 
   background-color: aquamarine;
-  backdrop-filter: blur(5px);
+  /* backdrop-filter: blur(5px); */
   color: var(--c-color-text-1);
   height: 48px;
   line-height: 48px;
@@ -17,9 +17,21 @@
   z-index: var(--c-z-index-message);
   transition: all 0.4s ease-out;
 
-  padding: 0 20px;
+  padding: var(--c-message-padding);
+}
+.c-message .c-message__icon {
+  display: inline-block;
+  position: absolute;
+  left: 14px;
+  top: 14px;
+  line-height: 20px;
 }
 .c-message .c-message__close {
+  display: inline-block;
+  position: absolute;
+  right: 14px;
+  top: 14px;
+  line-height: 20px;
   cursor: pointer;
 }
 
