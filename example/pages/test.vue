@@ -245,6 +245,12 @@
         <CTag type="warning" size="l" round clean>标签</CTag>
         <br />
         closable
+        <CTag type="success" size="s" clean closable>close</CTag>
+        <CTag type="success" size="m" clean closable>close</CTag>
+        <CTag type="success" size="l" clean closable>close</CTag>
+        <CTag type="success" size="s" clean closable round>close</CTag>
+        <CTag type="success" size="m" clean closable round>close</CTag>
+        <CTag type="success" size="l" clean closable round>close</CTag>
         <CTag type="success" size="m" closable>closable</CTag>
         <CTag type="success" size="m" closable clean @c_close="closetest"
           >closable</CTag

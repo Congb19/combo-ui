@@ -5,6 +5,8 @@ export default {
 </script>
 <script setup lang="ts">
 import { computed, PropType, ref } from 'vue-demi'
+import { CIcon } from '..'
+import { Close } from '@vicons/ionicons5'
 import './index.css'
 const emit = defineEmits(['c_click', 'c_mouseover', 'c_close'])
 const props = defineProps({
@@ -55,6 +57,17 @@ const className = computed(() => {
     ${props.round ? 'c-tag-round' : ''}
   `
 })
+const closeColor = computed(() => {
+  if (!props.clean) return 'var(--c-color-text-dirty-1)'
+  return `var(--c-color-${props.type}-1)`
+})
+const otherStyle = computed(() => {
+  return {
+    '--c-tag-padding-s': props.closable ? '0 16px 0 8px' : '0 8px',
+    '--c-tag-padding-m': props.closable ? '0 18px 0 10px' : '0 10px',
+    '--c-tag-padding-l': props.closable ? '0 20px 0 12px' : '0 12px',
+  }
+})
 </script>
 
 <template>
@@ -64,12 +77,15 @@ const className = computed(() => {
       :class="className"
       @click="events.c_click"
       @mouseover="events.c_mouseover"
+      :style="otherStyle"
     >
       <!-- <div class="c-tag__border"></div> -->
       <slot>标签</slot>
       <span class="c-tag__close" v-if="closable" @click="events.c_close">
-        ×</span
-      >
+        <CIcon :size="12" :color="closeColor" :style="{ cursor: 'pointer' }">
+          <Close></Close>
+        </CIcon>
+      </span>
     </div>
   </Transition>
 </template>
