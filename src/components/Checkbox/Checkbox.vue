@@ -10,25 +10,18 @@ import { CheckmarkSharp } from '@vicons/ionicons5'
 import './index.css'
 
 const emit = defineEmits(['c_change', 'update:value'])
-const props = defineProps({
-  value: {
-    type: Boolean,
-  },
-  size: {
-    type: String as PropType<'s' | 'm' | 'l'>,
-    default: 'm',
-  },
-  color: {
-    type: String,
-    default: 'var(--c-color-primary-1)',
-  },
-  disabled: {
-    type: Boolean,
-    default: false,
-  },
-  icon: {
-    default: CheckmarkSharp,
-  },
+interface Props {
+  value: boolean
+  size?: 's' | 'm' | 'l'
+  color?: string
+  disabled?: boolean
+  icon?: any
+}
+const props = withDefaults(defineProps<Props>(), {
+  size: 'm',
+  color: 'var(--c-color-primary-1)',
+  disabled: false,
+  icon: CheckmarkSharp,
 })
 const value = ref(props.value)
 const status = ref('normal')

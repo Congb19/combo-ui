@@ -308,7 +308,7 @@ watch(
   }
 )
 const checkboxvalue = ref(true)
-const typetest = ref('warning')
+const typetest: any = ref('warning')
 const typeclick = () => {
   typetest.value = 'error'
 }

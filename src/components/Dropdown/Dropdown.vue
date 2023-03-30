@@ -63,7 +63,7 @@ const otherStyleBody = computed(() => {
 <template>
   <Transition name="dropdown">
     <div ref="dropdown" class="c-dropdown" v-show="props.show">
-      <div class="c-dropdown__arrow" data-popper-arrow></div>
+      <!-- <div class="c-dropdown__arrow" data-popper-arrow></div> -->
       <div class="c-dropdown__body" :style="otherStyleBody">
         <slot></slot>
       </div>

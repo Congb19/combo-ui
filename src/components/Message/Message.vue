@@ -57,14 +57,6 @@ const props = defineProps({
   },
 })
 
-// const otherStyle = computed(() => {
-//   return props.position.includes('left')
-//     ? { left: '20px' }
-//     : props.position.includes('right')
-//     ? { right: '20px' }
-//     : {}
-// })
-
 const className = computed(() => {
   return `c-message
     c-message-${props.type}
