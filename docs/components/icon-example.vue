@@ -25,6 +25,6 @@ import {
   自定义svg
   <br />
   <CIcon size="30" background-color="orange" color="white">
-    <img src="../assets/test.svg" /> </CIcon
+    <img src="../public/assets/test.svg" /> </CIcon
   >&nbsp;
 </template>
