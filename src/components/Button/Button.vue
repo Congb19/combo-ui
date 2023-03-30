@@ -6,6 +6,8 @@ export default {
 <script setup lang="ts">
 import { computed, PropType, ref } from 'vue-demi'
 import './index.css'
+// import { c_log } from '../../utils'
+// c_log('error', 'test')
 // props & events
 // ------------------------------------------------------------------------------
 const emit = defineEmits(['c_click'])

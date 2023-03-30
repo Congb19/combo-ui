@@ -4,7 +4,17 @@ import { defineConfig } from 'vitepress'
 export default defineConfig({
   title: 'Combo UI',
   description: "Congb19's Vue3 Components Library",
+  head: [
+    [
+      'link',
+      {
+        rel: 'icon',
+        href: '/assets/test.svg',
+      },
+    ],
+  ],
   themeConfig: {
+    logo: '../assets/test.svg',
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: 'Home', link: '/' },
