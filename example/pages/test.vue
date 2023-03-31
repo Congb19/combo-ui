@@ -21,12 +21,24 @@
         <CBlock type="warning" :content="blockcontent"></CBlock>
         <CBlock type="error" :content="blockcontent"></CBlock>
         <CBlock type="info" detail :content="blockcontent"></CBlock>
+        <br />
+        展开收起
+        <br />
         <CBlock
           type="success"
           detail
           :expanded="false"
           :content="blockcontent"
         ></CBlock>
+        <CBlock
+          type="info"
+          title="customtitle"
+          :content="blockcontent"
+        ></CBlock>
+        <br />
+        指定宽度
+        <br />
+        <CBlock type="info" :content="blockcontent" :width="300"></CBlock>
       </div>
 
       <div style="display: block">

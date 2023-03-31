@@ -22,6 +22,7 @@ interface Props {
   content: string
   detail?: boolean
   expanded?: boolean
+  width?: number
 }
 const props = withDefaults(defineProps<Props>(), {
   type: 'default',
@@ -38,6 +39,11 @@ const className = computed(() => {
     c-block-${props.type}
     ${props.detail ? 'c-block-detail' : ''}
   `
+})
+const otherStyle = computed(() => {
+  return {
+    width: props.width ? props.width + 'px' : '100%',
+  }
 })
 const iconColor = computed(() => {
   return `var(--c-color-${props.type == 'info' ? 'primary' : props.type}-1)`
@@ -56,7 +62,7 @@ const clickBody = (e: any) => {
 }
 </script>
 <template>
-  <div :class="className" @click="click">
+  <div :class="className" @click="click" :style="otherStyle">
     <span class="c-block__icon">
       <CIcon :size="20" :color="iconColor">
         <CheckmarkCircle v-if="type == 'success'"></CheckmarkCircle>
