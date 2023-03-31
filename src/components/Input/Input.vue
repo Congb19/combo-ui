@@ -4,8 +4,23 @@ export default {
 }
 </script>
 <script setup lang="ts">
-import { computed, onMounted, PropType, Ref, ref, watch } from 'vue-demi'
+import { computed, onMounted, ref, watch } from 'vue-demi'
 import './index.css'
+interface Props {
+  size?: 's' | 'm' | 'l'
+  type?: 'text' | 'password' | 'textarea'
+  maxLength?: number
+  value?: string | number
+  disabled?: boolean
+  placeholder?: string
+}
+const props = withDefaults(defineProps<Props>(), {
+  size: 'm',
+  type: 'text',
+  value: '',
+  disabled: false,
+  placeholder: '',
+})
 
 const emit = defineEmits([
   'update:value',
@@ -14,32 +29,7 @@ const emit = defineEmits([
   'c_focus',
   'c_click',
 ])
-const props = defineProps({
-  size: {
-    type: String as PropType<'s' | 'm' | 'l'>,
-    default: 'm',
-  },
-  type: {
-    type: String as PropType<'text' | 'password' | 'textarea'>,
-    default: 'text',
-  },
-  maxLength: {
-    type: Number,
-  },
-  value: {
-    type: [String, Number],
-    default: '',
-  },
-  disabled: {
-    type: Boolean,
-    default: false,
-  },
-  placeholder: {
-    type: [String],
-    default: '',
-  },
-})
-// const { size, type, maxLength, value, disabled, placeholder } = props
+
 watch(
   () => props.value,
   (val) => {
@@ -79,9 +69,6 @@ const mouseenter = () => {
 }
 const mouseleave = () => {
   if (status.value !== 'focus' && !props.disabled) status.value = 'default'
-}
-const blur = () => {
-  c_input.value.blur()
 }
 
 const events = {

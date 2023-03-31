@@ -42,9 +42,7 @@ class Msg {
     counter++
 
     // resolve options
-    let props = {
-      msg: '',
-      duration: 5000,
+    let props: any = {
       type,
       position: 'mid',
     }
@@ -88,23 +86,16 @@ class Msg {
       destroy: () => this.destroy.call(this),
     })
     this.instance.mount(this.div)
-    // console.log('create ok', this.instance)
   }
   destroy() {
-    if (
-      activeMessages.has(this.id) ||
-      activeMessagesLeft.has(this.id) ||
-      activeMessagesRight.has(this.id)
-    ) {
-      // console.log('to destroy', this.instance)
-
+    let map =
+      this.props.position == 'mid'
+        ? activeMessages
+        : this.props.position == 'left'
+        ? activeMessagesLeft
+        : activeMessagesRight
+    if (map.has(this.id)) {
       // recalc position
-      let map =
-        this.props.position == 'mid'
-          ? activeMessages
-          : this.props.position == 'left'
-          ? activeMessagesLeft
-          : activeMessagesRight
       this.div.className = 'c-message-container c-message-container-hide'
       let topCalc = setInterval(() => {
         if (this.top.value <= 0) clearInterval(topCalc)

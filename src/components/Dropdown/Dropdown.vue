@@ -2,7 +2,7 @@
 export default { name: 'CDropdown' }
 </script>
 <script lang="ts" setup>
-import { createPopper, placements } from '@popperjs/core'
+import { createPopper } from '@popperjs/core'
 import { computed, onMounted, ref, watch } from 'vue-demi'
 import './index.css'
 

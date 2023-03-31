@@ -4,38 +4,29 @@ export default {
 }
 </script>
 <script setup lang="ts">
-import { computed, PropType, ref } from 'vue-demi'
+import { computed, ref } from 'vue-demi'
 import './index.css'
 // import { c_log } from '../../utils'
 // c_log('error', 'test')
 // props & events
 // ------------------------------------------------------------------------------
-const emit = defineEmits(['c_click'])
-const status = ref('normal')
-const props = defineProps({
-  size: {
-    type: String as PropType<'s' | 'm' | 'l'>,
-    default: 'm',
-  },
-  round: {
-    type: Boolean,
-    default: false,
-  },
-  type: {
-    type: String as PropType<
-      'default' | 'primary' | 'success' | 'warning' | 'error'
-    >,
-    default: 'default',
-  },
-  disabled: {
-    type: Boolean,
-    default: false,
-  },
-  clean: {
-    type: Boolean,
-    default: false,
-  },
+interface Props {
+  size?: 's' | 'm' | 'l'
+  round?: boolean
+  type?: 'default' | 'primary' | 'success' | 'warning' | 'error'
+  disabled?: boolean
+  clean?: boolean
+}
+const props = withDefaults(defineProps<Props>(), {
+  size: 'm',
+  round: false,
+  type: 'default',
+  disabled: false,
+  clean: false,
 })
+const emit = defineEmits(['c_click'])
+
+const status = ref('normal')
 
 const events = {
   c_click: () => {

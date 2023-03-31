@@ -12,7 +12,7 @@ import {
   <CIcon size="20"><AmericanFootballSharp /></CIcon>&nbsp;
   <CIcon size="20"><FootballSharp /></CIcon>&nbsp;
   <CIcon size="20"><LogoNpm /></CIcon>&nbsp;
-  <CIcon size="20"> 😂 </CIcon>
+  <CIcon size="20">😂</CIcon>
   <br />
   尺寸、颜色、背景色、圆角
   <br />

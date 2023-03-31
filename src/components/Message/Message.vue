@@ -19,7 +19,7 @@
   </div>
 </template>
 <script setup lang="ts">
-import { computed, onMounted, onUnmounted, PropType } from 'vue-demi'
+import { computed, onMounted, onUnmounted } from 'vue-demi'
 import { CIcon } from '..'
 import {
   CheckmarkCircle,
@@ -29,32 +29,20 @@ import {
   Close,
 } from '@vicons/ionicons5'
 import './index.css'
-const props = defineProps({
-  type: {
-    type: String as PropType<'success' | 'warning' | 'info' | 'error'>,
-    default: 'info',
-    // required: true,
-  },
-  msg: {
-    type: String,
-    required: true,
-  },
-  duration: {
-    type: Number,
-    required: false,
-  },
-  destroy: {
-    type: Function,
-    required: true,
-  },
-  position: {
-    type: String,
-    default: 'top',
-  },
-  closable: {
-    type: Boolean,
-    default: false,
-  },
+
+interface Props {
+  type?: 'success' | 'warning' | 'info' | 'error'
+  msg: string
+  duration?: number
+  destroy: Function
+  // position?: 'top' | 'left' | 'right'
+  closable?: boolean
+}
+const props = withDefaults(defineProps<Props>(), {
+  type: 'info',
+  duration: 5000,
+  // position: 'top',
+  closable: false,
 })
 
 const className = computed(() => {

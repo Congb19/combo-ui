@@ -4,7 +4,7 @@ export default {
 }
 </script>
 <script setup lang="ts">
-import { computed, PropType, reactive, ref, watch } from 'vue-demi'
+import { computed, ref, watch } from 'vue-demi'
 import { CIcon } from '..'
 import { CheckmarkSharp } from '@vicons/ionicons5'
 import './index.css'

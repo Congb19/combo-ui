@@ -4,35 +4,28 @@ export default {
 }
 </script>
 <script setup lang="ts">
-import { computed, PropType, ref } from 'vue-demi'
+import { computed, ref } from 'vue-demi'
 import { CIcon } from '..'
 import { Close } from '@vicons/ionicons5'
 import './index.css'
-const emit = defineEmits(['c_click', 'c_mouseover', 'c_close'])
-const props = defineProps({
-  size: {
-    type: String as PropType<'s' | 'm' | 'l'>,
-    default: 'm',
-  },
-  round: {
-    type: Boolean,
-    default: false,
-  },
-  type: {
-    type: String as PropType<
-      'default' | 'primary' | 'success' | 'warning' | 'error'
-    >,
-    default: 'default',
-  },
-  closable: {
-    type: Boolean,
-    default: false,
-  },
-  clean: {
-    type: Boolean,
-    default: false,
-  },
+
+interface Props {
+  size?: 's' | 'm' | 'l'
+  round?: boolean
+  type?: 'default' | 'primary' | 'success' | 'warning' | 'error'
+  closable?: boolean
+  clean?: boolean
+}
+const props = withDefaults(defineProps<Props>(), {
+  size: 'm',
+  round: false,
+  type: 'default',
+  closable: false,
+  clean: false,
 })
+
+const emit = defineEmits(['c_click', 'c_mouseover', 'c_close'])
+
 const show = ref(true)
 const events = {
   c_click: () => {

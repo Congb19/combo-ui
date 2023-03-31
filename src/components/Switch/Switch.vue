@@ -4,31 +4,26 @@ export default {
 }
 </script>
 <script setup lang="ts">
-import { computed, PropType, reactive, ref, watch } from 'vue-demi'
+import { computed, ref, watch } from 'vue-demi'
+// import { Component } from 'vue'
 import { CIcon } from '..'
 import './index.css'
 
-const emit = defineEmits(['c_change', 'update:value'])
-const props = defineProps({
-  value: {
-    type: Boolean,
-  },
-  size: {
-    type: String as PropType<'s' | 'm' | 'l'>,
-    default: 'm',
-  },
-  color: {
-    type: String,
-    default: 'var(--c-color-primary-1)',
-  },
-  disabled: {
-    type: Boolean,
-    default: false,
-  },
-  icon: {
-    type: [String, Object],
-  },
+interface Props {
+  value: boolean
+  size?: 's' | 'm' | 'l'
+  color?: string // 有问题，最好先不用
+  disabled?: boolean
+  icon?: string | object
+}
+const props = withDefaults(defineProps<Props>(), {
+  size: 'm',
+  color: 'var(--c-color-primary-1)',
+  disabled: false,
 })
+
+const emit = defineEmits(['c_change', 'update:value'])
+
 const value = ref(props.value)
 const status = ref('normal')
 watch(

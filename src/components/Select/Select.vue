@@ -4,18 +4,10 @@ export default {
 }
 </script>
 <script setup lang="ts">
-import {
-  computed,
-  nextTick,
-  onMounted,
-  ref,
-  watch,
-  getCurrentInstance,
-} from 'vue-demi'
+import { computed, onMounted, ref, watch } from 'vue-demi'
 import { CInput, CDropdown } from '..'
 
 import SelectOptions from './SelectOptions.vue'
-import { createPopper } from '@popperjs/core'
 import './index.css'
 
 interface Props {
@@ -40,12 +32,13 @@ interface Props {
 }
 const props = withDefaults(defineProps<Props>(), {
   size: 'm',
-  value: null,
   placement: 'bottom-start',
   disabled: false,
   maxHeight: 200,
 })
+
 const emit = defineEmits(['c_select', 'update:value'])
+
 const className = computed(() => {
   return `
     c-select
