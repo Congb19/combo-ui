@@ -62,7 +62,7 @@ const blur = () => {
     @blur="blur"
   >
     <div class="c-button__border"></div>
-    <slot>Button</slot>
+    <slot></slot>
   </div>
 </template>
 <!-- <style src="./index.css"></style> -->

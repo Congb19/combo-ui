@@ -13,6 +13,23 @@
       </div>
 
       <div style="display: block">
+        ------------------block-------------------
+        <br />
+        <CBlock content="default"></CBlock>
+        <CBlock type="info" :content="blockcontent"></CBlock>
+        <CBlock type="success" :content="blockcontent"></CBlock>
+        <CBlock type="warning" :content="blockcontent"></CBlock>
+        <CBlock type="error" :content="blockcontent"></CBlock>
+        <CBlock type="info" detail :content="blockcontent"></CBlock>
+        <CBlock
+          type="success"
+          detail
+          :expanded="false"
+          :content="blockcontent"
+        ></CBlock>
+      </div>
+
+      <div style="display: block">
         ------------------select-------------------
         <br />
         {{ selectvalue }}
@@ -266,6 +283,7 @@
 <script setup lang="ts">
 import { computed, ref, watch } from 'vue'
 import {
+  CBlock,
   CButton,
   CTag,
   CInput,
@@ -370,4 +388,8 @@ const dict = ref([
 const selectevent = (value: any) => {
   console.log('select!!!', value)
 }
+
+// block
+const blockcontent =
+  'Either change the import in "example/pages/test.vue?vue&type=script&setup=true&lang.ts" to point directly to the exporting module or reconfigure "output.manualChunks" to ensure these modules end up in the same chunk.'
 </script>

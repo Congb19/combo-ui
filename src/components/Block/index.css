@@ -1,0 +1,62 @@
+.c-block {
+  position: relative;
+  display: block;
+  border: 1px red solid;
+  border-radius: 10px;
+  padding: 10px 10px 10px 40px;
+  /* word-break:break-all */
+}
+.c-block-detail {
+  cursor: pointer;
+}
+.c-block__icon {
+  position: absolute;
+  top: 9px;
+  left: 10px;
+}
+.c-block__title {
+  position: relative;
+  display: inline-block;
+  font-weight: bold;
+  font-size: var(--c-font-size-l);
+  /* left: 6px; */
+}
+.c-block__body {
+  position: relative;
+  display: block;
+  padding-top: 5px;
+  font-size: var(--c-font-size-m);
+  /* left: 26px; */
+  cursor: text;
+}
+.c-block__arrow {
+  position: absolute;
+  top: 7px;
+  right: 17px;
+}
+
+.c-block-default {
+  background-color: var(--c-color-default-0);
+  border-color: var(--c-color-default-1);
+  color: var(--c-color-text-1);
+}
+.c-block-info {
+  background-color: var(--c-color-primary-0);
+  border-color: var(--c-color-primary-1);
+  color: var(--c-color-primary-1);
+}
+.c-block-success {
+  background-color: var(--c-color-success-0);
+  border-color: var(--c-color-success-1);
+  color: var(--c-color-success-1);
+}
+.c-block-warning {
+  background-color: var(--c-color-warning-0);
+  border-color: var(--c-color-warning-1);
+  color: var(--c-color-warning-1);
+}
+.c-block-error {
+  background-color: var(--c-color-error-0);
+  border-color: var(--c-color-error-1);
+  color: var(--c-color-error-1);
+}

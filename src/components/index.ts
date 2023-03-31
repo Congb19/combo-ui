@@ -1,3 +1,4 @@
+import Block from './Block'
 import Button from './Button'
 import Checkbox from './Checkbox'
 import Dropdown from './Dropdown'
@@ -13,6 +14,7 @@ import ThemeProvider from './ThemeProvider'
 import { useTheme } from './Theme'
 
 // 页面内直接 import
+export const CBlock = Block
 export const CButton = Button
 export const CCheckbox = Checkbox
 export const CDropdown = Dropdown
@@ -26,6 +28,7 @@ export const CThemeProvider = ThemeProvider
 
 // create([C.Button, C.Tag])
 export {
+  Block,
   Button,
   Checkbox,
   Dropdown,
@@ -42,6 +45,7 @@ export {
 
 // create(C.All)
 export const All = [
+  Block,
   Button,
   Checkbox,
   Dropdown,

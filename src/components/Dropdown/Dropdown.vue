@@ -27,18 +27,21 @@ interface Props {
 const props = withDefaults(defineProps<Props>(), {
   placement: 'bottom-start',
 })
+
 const dropdown = ref()
 let popperInstance: any
+
 watch(
   () => props.show,
   (val) => {
     // console.log('show update', val)
-    popperInstance.update()
+    popperInstance?.update()
   }
 )
+
 onMounted(() => {
   setTimeout(() => {
-    // console.log('testtttt', { dom: props.parent }, dropdown.value)
+    console.log('testtttt', { dom: props.parent }, dropdown.value)
     popperInstance = createPopper(props.parent, dropdown.value, {
       placement: props.placement,
       modifiers: [
