@@ -18,6 +18,13 @@ const props = withDefaults(defineProps<Props>(), {
   borderRadius: 2,
 })
 
+const emits = defineEmits(['c_click'])
+const events = {
+  c_click: () => {
+    emits('c_click')
+  },
+}
+
 const otherStyle: any = {
   height: props.size + 'px',
   width: props.size + 'px',
@@ -29,7 +36,7 @@ const otherStyle: any = {
 }
 </script>
 <template>
-  <div class="c-icon" :style="otherStyle">
+  <div class="c-icon" :style="otherStyle" @click="events.c_click">
     <slot></slot>
   </div>
 </template>

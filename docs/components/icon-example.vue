@@ -5,6 +5,7 @@ import {
   FootballSharp,
   LogoNpm,
 } from '@vicons/ionicons5'
+const clicktest = () => console.log('click!!')
 </script>
 <template>
   基础使用
@@ -27,4 +28,8 @@ import {
   <CIcon size="30" background-color="orange" color="white">
     <img src="../public/assets/test.svg" /> </CIcon
   >&nbsp;
+  <br />
+  事件
+  <br />
+  <CIcon size="20" @c_click="clicktest"><AmericanFootballSharp /></CIcon>&nbsp;
 </template>

@@ -35,6 +35,7 @@ export default defineConfig({
       {
         text: 'Components 组件',
         items: [
+          { text: 'Block 块', link: '/components/block' },
           { text: 'Button 按钮', link: '/components/button' },
           { text: 'Checkbox 勾选框', link: '/components/checkbox' },
           { text: 'Icon 图标', link: '/components/icon' },

@@ -30,6 +30,12 @@ const props = withDefaults(defineProps<Props>(), {
   detail: false,
   expanded: true,
 })
+const emits = defineEmits(['c_expand'])
+const events = {
+  c_expand: () => {
+    emits('c_expand', expanded.value)
+  },
+}
 
 const expanded = ref(props.expanded)
 
@@ -45,6 +51,12 @@ const otherStyle = computed(() => {
     width: props.width ? props.width + 'px' : '100%',
   }
 })
+const otherStyleBody = computed(() => {
+  // todo: max lines
+  return {
+    width: props.width ? props.width + 'px' : '100%',
+  }
+})
 const iconColor = computed(() => {
   return `var(--c-color-${props.type == 'info' ? 'primary' : props.type}-1)`
 })
@@ -55,6 +67,7 @@ const borderColor = computed(() => {
 const click = () => {
   if (!props.detail) return
   expanded.value = !expanded.value
+  events.c_expand()
 }
 const clickBody = (e: any) => {
   if (!props.detail) return

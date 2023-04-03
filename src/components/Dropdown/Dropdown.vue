@@ -41,7 +41,7 @@ watch(
 
 onMounted(() => {
   setTimeout(() => {
-    console.log('testtttt', { dom: props.parent }, dropdown.value)
+    // console.log('testtttt', { dom: props.parent }, dropdown.value)
     popperInstance = createPopper(props.parent, dropdown.value, {
       placement: props.placement,
       modifiers: [

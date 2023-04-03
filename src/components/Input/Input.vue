@@ -88,9 +88,6 @@ const events = {
     emit('c_click')
   },
 }
-const cfocus = () => {
-  c_input.value.focus()
-}
 const className = computed(() => {
   return `
     c-input

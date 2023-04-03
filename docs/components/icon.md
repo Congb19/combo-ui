@@ -4,9 +4,9 @@ import IconExample from './icon-example.vue'
 
 # Icon 图标
 
-展示 svg 图标。
+展示 svg 图标。你可以使用 emoji、 [xicons](https://xicons.org/#/) 图标库，或使用 UI 给你提供的 svg。
 
-你可以使用 emoji、 [xicons](https://xicons.org/#/) 图标库，或使用 UI 给你提供的 svg。希望 UI 能给你提供完整切好的图标库。
+希望 UI 能给你提供完整切好的图标库。
 
 ---
 
@@ -20,6 +20,7 @@ import {
   FootballSharp,
   LogoNpm,
 } from '@vicons/ionicons5'
+const clicktest = () => console.log('click!!')
 </script>
 <template>
   基础使用
@@ -27,7 +28,7 @@ import {
   <CIcon size="20"><AmericanFootballSharp /></CIcon>&nbsp;
   <CIcon size="20"><FootballSharp /></CIcon>&nbsp;
   <CIcon size="20"><LogoNpm /></CIcon>&nbsp;
-  <CIcon size="20"> 😂 </CIcon>
+  <CIcon size="20">😂</CIcon>
   <br />
   尺寸、颜色、背景色、圆角
   <br />
@@ -40,7 +41,11 @@ import {
   自定义svg
   <br />
   <CIcon size="30" background-color="orange" color="white">
-    <img src="../assets/test.svg" /> </CIcon
+    <img src="../public/assets/test.svg" /> </CIcon
   >&nbsp;
+  <br />
+  事件
+  <br />
+  <CIcon size="20" @c_click="clicktest"><AmericanFootballSharp /></CIcon>&nbsp;
 </template>
 ```
