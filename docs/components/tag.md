@@ -52,7 +52,7 @@ const mouseovertest = () => console.log('mouseover')
   事件
   <br />
   <CTag @c_click="clicktest">Click!</CTag>&nbsp;
-  <CTag @c_mouseover="mouseovertest">Click!</CTag>&nbsp;
+  <CTag @c_mouseover="mouseovertest">Mouseover!</CTag>&nbsp;
   <CTag closable @c_close="closetest">Close!</CTag>&nbsp;
   <div></div>
   <br />
