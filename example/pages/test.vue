@@ -12,6 +12,13 @@
           <input v-model="inputvalue2" />
           <CInput v-model:value="inputvalue2" />
         </div>
+        <div style="display: block">
+          ------------------loading-------------------
+          <br />
+          {{ CLoadingStatus }}
+          <CButton @c_click="loadingstart">Loading start</CButton>
+          <CButton @c_click="loadingstop">Loading stop</CButton>
+        </div>
 
         <div style="display: block">
           ------------------block-------------------
@@ -321,10 +328,12 @@ import {
   useMsg,
   useTheme,
   CLoadingProvider,
+  useLoading,
 } from '../../src'
 import { AmericanFootballSharp, FootballOutline } from '@vicons/ionicons5'
 // import testSVG from './test.svg'
 const msg = useMsg()
+const { CLoading, CLoadingStatus, CLoadingBar } = useLoading()
 const { currentTheme, changeTheme } = useTheme()
 const changeTheme2 = (theme: string) => {
   document.getElementsByTagName('html')[0].className = theme ? theme : ''
@@ -418,4 +427,12 @@ const selectevent = (value: any) => {
 // block
 const blockcontent =
   'Either change the import in "example/pages/test.vue?vue&type=script&setup=true&lang.ts" to point directly to the exporting module or reconfigure "output.manualChunks" to ensure these modules end up in the same chunk.'
+
+// loading
+const loadingstart = () => {
+  CLoading.start()
+}
+const loadingstop = () => {
+  CLoading.stop()
+}
 </script>

@@ -6,6 +6,7 @@ import './styles/index.css'
 // composables
 export { useTheme } from './components' // include color vars
 export { useMsg } from './components'
+export { useLoading } from './components'
 
 // all components
 export * as C from './components/'

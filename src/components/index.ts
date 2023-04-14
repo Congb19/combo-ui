@@ -13,6 +13,7 @@ import { useMsg } from './Message'
 import ThemeProvider from './ThemeProvider'
 import { useTheme } from './Theme'
 import LoadingProvider from './LoadingProvider'
+import { useLoading } from './Loading'
 
 // 页面内直接 import
 export const CBlock = Block
@@ -44,6 +45,7 @@ export {
   ThemeProvider,
   useTheme,
   LoadingProvider,
+  useLoading,
 }
 
 // create(C.All)
