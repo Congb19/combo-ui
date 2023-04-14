@@ -1,295 +1,308 @@
 <template>
   <CThemeProvider>
-    <CMessageProvider>
-      <div style="display: block">
-        ------------------其他-------------------
-        <br />
-        主题：<CSwitch v-model:value="switchvalue2"></CSwitch>&nbsp;
-        <CButton :type="typetest" clean @c_click="typeclick">
-          prop change test
-        </CButton>
-        <input v-model="inputvalue2" />
-        <CInput v-model:value="inputvalue2" />
-      </div>
+    <CLoadingProvider>
+      <CMessageProvider>
+        <div style="display: block">
+          ------------------其他-------------------
+          <br />
+          主题：<CSwitch v-model:value="switchvalue2"></CSwitch>&nbsp;
+          <CButton :type="typetest" clean @c_click="typeclick">
+            prop change test
+          </CButton>
+          <input v-model="inputvalue2" />
+          <CInput v-model:value="inputvalue2" />
+        </div>
 
-      <div style="display: block">
-        ------------------block-------------------
-        <br />
-        <CBlock content="default"></CBlock>
-        <CBlock type="info" :content="blockcontent"></CBlock>
-        <CBlock type="success" :content="blockcontent"></CBlock>
-        <CBlock type="warning" :content="blockcontent"></CBlock>
-        <CBlock type="error" :content="blockcontent"></CBlock>
-        <CBlock type="info" detail :content="blockcontent"></CBlock>
-        <br />
-        展开收起
-        <br />
-        <CBlock
-          type="success"
-          detail
-          :expanded="false"
-          :content="blockcontent"
-        ></CBlock>
-        <CBlock
-          type="info"
-          title="customtitle"
-          :content="blockcontent"
-        ></CBlock>
-        <br />
-        指定宽度
-        <br />
-        <CBlock type="info" :content="blockcontent" :width="300"></CBlock>
-      </div>
+        <div style="display: block">
+          ------------------block-------------------
+          <br />
+          <CBlock content="default"></CBlock>
+          <CBlock type="info" :content="blockcontent"></CBlock>
+          <CBlock type="success" :content="blockcontent"></CBlock>
+          <CBlock type="warning" :content="blockcontent"></CBlock>
+          <CBlock type="error" :content="blockcontent"></CBlock>
+          <CBlock type="info" detail :content="blockcontent"></CBlock>
+          <br />
+          展开收起
+          <br />
+          <CBlock
+            type="success"
+            detail
+            :expanded="false"
+            :content="blockcontent"
+          ></CBlock>
+          <CBlock
+            type="info"
+            title="customtitle"
+            :content="blockcontent"
+          ></CBlock>
+          <br />
+          指定宽度
+          <br />
+          <CBlock type="info" :content="blockcontent" :width="300"></CBlock>
+        </div>
 
-      <div style="display: block">
-        ------------------select-------------------
-        <br />
-        {{ selectvalue }}
-        <br />
-        <CSelect v-model:value="selectvalue" :options="dict"></CSelect>
-        <CSelect
-          v-model:value="selectvalue2"
-          :options="[]"
-          @c_select="selectevent"
-        ></CSelect>
-        <CSelect
-          v-model:value="selectvalue"
-          :options="dict"
-          placement="top"
-        ></CSelect>
-        <CSelect v-model:value="selectvalue" :options="dict" disabled></CSelect>
-        <CSelect
-          v-model:value="selectvalue"
-          :options="dict"
-          :max-height="80"
-        ></CSelect>
-      </div>
+        <div style="display: block">
+          ------------------select-------------------
+          <br />
+          {{ selectvalue }}
+          <br />
+          <CSelect v-model:value="selectvalue" :options="dict"></CSelect>
+          <CSelect
+            v-model:value="selectvalue2"
+            :options="[]"
+            @c_select="selectevent"
+          ></CSelect>
+          <CSelect
+            v-model:value="selectvalue"
+            :options="dict"
+            placement="top"
+          ></CSelect>
+          <CSelect
+            v-model:value="selectvalue"
+            :options="dict"
+            disabled
+          ></CSelect>
+          <CSelect
+            v-model:value="selectvalue"
+            :options="dict"
+            :max-height="80"
+          ></CSelect>
+        </div>
 
-      <div style="display: block">
-        ------------------icon-------------------
-        <br />
-        <CIcon>
-          <AmericanFootballSharp />
-        </CIcon>
-        <CIcon color="orange">
-          <img src="./test.svg" />
-        </CIcon>
-        <CIcon color="orange" :size="30" background-color="blue"> 😂 </CIcon>
-        <CIcon color="orange" :size="30" background-color="blue"> 喔 </CIcon>
-      </div>
-      <div style="display: block">
-        ------------------checkbox-------------------
-        <br />
-        <br />
-        {{ checkboxvalue }}
-        <br />
-        默认
-        <br />
-        <CCheckbox v-model:value="checkboxvalue"></CCheckbox>&nbsp;
-        <CCheckbox v-model:value="checkboxvalue" disabled></CCheckbox>&nbsp;
-        <!-- <br />
+        <div style="display: block">
+          ------------------icon-------------------
+          <br />
+          <CIcon>
+            <AmericanFootballSharp />
+          </CIcon>
+          <CIcon color="orange">
+            <img src="./test.svg" />
+          </CIcon>
+          <CIcon color="orange" :size="30" background-color="blue"> 😂 </CIcon>
+          <CIcon color="orange" :size="30" background-color="blue"> 喔 </CIcon>
+        </div>
+        <div style="display: block">
+          ------------------checkbox-------------------
+          <br />
+          <br />
+          {{ checkboxvalue }}
+          <br />
+          默认
+          <br />
+          <CCheckbox v-model:value="checkboxvalue"></CCheckbox>&nbsp;
+          <CCheckbox v-model:value="checkboxvalue" disabled></CCheckbox>&nbsp;
+          <!-- <br />
         颜色
         <br />
         <CCheckbox v-model:value="checkboxvalue" color="red"></CCheckbox>&nbsp;
         <CCheckbox v-model:value="checkboxvalue" color="green"></CCheckbox
         >&nbsp; -->
-        <br />
-        尺寸
-        <br />
-        <CCheckbox v-model:value="checkboxvalue" size="s"></CCheckbox>&nbsp;
-        <CCheckbox v-model:value="checkboxvalue" size="m"></CCheckbox>&nbsp;
-        <CCheckbox v-model:value="checkboxvalue" size="l"></CCheckbox>&nbsp;
-        <br />
-        自定义图标
-        <br />
-        <CCheckbox
-          v-model:value="checkboxvalue"
-          size="l"
-          :icon="AmericanFootballSharp"
-        ></CCheckbox
-        >&nbsp;
-        <CCheckbox v-model:value="checkboxvalue" size="l" icon="🏡"></CCheckbox>
-      </div>
-      <div style="display: block">
-        ------------------switch-------------------
-        <br />
-        <br />
-        {{ switchvalue }}
-        <br />
-        默认
-        <br />
-        <CSwitch v-model:value="switchvalue"></CSwitch>&nbsp;
-        <CSwitch v-model:value="switchvalue" disabled></CSwitch>&nbsp;
-        <!-- <br />
+          <br />
+          尺寸
+          <br />
+          <CCheckbox v-model:value="checkboxvalue" size="s"></CCheckbox>&nbsp;
+          <CCheckbox v-model:value="checkboxvalue" size="m"></CCheckbox>&nbsp;
+          <CCheckbox v-model:value="checkboxvalue" size="l"></CCheckbox>&nbsp;
+          <br />
+          自定义图标
+          <br />
+          <CCheckbox
+            v-model:value="checkboxvalue"
+            size="l"
+            :icon="AmericanFootballSharp"
+          ></CCheckbox
+          >&nbsp;
+          <CCheckbox
+            v-model:value="checkboxvalue"
+            size="l"
+            icon="🏡"
+          ></CCheckbox>
+        </div>
+        <div style="display: block">
+          ------------------switch-------------------
+          <br />
+          <br />
+          {{ switchvalue }}
+          <br />
+          默认
+          <br />
+          <CSwitch v-model:value="switchvalue"></CSwitch>&nbsp;
+          <CSwitch v-model:value="switchvalue" disabled></CSwitch>&nbsp;
+          <!-- <br />
         颜色
         <br />
         <CSwitch v-model:value="switchvalue" color="red"></CSwitch>&nbsp;
         <CSwitch v-model:value="switchvalue" color="grey"></CSwitch>&nbsp; -->
-        <br />
-        尺寸
-        <br />
-        <CSwitch v-model:value="switchvalue" size="s"></CSwitch>&nbsp;
-        <CSwitch v-model:value="switchvalue" size="m"></CSwitch>&nbsp;
-        <CSwitch v-model:value="switchvalue" size="l"></CSwitch>&nbsp;
-        <br />
-        自定义图标
-        <br />
-        <CSwitch v-model:value="switchvalue" :icon="FootballOutline"></CSwitch
-        >&nbsp;
-        <CSwitch v-model:value="switchvalue" size="l" icon="☀️"></CSwitch>
-      </div>
-      <div style="display: block">
-        ---------------------message----------------------
-        <br />
-        <CButton type="success" clean @c_click="msgtest1"> msgtest1 </CButton>
-        <CButton type="success" clean @c_click="msgtest2"> msgtest2 </CButton>
-        <CButton type="success" clean @c_click="msgtest3"> msgtest3 </CButton>
-      </div>
-      <br />
-      <div style="display: block">
-        ---------------------button----------------------
-        <br />
-        default
-        <CButton>Btn 默认</CButton>
-        <CButton clean>Btn 默认</CButton>
-        <br />
-        size
-        <CButton size="s">Btn s</CButton>
-        <CButton size="m">Btn m</CButton>
-        <CButton size="l">Btn l</CButton>
-        <br />
-        round
-        <CButton round>Btn round</CButton>
-        <br />
-        type
-        <CButton type="primary">Btn primary</CButton>
-        <CButton type="success">Btn success</CButton>
-        <CButton type="warning">Btn warning</CButton>
-        <CButton type="error">Btn error</CButton>
-        <br />
-        clean=false
-        <CButton type="primary" clean>primary clean</CButton>
-        <CButton type="success" clean>success clean</CButton>
-        <CButton type="warning" clean>warning clean</CButton>
-        <CButton type="error" clean>error clean</CButton>
-        <br />
-        disabled
-        <CButton disabled>Btn disabled</CButton>
-        <CButton disabled clean>Btn disabled</CButton>
-        <br />
-        c_click
-        <CButton @c_click="clicktest">Btn 事件</CButton>
-
-        <br />
-      </div>
-      <div style="display: block">
-        -------------------切换主题测试---------------------
-        <br />
-        <CButton clean type="success" @c_click="changeTheme('light')">
-          to-light
-        </CButton>
-        <CButton @c_click="changeTheme('dark')">to-dark</CButton>
-        <CButton clean type="success" @c_click="changeTheme2('light')">
-          to-light
-        </CButton>
-        <CButton @c_click="changeTheme2('dark')">to-dark</CButton>
-        <div
-          style="color: var(--combo-test-color); transition: all 0.2s ease-out"
-        >
-          {{ currentTheme }}
+          <br />
+          尺寸
+          <br />
+          <CSwitch v-model:value="switchvalue" size="s"></CSwitch>&nbsp;
+          <CSwitch v-model:value="switchvalue" size="m"></CSwitch>&nbsp;
+          <CSwitch v-model:value="switchvalue" size="l"></CSwitch>&nbsp;
+          <br />
+          自定义图标
+          <br />
+          <CSwitch v-model:value="switchvalue" :icon="FootballOutline"></CSwitch
+          >&nbsp;
+          <CSwitch v-model:value="switchvalue" size="l" icon="☀️"></CSwitch>
         </div>
-      </div>
-      <br />
+        <div style="display: block">
+          ---------------------message----------------------
+          <br />
+          <CButton type="success" clean @c_click="msgtest1"> msgtest1 </CButton>
+          <CButton type="success" clean @c_click="msgtest2"> msgtest2 </CButton>
+          <CButton type="success" clean @c_click="msgtest3"> msgtest3 </CButton>
+        </div>
+        <br />
+        <div style="display: block">
+          ---------------------button----------------------
+          <br />
+          default
+          <CButton>Btn 默认</CButton>
+          <CButton clean>Btn 默认</CButton>
+          <br />
+          size
+          <CButton size="s">Btn s</CButton>
+          <CButton size="m">Btn m</CButton>
+          <CButton size="l">Btn l</CButton>
+          <br />
+          round
+          <CButton round>Btn round</CButton>
+          <br />
+          type
+          <CButton type="primary">Btn primary</CButton>
+          <CButton type="success">Btn success</CButton>
+          <CButton type="warning">Btn warning</CButton>
+          <CButton type="error">Btn error</CButton>
+          <br />
+          clean=false
+          <CButton type="primary" clean>primary clean</CButton>
+          <CButton type="success" clean>success clean</CButton>
+          <CButton type="warning" clean>warning clean</CButton>
+          <CButton type="error" clean>error clean</CButton>
+          <br />
+          disabled
+          <CButton disabled>Btn disabled</CButton>
+          <CButton disabled clean>Btn disabled</CButton>
+          <br />
+          c_click
+          <CButton @c_click="clicktest">Btn 事件</CButton>
 
-      <div style="display: block">
-        ------------------input-------------------
+          <br />
+        </div>
+        <div style="display: block">
+          -------------------切换主题测试---------------------
+          <br />
+          <CButton clean type="success" @c_click="changeTheme('light')">
+            to-light
+          </CButton>
+          <CButton @c_click="changeTheme('dark')">to-dark</CButton>
+          <CButton clean type="success" @c_click="changeTheme2('light')">
+            to-light
+          </CButton>
+          <CButton @c_click="changeTheme2('dark')">to-dark</CButton>
+          <div
+            style="
+              color: var(--combo-test-color);
+              transition: all 0.2s ease-out;
+            "
+          >
+            {{ currentTheme }}
+          </div>
+        </div>
         <br />
-        {{ inputvalue }}
+
+        <div style="display: block">
+          ------------------input-------------------
+          <br />
+          {{ inputvalue }}
+          <br />
+          <CInput v-model:value="inputvalue" />
+          <CInput placeholder="input!" />
+          <br />
+          size
+          <br />
+          <CInput v-model:value="inputvalue" size="s" />
+          <CInput v-model:value="inputvalue" size="m" />
+          <CInput v-model:value="inputvalue" size="l" />
+          <br />
+          disabled
+          <br />
+          <CInput v-model:value="inputvalue" disabled />
+          <br />
+          password
+          <br />
+          <CInput v-model:value="inputvalue" type="password" />
+          <br />
+          textarea
+          <br />
+          <CInput v-model:value="inputvalue" type="textarea" />
+          <br />
+          maxlength
+          <br />
+          <CInput v-model:value="inputvalue" :max-length="12" />
+          <CInput v-model:value="inputvalue" :max-length="12" type="textarea" />
+          <br />
+          event （c_focus, c_blur, c_change）
+          <br />
+          <CInput
+            v-model:value="inputvalue"
+            @c_focus="focustest"
+            @c_blur="blurtest"
+            @c_change="changetest"
+          />
+          <br />
+        </div>
+        <div style="display: block">
+          ------------------tag-------------------
+          <br />
+          默认
+          <CTag>123</CTag>
+          <CTag type="primary">标签</CTag>
+          <CTag type="success">123</CTag>
+          <CTag type="warning">标签</CTag>
+          <CTag type="error">123</CTag>
+          <CTag clean>123</CTag>
+          <CTag type="primary" clean>标签</CTag>
+          <CTag type="success" clean>123</CTag>
+          <CTag type="warning" clean>标签</CTag>
+          <CTag type="error" clean>123</CTag>
+          <br />
+          尺寸
+          <CTag type="primary" size="s">标签</CTag>
+          <CTag type="success" size="m">标签</CTag>
+          <CTag type="warning" size="l">标签</CTag>
+          <CTag type="primary" size="s" clean>标签</CTag>
+          <CTag type="success" size="m" clean>标签</CTag>
+          <CTag type="warning" size="l" clean>标签</CTag>
+          <br />
+          round
+          <CTag type="primary" size="s" round>round</CTag>
+          <CTag type="success" size="m" round>round</CTag>
+          <CTag type="warning" size="l" round>round</CTag>
+          <CTag type="primary" size="s" round clean>标签</CTag>
+          <CTag type="success" size="m" round clean>标签</CTag>
+          <CTag type="warning" size="l" round clean>标签</CTag>
+          <br />
+          closable
+          <CTag type="success" size="s" clean closable>close</CTag>
+          <CTag type="success" size="m" clean closable>close</CTag>
+          <CTag type="success" size="l" clean closable>close</CTag>
+          <CTag type="success" size="s" clean closable round>close</CTag>
+          <CTag type="success" size="m" clean closable round>close</CTag>
+          <CTag type="success" size="l" clean closable round>close</CTag>
+          <CTag type="success" size="m" closable>closable</CTag>
+          <CTag type="success" size="m" closable clean @c_close="closetest"
+            >closable</CTag
+          >
+          <CTag type="success" size="m" closable round>closable</CTag>
+        </div>
         <br />
-        <CInput v-model:value="inputvalue" />
-        <CInput placeholder="input!" />
         <br />
-        size
         <br />
-        <CInput v-model:value="inputvalue" size="s" />
-        <CInput v-model:value="inputvalue" size="m" />
-        <CInput v-model:value="inputvalue" size="l" />
-        <br />
-        disabled
-        <br />
-        <CInput v-model:value="inputvalue" disabled />
-        <br />
-        password
-        <br />
-        <CInput v-model:value="inputvalue" type="password" />
-        <br />
-        textarea
-        <br />
-        <CInput v-model:value="inputvalue" type="textarea" />
-        <br />
-        maxlength
-        <br />
-        <CInput v-model:value="inputvalue" :max-length="12" />
-        <CInput v-model:value="inputvalue" :max-length="12" type="textarea" />
-        <br />
-        event （c_focus, c_blur, c_change）
-        <br />
-        <CInput
-          v-model:value="inputvalue"
-          @c_focus="focustest"
-          @c_blur="blurtest"
-          @c_change="changetest"
-        />
-        <br />
-      </div>
-      <div style="display: block">
-        ------------------tag-------------------
-        <br />
-        默认
-        <CTag>123</CTag>
-        <CTag type="primary">标签</CTag>
-        <CTag type="success">123</CTag>
-        <CTag type="warning">标签</CTag>
-        <CTag type="error">123</CTag>
-        <CTag clean>123</CTag>
-        <CTag type="primary" clean>标签</CTag>
-        <CTag type="success" clean>123</CTag>
-        <CTag type="warning" clean>标签</CTag>
-        <CTag type="error" clean>123</CTag>
-        <br />
-        尺寸
-        <CTag type="primary" size="s">标签</CTag>
-        <CTag type="success" size="m">标签</CTag>
-        <CTag type="warning" size="l">标签</CTag>
-        <CTag type="primary" size="s" clean>标签</CTag>
-        <CTag type="success" size="m" clean>标签</CTag>
-        <CTag type="warning" size="l" clean>标签</CTag>
-        <br />
-        round
-        <CTag type="primary" size="s" round>round</CTag>
-        <CTag type="success" size="m" round>round</CTag>
-        <CTag type="warning" size="l" round>round</CTag>
-        <CTag type="primary" size="s" round clean>标签</CTag>
-        <CTag type="success" size="m" round clean>标签</CTag>
-        <CTag type="warning" size="l" round clean>标签</CTag>
-        <br />
-        closable
-        <CTag type="success" size="s" clean closable>close</CTag>
-        <CTag type="success" size="m" clean closable>close</CTag>
-        <CTag type="success" size="l" clean closable>close</CTag>
-        <CTag type="success" size="s" clean closable round>close</CTag>
-        <CTag type="success" size="m" clean closable round>close</CTag>
-        <CTag type="success" size="l" clean closable round>close</CTag>
-        <CTag type="success" size="m" closable>closable</CTag>
-        <CTag type="success" size="m" closable clean @c_close="closetest"
-          >closable</CTag
-        >
-        <CTag type="success" size="m" closable round>closable</CTag>
-      </div>
-      <br />
-      <br />
-      <br />
-    </CMessageProvider>
+      </CMessageProvider>
+    </CLoadingProvider>
   </CThemeProvider>
 </template>
 <script setup lang="ts">
@@ -307,6 +320,7 @@ import {
   CThemeProvider,
   useMsg,
   useTheme,
+  CLoadingProvider,
 } from '../../src'
 import { AmericanFootballSharp, FootballOutline } from '@vicons/ionicons5'
 // import testSVG from './test.svg'

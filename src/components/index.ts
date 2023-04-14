@@ -12,6 +12,7 @@ import MessageProvider from './MessageProvider'
 import { useMsg } from './Message'
 import ThemeProvider from './ThemeProvider'
 import { useTheme } from './Theme'
+import LoadingProvider from './LoadingProvider'
 
 // 页面内直接 import
 export const CBlock = Block
@@ -25,6 +26,7 @@ export const CSwitch = Switch
 export const CTag = Tag
 export const CMessageProvider = MessageProvider
 export const CThemeProvider = ThemeProvider
+export const CLoadingProvider = LoadingProvider
 
 // create([C.Button, C.Tag])
 export {
@@ -38,9 +40,10 @@ export {
   Switch,
   Tag,
   MessageProvider,
-  ThemeProvider,
   useMsg,
+  ThemeProvider,
   useTheme,
+  LoadingProvider,
 }
 
 // create(C.All)
@@ -56,4 +59,5 @@ export const All = [
   Tag,
   MessageProvider,
   ThemeProvider,
+  LoadingProvider,
 ]

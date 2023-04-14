@@ -7,6 +7,7 @@
   --c-font-size-l: 16px;
 
   /* z-index */
+  --c-z-index-loading: 9999;
   --c-z-index-message: 999;
   --c-z-index-button: 1;
   --c-z-index-input: 1;

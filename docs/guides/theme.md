@@ -61,8 +61,3 @@ const { changeTheme } = useTheme()
 changeTheme(customTheme)
 changeTheme('light')
 ```
-
-## todo
-
-- 主题生成器
-- 使用主题生成器生成自定义主题 css 文件。

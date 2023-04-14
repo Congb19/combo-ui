@@ -25,19 +25,27 @@ Congb19 的 Vue 3 组件库。Congb19's Vue 3 Component Library.
   - 标签 Tag ✅
   - 输入框 Input ✅
   - 图标 Icon ✅
+    - todo: windows 下存在 emoji 大小不统一问题
   - 勾选框 Checkbox ✅
   - 开关 Switch ✅
   - 下拉菜单 Dropdown ✅
   - 选择器 Select ✅
-  - 日期选择器 DatePicker
   - 块 Block ✅
   -
+  - 日期选择器 DatePicker
   - ...
 
 - 组合式函数
 
   - 消息 useMsg (with MessageProvider) ✅
   - 主题 useTheme (with ThemeProvider) ✅
+    - todo：主题生成器
+    - todo：使用主题生成器生成自定义主题 css 文件。
+  - 加载 useLoading（with LoadingProvider）
+
+- build 脚本
+
+  - 组件打包发布
 
 ### 起因 / Thinking
 

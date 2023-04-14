@@ -1,8 +1,12 @@
+<script setup>
+import {CBlock} from '../../src'
+ </script>
+
 # Install 安装
 
 ## 安装 / Installation
 
-尚未发布
+<CBlock type='warning' content='尚未发布'></CBlock>
 
 `pnpm i @congb19/combo-ui`
 
