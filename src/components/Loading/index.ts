@@ -21,7 +21,9 @@ class Loading {
     this.status.value = true
   }
   stop() {
-    this.instance.unmount()
+    if (this.instance) {
+      this.instance.unmount()
+    }
     this.instance = null
     this.status.value = false
   }

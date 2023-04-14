@@ -4,9 +4,9 @@ import MessageExample from './message-example.vue'
 
 # Message 消息
 
-在全局弹出醒目的消息来。
+在全局弹出醒目的消息来。如果你的微信弹出了重要的人的消息，一定要记得回复。
 
-如果你的微信弹出了重要的人的消息，一定要记得回复。
+Combo UI 通过 `useMsg` 方法创建一个消息实例。你可以通过这个实例在任意位置唤出全局消息。
 
 ---
 

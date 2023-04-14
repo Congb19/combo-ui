@@ -40,6 +40,7 @@ export default defineConfig({
           { text: 'Checkbox 勾选框', link: '/components/checkbox' },
           { text: 'Icon 图标', link: '/components/icon' },
           { text: 'Input 输入框', link: '/components/input' },
+          { text: 'Loading 加载', link: '/components/loading' },
           { text: 'Message 消息', link: '/components/message' },
           { text: 'Select 选择器', link: '/components/select' },
           { text: 'Switch 开关', link: '/components/switch' },

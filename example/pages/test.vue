@@ -16,6 +16,7 @@
           ------------------loading-------------------
           <br />
           {{ CLoadingStatus }}
+          <CButton @c_click="loading">Loading</CButton>
           <CButton @c_click="loadingstart">Loading start</CButton>
           <CButton @c_click="loadingstop">Loading stop</CButton>
         </div>
@@ -434,5 +435,11 @@ const loadingstart = () => {
 }
 const loadingstop = () => {
   CLoading.stop()
+}
+const loading = () => {
+  CLoading.start()
+  setTimeout(() => {
+    CLoading.stop()
+  }, 4000)
 }
 </script>
