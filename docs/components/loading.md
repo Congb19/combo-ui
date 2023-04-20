@@ -4,7 +4,7 @@ import LoadingExample from './loading-example.vue'
 
 # Loading 加载
 
-很多人都讨厌页面开始转圈圈。但是内容没加载完的话，不得不转着等。
+很多人都讨厌页面开始转圈圈。但是内容没加载完的话，不得不等它继续转。所以说，人们讨厌的是网速慢和性能差，并不是讨厌 Loading 组件本身。
 
 Combo UI 通过 `useLoading` 方法提供了 `CLoading` 实例以及 `CLoadingStatus` 属性。你可以在任意地方调用 `CLoading` 实例的 start 方法或 stop 方法来控制 loading 的状态。
 

@@ -30,6 +30,7 @@ Congb19 的 Vue 3 组件库。Congb19's Vue 3 Component Library.
   - 开关 Switch ✅
   - 下拉菜单 Dropdown ✅
   - 选择器 Select ✅
+    - todo: windows 下滚动条样式问题
   - 块 Block ✅
   -
   - 日期选择器 DatePicker

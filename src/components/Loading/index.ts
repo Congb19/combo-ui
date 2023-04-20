@@ -8,10 +8,14 @@ class Loading {
   private component: Component = CLoading
   private instance: any = null
   private container: any = document.getElementById('c-loading-provider')
+  private options: any
   status: Ref<boolean> = ref(false)
+  constructor(options: any) {
+    this.options = options
+  }
   create() {
     this.container = document.getElementById('c-loading-provider')
-    this.instance = createApp(this.component)
+    this.instance = createApp(this.component, this.options)
   }
   start() {
     if (!this.instance) {
@@ -30,9 +34,9 @@ class Loading {
 }
 class LoadingBar {}
 
-export const useLoading = () => {
+export const useLoading = (options?: any) => {
   if (!loadingInstance) {
-    loadingInstance = new Loading()
+    loadingInstance = new Loading(options)
   }
   if (!loadingBarInstance) {
     loadingBarInstance = new LoadingBar()

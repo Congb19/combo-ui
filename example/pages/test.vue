@@ -334,7 +334,6 @@ import {
 import { AmericanFootballSharp, FootballOutline } from '@vicons/ionicons5'
 // import testSVG from './test.svg'
 const msg = useMsg()
-const { CLoading, CLoadingStatus, CLoadingBar } = useLoading()
 const { currentTheme, changeTheme } = useTheme()
 const changeTheme2 = (theme: string) => {
   document.getElementsByTagName('html')[0].className = theme ? theme : ''
@@ -430,6 +429,7 @@ const blockcontent =
   'Either change the import in "example/pages/test.vue?vue&type=script&setup=true&lang.ts" to point directly to the exporting module or reconfigure "output.manualChunks" to ensure these modules end up in the same chunk.'
 
 // loading
+const { CLoading, CLoadingStatus, CLoadingBar } = useLoading()
 const loadingstart = () => {
   CLoading.start()
 }
