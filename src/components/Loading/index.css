@@ -19,9 +19,11 @@
   animation: changeright 1s linear infinite;
 }
 .c-loading__text {
-  position: fixed;
+  position: absolute;
+  display: inline-block;
+  text-align: center;
   left: calc(50% - 40px);
-  top: calc(50% + 40px);
+  top: calc(50% + 50px);
   color: var(--c-color-primary-1);
 }
 
@@ -35,4 +37,15 @@
   100% {
     -webkit-transform: rotate(360deg);
   }
+}
+
+.c-loadingbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  border-top-right-radius: 1.5px;
+  border-bottom-right-radius: 1.5px;
+  /* width: 100vw; */
+  background-color: red;
 }

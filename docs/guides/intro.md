@@ -32,7 +32,6 @@ Congb19 的 Vue 3 组件库。Congb19's Vue 3 Component Library.
   - 选择器 Select ✅
     - todo: windows 下滚动条样式问题
   - 块 Block ✅
-  -
   - 日期选择器 DatePicker
   - ...
 
@@ -42,7 +41,7 @@ Congb19 的 Vue 3 组件库。Congb19's Vue 3 Component Library.
   - 主题 useTheme (with ThemeProvider) ✅
     - todo：主题生成器
     - todo：使用主题生成器生成自定义主题 css 文件。
-  - 加载 useLoading（with LoadingProvider）
+  - 加载 useLoading（with LoadingProvider）✅
 
 - build 脚本
 

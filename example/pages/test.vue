@@ -16,6 +16,11 @@
           ------------------loading-------------------
           <br />
           {{ CLoadingStatus }}
+          <CButton @c_click="loading2">Loadingbar</CButton>
+          <CButton @c_click="loadingbarstart">Loadingbar start</CButton>
+          <CButton @c_click="loadingbarstop">Loadingbar stop</CButton>
+          <CButton @c_click="goto(40)">goto40</CButton>
+          <br />
           <CButton @c_click="loading">Loading</CButton>
           <CButton @c_click="loadingstart">Loading start</CButton>
           <CButton @c_click="loadingstop">Loading stop</CButton>
@@ -429,7 +434,7 @@ const blockcontent =
   'Either change the import in "example/pages/test.vue?vue&type=script&setup=true&lang.ts" to point directly to the exporting module or reconfigure "output.manualChunks" to ensure these modules end up in the same chunk.'
 
 // loading
-const { CLoading, CLoadingStatus, CLoadingBar } = useLoading()
+const { CLoading, CLoadingStatus, CLoadingBar } = useLoading({ text: '加载中' })
 const loadingstart = () => {
   CLoading.start()
 }
@@ -441,5 +446,20 @@ const loading = () => {
   setTimeout(() => {
     CLoading.stop()
   }, 4000)
+}
+const loadingbarstart = () => {
+  CLoadingBar.start()
+}
+const loadingbarstop = () => {
+  CLoadingBar.stop()
+}
+const loading2 = () => {
+  CLoadingBar.start()
+  setTimeout(() => {
+    CLoadingBar.finish()
+  }, 2000)
+}
+const goto = (percent) => {
+  CLoadingBar.goto(percent)
 }
 </script>
