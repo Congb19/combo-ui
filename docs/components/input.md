@@ -6,6 +6,8 @@ import InputExample from './input-example.vue'
 
 简简单单输入框。
 
+Combo UI 的输入框内部的元素为原生的 input 元素。在封装时对中文拼音输入法等特殊输入法输入进行了等待处理，使得这类文字的输入更加符合直觉；提供了值的双向绑定和一些触发事件。除此之外，没有做太多的定制。
+
 ---
 
 <input-example></input-example>

@@ -172,8 +172,8 @@
           ---------------------button----------------------
           <br />
           default
-          <CButton>Btn 默认</CButton>
-          <CButton clean>Btn 默认</CButton>
+          <CButton id="testbtn1" @c_click="clicktest">Btn 默认</CButton>
+          <CButton clean @c_click="testbtn1click">Btn 默认</CButton>
           <br />
           size
           <CButton size="s">Btn s</CButton>
@@ -461,5 +461,12 @@ const loading2 = () => {
 }
 const goto = (percent) => {
   CLoadingBar.goto(percent)
+}
+
+// 123
+let testbtn1click = () => {
+  let btn1 = document.getElementById('testbtn1')
+  console.log('testbtn1click', btn1)
+  btn1?.click()
 }
 </script>

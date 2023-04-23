@@ -4,9 +4,11 @@ import IconExample from './icon-example.vue'
 
 # Icon 图标
 
-展示 svg 图标。你可以使用 emoji、 [xicons](https://xicons.org/#/) 图标库，或使用 UI 给你提供的 svg。
+展示 svg 图标。
 
-希望 UI 能给你提供完整切好的图标库。
+你可以使用 emoji、 [xicons](https://xicons.org/#/) 图标库，或使用 UI 给你提供的 svg，具体可见下方的参考代码。
+
+但是，emoji 在不同字体下的表现可能有巨大的差别，第三方图标库里又可能没有你需要的图标。所以，希望 UI 总是能给我们提供完整切好的图标库。
 
 ---
 
