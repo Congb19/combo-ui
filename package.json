@@ -1,20 +1,21 @@
 {
-  "name": "combo-ui",
-  "version": "0.0.1",
+  "name": "@congb19/combo-ui",
+  "version": "0.0.4",
   "description": "Congb19's Vue 3 Component Library.",
   "author": "Congb19",
   "scripts": {
     "dev": "vite",
     "docs:dev": "vitepress dev docs",
     "docs:build": "vitepress build docs",
-    "docs:preview": "vitepress preview docs"
+    "docs:preview": "vitepress preview docs",
+    "build": "vite build"
   },
   "type": "module",
   "files": [
     "dist"
   ],
-  "main": "./dist/combo-ui.js",
-  "module": "./dist/combo-ui.js",
+  "main": "./src/index.ts",
+  "module": "./dist/combo-ui/es/src/index.mjs",
   "exports": {
     ".": {
       "import": "./dist/combo-ui.js"
@@ -32,6 +33,7 @@
     "@vitejs/plugin-vue": "^3.0.0",
     "typescript": "^4.4.4",
     "vite": "^3.0.0",
+    "vite-plugin-dts": "1.4.1",
     "vitepress": "^1.0.0-alpha.59",
     "vue-tsc": "^0.29.8"
   }

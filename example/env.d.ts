@@ -6,8 +6,3 @@ declare module '*.vue' {
   const component: DefineComponent<{}, {}, any>
   export default component
 }
-
-declare module '*.svg' {
-  const svgcontent: any
-  export default svgcontent
-}
