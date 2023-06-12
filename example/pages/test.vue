@@ -321,19 +321,19 @@
 <script setup lang="ts">
 import { computed, ref, watch } from 'vue'
 import {
-  CBlock,
-  // CButton,
-  CTag,
-  CInput,
-  CSwitch,
-  CCheckbox,
-  CIcon,
-  CSelect,
-  CMessageProvider,
-  CThemeProvider,
+  // CBlock,
+  // // CButton,
+  // CTag,
+  // CInput,
+  // CSwitch,
+  // CCheckbox,
+  // CIcon,
+  // CSelect,
+  // CMessageProvider,
+  // CThemeProvider,
   useMsg,
   useTheme,
-  CLoadingProvider,
+  // CLoadingProvider,
   useLoading,
 } from '../../src'
 import { AmericanFootballSharp, FootballOutline } from '@vicons/ionicons5'

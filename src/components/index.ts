@@ -50,6 +50,7 @@ export {
 
 // create(C.All)
 export const All = [
+  undefined, // 占位
   Block,
   Button,
   Checkbox,

@@ -14,6 +14,7 @@ export * from './components/'
 
 // global register
 const registerComponent = (app: App, name: string, component: any) => {
+  if (!name) return
   const registered = app.component(name)
   if (!registered) app.component(name, component)
 }
@@ -21,9 +22,10 @@ export const create = (components?: any[]) => {
   const install = (app: App) => {
     if (components?.length && components.length > 0)
       components.forEach((component) => {
+        if (!component) return
         const { name } = component
-        if (import.meta.env.DEV)
-          console.log('component registered globally, ', name)
+        // if (import.meta.env.DEV)
+        console.log('component registered globally, ', name)
         registerComponent(app, name, component)
       })
   }

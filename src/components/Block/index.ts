@@ -1,2 +1,2 @@
-import Block from './Block.vue'
-export default Block
+import CBlock from './Block.vue'
+export default CBlock

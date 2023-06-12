@@ -29,6 +29,7 @@ import p from "./LoadingProvider/LoadingProvider.vue_vue_type_script_setup_true_
 import { default as xo } from "./LoadingProvider/LoadingProvider.vue_vue_type_script_setup_true_lang.mjs";
 import { useLoading as Co } from "./Loading/index.mjs";
 const I = o, S = r, b = t, L = m, M = e, D = f, A = s, j = a, q = i, y = c, z = n, E = p, F = [
+  void 0,
   o,
   r,
   t,
