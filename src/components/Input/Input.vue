@@ -1,6 +1,6 @@
 <script lang="ts">
 export default {
-  name: 'CButton',
+  name: 'CInput',
 }
 </script>
 <script setup lang="ts">

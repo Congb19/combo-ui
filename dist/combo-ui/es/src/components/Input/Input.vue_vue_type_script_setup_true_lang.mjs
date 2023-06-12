@@ -1,8 +1,8 @@
-import { defineComponent as h, watch as g, ref as d, onMounted as x, computed as k, openBlock as v, createElementBlock as p, normalizeClass as y, unref as L } from "vue";
+import { defineComponent as h, watch as g, ref as d, onMounted as x, computed as k, openBlock as p, createElementBlock as v, normalizeClass as y, unref as L } from "vue";
 import "./index2.mjs";
 const B = ["type", "disabled", "value", "placeholder", "maxlength"], M = ["disabled", "value", "placeholder", "maxlength"], C = {
-  name: "CButton"
-}, I = /* @__PURE__ */ h({
+  name: "CInput"
+}, E = /* @__PURE__ */ h({
   ...C,
   props: {
     size: { default: "m" },
@@ -23,20 +23,20 @@ const B = ["type", "disabled", "value", "placeholder", "maxlength"], M = ["disab
     const e = m;
     g(
       () => e.value,
-      (a) => {
-        e.maxLength ? n.value = (a + "").substring(0, e.maxLength) : n.value = a + "";
+      (t) => {
+        e.maxLength ? n.value = (t + "").substring(0, e.maxLength) : n.value = t + "";
       }
     );
     const c = d(), r = d(!1);
     x(() => {
-      c.value.addEventListener("compositionstart", (a) => {
+      c.value.addEventListener("compositionstart", (t) => {
         r.value = !0;
-      }), c.value.addEventListener("compositionend", (a) => {
-        r.value = !1, i(a);
+      }), c.value.addEventListener("compositionend", (t) => {
+        r.value = !1, i(t);
       });
     });
-    const n = d(e.value), i = (a) => {
-      r.value || (n.value = a.target.value, s("update:value", n.value), s("c_change", n.value));
+    const n = d(e.value), i = (t) => {
+      r.value || (n.value = t.target.value, s("update:value", n.value), s("c_change", n.value));
     }, o = d("default"), f = () => {
       o.value !== "focus" && !e.disabled && (o.value = "hover");
     }, _ = () => {
@@ -60,11 +60,11 @@ const B = ["type", "disabled", "value", "placeholder", "maxlength"], M = ["disab
     c-input-${e.size} 
     ${e.disabled ? "c-input-disabled" : ""}
   `);
-    return (a, u) => (v(), p("div", {
+    return (t, u) => (p(), v("div", {
       class: y(L(b)),
-      onClick: u[4] || (u[4] = (...t) => l.c_click && l.c_click(...t))
+      onClick: u[4] || (u[4] = (...a) => l.c_click && l.c_click(...a))
     }, [
-      e.type !== "textarea" ? (v(), p("input", {
+      e.type !== "textarea" ? (p(), v("input", {
         key: 0,
         ref_key: "c_input",
         ref: c,
@@ -73,12 +73,12 @@ const B = ["type", "disabled", "value", "placeholder", "maxlength"], M = ["disab
         value: n.value,
         placeholder: e.placeholder,
         maxlength: e.maxLength ? e.maxLength : void 0,
-        onFocus: u[0] || (u[0] = (...t) => l.c_focus && l.c_focus(...t)),
-        onBlur: u[1] || (u[1] = (...t) => l.c_blur && l.c_blur(...t)),
+        onFocus: u[0] || (u[0] = (...a) => l.c_focus && l.c_focus(...a)),
+        onBlur: u[1] || (u[1] = (...a) => l.c_blur && l.c_blur(...a)),
         onMouseenter: f,
         onMouseleave: _,
         onInput: i
-      }, null, 40, B)) : (v(), p("textarea", {
+      }, null, 40, B)) : (p(), v("textarea", {
         key: 1,
         ref_key: "c_input",
         ref: c,
@@ -90,8 +90,8 @@ const B = ["type", "disabled", "value", "placeholder", "maxlength"], M = ["disab
         value: n.value,
         placeholder: e.placeholder,
         maxlength: e.maxLength ? e.maxLength : void 0,
-        onFocus: u[2] || (u[2] = (...t) => l.c_focus && l.c_focus(...t)),
-        onBlur: u[3] || (u[3] = (...t) => l.c_blur && l.c_blur(...t)),
+        onFocus: u[2] || (u[2] = (...a) => l.c_focus && l.c_focus(...a)),
+        onBlur: u[3] || (u[3] = (...a) => l.c_blur && l.c_blur(...a)),
         onMouseenter: f,
         onMouseleave: _,
         onInput: i
@@ -101,5 +101,5 @@ const B = ["type", "disabled", "value", "placeholder", "maxlength"], M = ["disab
   }
 });
 export {
-  I as default
+  E as default
 };
