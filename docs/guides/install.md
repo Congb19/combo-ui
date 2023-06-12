@@ -6,7 +6,7 @@ import {CBlock} from '../../src'
 
 ## 安装 / Installation
 
-<CBlock type='warning' content='尚未发布'></CBlock>
+<!-- <CBlock type='warning' content='尚未发布'></CBlock> -->
 
 `pnpm i @congb19/combo-ui`
 
@@ -28,6 +28,7 @@ import { CTag } from '@congb19/combo-ui'
 ```typescript
 import App from './App.vue'
 import { create, C } from '@congb19/combo-ui'
+import '@congb19/combo-ui/dist/combo-ui/es/style.css'
 const app = createApp(App)
 
 const combo = create(C.All) // 全部全局注册

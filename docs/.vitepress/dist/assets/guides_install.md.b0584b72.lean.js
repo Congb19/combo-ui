@@ -1,0 +1,1 @@
+import"./chunks/index.1576f27e.js";import{c as s,o as a,N as n}from"./chunks/framework.0d72c9ec.js";const l=n("",7),o=[l],y=JSON.parse('{"title":"Install 安装","description":"","frontmatter":{},"headers":[],"relativePath":"guides/install.md"}'),p={name:"guides/install.md"},F=Object.assign(p,{setup(t){return(e,c)=>(a(),s("div",null,o))}});export{y as __pageData,F as default};
