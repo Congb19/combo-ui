@@ -18,6 +18,11 @@
     </div>
   </div>
 </template>
+<script lang="ts">
+export default {
+  name: 'CMessage',
+}
+</script>
 <script setup lang="ts">
 import { computed, onMounted, onUnmounted } from 'vue-demi'
 import { CIcon } from '..'

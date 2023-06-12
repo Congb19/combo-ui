@@ -8,6 +8,11 @@
     <span class="c-loading__text">{{ text }}{{ dots }}</span>
   </div>
 </template>
+<script lang="ts">
+export default {
+  name: 'CLoading',
+}
+</script>
 <script setup lang="ts">
 import { CIcon } from '../'
 import { onMounted, onUnmounted, ref, watch } from 'vue-demi'

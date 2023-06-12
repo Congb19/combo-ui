@@ -1,6 +1,9 @@
-import { defineComponent as t, computed as l, onMounted as r, onUnmounted as u, openBlock as a, createElementBlock as c, normalizeStyle as s, unref as d } from "vue";
+import { defineComponent as t, computed as l, onMounted as r, onUnmounted as a, openBlock as u, createElementBlock as c, normalizeStyle as s, unref as d } from "vue";
 import "./index2.mjs";
-const f = /* @__PURE__ */ t({
+const m = {
+  name: "CLoadingBar"
+}, f = /* @__PURE__ */ t({
+  ...m,
   props: {
     status: null,
     color: null
@@ -12,9 +15,9 @@ const f = /* @__PURE__ */ t({
     }));
     return r(() => {
       console.log("loadingbar mounted");
-    }), u(() => {
+    }), a(() => {
       console.log("loadingbar unmounted");
-    }), (m, p) => (a(), c("div", {
+    }), (i, p) => (u(), c("div", {
       class: "c-loadingbar",
       style: s(d(e))
     }, null, 4));

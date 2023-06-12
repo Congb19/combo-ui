@@ -6,7 +6,10 @@ import B from "../../../node_modules/.pnpm/@vicons_ionicons5@0.12.0/node_modules
 import V from "../../../node_modules/.pnpm/@vicons_ionicons5@0.12.0/node_modules/@vicons/ionicons5/es/AlertCircle.mjs";
 import b from "../../../node_modules/.pnpm/@vicons_ionicons5@0.12.0/node_modules/@vicons/ionicons5/es/CloseCircle.mjs";
 import w from "../../../node_modules/.pnpm/@vicons_ionicons5@0.12.0/node_modules/@vicons/ionicons5/es/Close.mjs";
-const S = { class: "c-message-wrapper" }, $ = { class: "c-message__icon" }, F = /* @__PURE__ */ C({
+const S = { class: "c-message-wrapper" }, $ = { class: "c-message__icon" }, E = {
+  name: "CMessage"
+}, F = /* @__PURE__ */ C({
+  ...E,
   props: {
     type: { default: "info" },
     msg: null,
@@ -25,7 +28,7 @@ const S = { class: "c-message-wrapper" }, $ = { class: "c-message__icon" }, F = 
         t.destroy();
       }, t.duration);
     }), k(() => {
-    }), (E, i) => (r(), m("div", S, [
+    }), (I, i) => (r(), m("div", S, [
       d("div", {
         class: x(e(y)),
         style: N(e(p))

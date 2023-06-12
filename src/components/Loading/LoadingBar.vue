@@ -1,6 +1,11 @@
 <template>
   <div class="c-loadingbar" :style="otherStyle"></div>
 </template>
+<script lang="ts">
+export default {
+  name: 'CLoadingBar',
+}
+</script>
 <script setup lang="ts">
 import { CIcon } from '../'
 import { Ref, computed, onMounted, onUnmounted, ref, watch } from 'vue-demi'
