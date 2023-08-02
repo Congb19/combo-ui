@@ -11,6 +11,17 @@
           </CButton>
           <input v-model="inputvalue2" />
           <CInput v-model:value="inputvalue2" />
+          <CButton type="primary" clean @c_click="click111">
+            debounce click
+          </CButton>
+          <CButton type="primary" clean @c_click="roll111">
+            throttle click
+          </CButton>
+        </div>
+        <div style="display: block">
+          ------------------datepicker-------------------
+          <br />
+          <CDatePicker v-model="datevalue"></CDatePicker>
         </div>
         <div style="display: block">
           ------------------loading-------------------
@@ -469,4 +480,205 @@ let testbtn1click = () => {
   console.log('testbtn1click', btn1)
   btn1?.click()
 }
+
+const log = (...args: any[]) => {
+  console.log('**------------------**')
+  console.log('**', ...args, '**')
+}
+
+const obj = {
+  a: 1,
+  fn(...args: any[]) {
+    console.log(this.a, ...args)
+  },
+}
+const obj2 = {
+  a: 2,
+}
+obj.fn(111, 222)
+log('原生call apply 测试')
+obj.fn.call(obj2, 111, 222)
+obj.fn.apply(obj2, [111, 222])
+
+// @ts-ignore
+Function.prototype.myCall = function (obj, ...args: any[]) {
+  if (obj == undefined || obj == null) {
+    obj = globalThis
+  }
+  // 给目标obj临时加上fn方法。此处this指的就是调用myCall的fn方法。
+  obj.fn = this
+  // 执行
+  let res = obj.fn(...args)
+
+  delete obj.fn
+  return res
+}
+
+// @ts-ignore
+Function.prototype.myApply = function (obj, args: any[]) {
+  if (obj == undefined || obj == null) {
+    obj = globalThis
+  }
+  // 给目标obj临时加上fn方法。此处this指的就是调用myCall的fn方法。
+  obj.fn = this
+  // 执行
+  let res = obj.fn(...args)
+
+  delete obj.fn
+  return res
+}
+log('myCall myApply 测试')
+// @ts-ignore
+obj.fn.myCall(obj2, 111, 222)
+// @ts-ignore
+obj.fn.myApply(obj2, [111, 222])
+
+log('原生bind测试')
+let newFn = obj.fn.bind(obj2, 111, 222)
+newFn()
+
+// @ts-ignore
+Function.prototype.myBind = function (obj, ...args) {
+  let originFn = this
+  let fn = function () {
+    return originFn.call(obj, ...args)
+  }
+  return fn
+}
+log('myBind测试')
+// @ts-ignore
+let newFn2 = obj.fn.myBind(obj2, 111, 222)
+newFn2()
+
+let fn = () => {
+  log('click!')
+}
+const myDebounce = function (fn, delay) {
+  let timer: any = null
+  return function (...args) {
+    clearTimeout(timer) // 无论如何，清空timer 重新计时
+    timer = setTimeout(function () {
+      // 因为实际调用fn的是调用debouncedFn的主体对象，也就是this，所以这里用call this。
+      fn.call(this, ...args)
+      log('debounce this', this)
+    }, delay)
+  }
+}
+let debouncedFn = myDebounce(fn, 1000)
+// 用法
+const click111 = debouncedFn
+// 然后按钮触发click就行。
+
+let fn2 = () => {
+  log('roll!')
+}
+const myThrottle = function (fn, delay) {
+  let flag = true // 表示是否锁住
+  return function (...args) {
+    if (!flag) return // 如果刚才已经解锁了 就返回 不用再生成一个计时器来实际触发函数和上锁了
+    flag = false // 解锁
+    setTimeout(() => {
+      fn.call(this, ...args)
+      flag = true // 执行完一次后重新锁住
+    }, delay)
+  }
+}
+let throttledFn2 = myThrottle(fn2, 200)
+const roll111 = throttledFn2
+
+// 深浅拷贝
+let level2Obj = {
+  a1: 2,
+  b1: 'b1',
+}
+let originObj = {
+  a: 1,
+  b: [1, 'b'],
+  c: level2Obj,
+}
+// 浅
+log('myCloneShallow测试')
+const myCloneShallow = function (obj) {
+  return {
+    ...obj,
+  }
+}
+let obj111 = myCloneShallow(originObj)
+log(obj111)
+// @ts-ignore
+log(obj111.c == level2Obj) // 仍然是同一个引用
+
+// JSON深拷贝
+log('JSON深拷贝测试')
+let obj222 = JSON.parse(JSON.stringify(originObj))
+log(obj222)
+// @ts-ignore
+log(obj222.c == level2Obj) // 已经非同一个引用了
+
+// 深
+log('myCloneDeep测试')
+const myCloneDeep = function (obj) {
+  // 非正常obj
+  if (typeof obj !== 'object' || obj == null) {
+    if (obj instanceof Function) return obj.call(this, ...arguments)
+    return obj
+  }
+  if (obj instanceof Date) return new Date(obj)
+  if (obj instanceof RegExp) return new RegExp(obj)
+  let res = {}
+  for (const key in obj) {
+    // 必须是自己的属性，不是原型链上的属性，所以用 hasOwnProperty
+    if (Object.prototype.hasOwnProperty.call(obj, key)) {
+      const element = obj[key]
+      if (element instanceof Array) {
+        res[key] = []
+        element.forEach((item) => res[key].push(myCloneDeep(item)))
+      }
+      // 还有一些没考虑到的情况，先不讨论
+      // else if() {}
+      else res[key] = myCloneDeep(element)
+    }
+  }
+  return res
+}
+let obj333 = myCloneDeep(originObj)
+log(obj333)
+// @ts-ignore
+log(obj333.c == level2Obj)
+
+// reduce
+let arr = [1, 3, 5, 7]
+log('reduce测试')
+let sum = arr.reduce((prev, curr) => prev + curr, 0)
+log(sum)
+
+// @ts-ignore
+Array.prototype.myReduce = function (fn, init) {
+  // 浅拷贝数组
+  const arr = Array.prototype.slice.call(this)
+  // 注意: reduce() 对于空数组是不会执行回调函数的。
+  if (!arr.length) return
+
+  // init默认是0，这可能有问题，例如fn里出现了乘法
+  // let curr = init
+  // arr.forEach((value, index) => {
+  //   curr = fn(curr, value, index, this)
+  // })
+  let hasInit = false
+  if (init !== null || init !== undefined) hasInit = true
+  let curr = hasInit ? init : arr[0]
+
+  for (let i = hasInit ? 0 : 1; i < arr.length; i++) {
+    curr = fn(curr, arr[i], i, this)
+  }
+  return curr
+}
+
+log('myReduce测试')
+// @ts-ignore
+let sum2 = arr.myReduce((prev, curr, currIndex, arr) => prev + curr, 0)
+log(sum2)
+
+// ------datepicker
+const datevalue = ref(new Date())
 </script>

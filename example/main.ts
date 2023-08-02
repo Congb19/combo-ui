@@ -2,9 +2,9 @@ import { createApp } from 'vue'
 import App from './App.vue'
 
 // dev
-// import { create, C } from '../src'
+import { create, C } from '../src'
 // prod
-import { create, C } from '../dist/combo-ui/es/src/index.mjs'
+// import { create, C } from '../dist/combo-ui/es/src/index.mjs'
 // // import './index.css'
 
 const app = createApp(App)

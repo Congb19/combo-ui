@@ -1,0 +1,10 @@
+.c-date-btn {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+}
+.c-date-btn__choose {
+  background-color: aqua;
+}

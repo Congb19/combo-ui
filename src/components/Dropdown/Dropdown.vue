@@ -59,7 +59,7 @@ onMounted(() => {
 const otherStyleBody = computed(() => {
   return {
     maxHeight: props.maxHeight ? props.maxHeight + 'px' : '9999px',
-    overflow: 'scroll',
+    overflow: props.maxHeight ? 'scroll' : 'auto',
   }
 })
 </script>

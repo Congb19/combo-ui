@@ -1,6 +1,7 @@
 import Block from './Block'
 import Button from './Button'
 import Checkbox from './Checkbox'
+import DatePicker from './DatePicker'
 import Dropdown from './Dropdown'
 import Icon from './Icon'
 import Input from './Input'
@@ -19,6 +20,7 @@ import { useLoading } from './Loading'
 export const CBlock = Block
 export const CButton = Button
 export const CCheckbox = Checkbox
+export const CDatePicker = DatePicker
 export const CDropdown = Dropdown
 export const CIcon = Icon
 export const CInput = Input
@@ -34,6 +36,7 @@ export {
   Block,
   Button,
   Checkbox,
+  DatePicker,
   Dropdown,
   Icon,
   Input,
@@ -54,6 +57,7 @@ export const All = [
   Block,
   Button,
   Checkbox,
+  DatePicker,
   Dropdown,
   Icon,
   Input,

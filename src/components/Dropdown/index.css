@@ -12,6 +12,9 @@
   border-radius: 4px;
   overflow: scroll;
 }
+.c-dropdown__body::-webkit-scrollbar {
+  display: none;
+}
 
 .c-dropdown__arrow,
 .c-dropdown__arrow::before {
