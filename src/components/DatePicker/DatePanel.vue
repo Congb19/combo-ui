@@ -4,13 +4,9 @@ import './index.css'
 
 const emit = defineEmits(['c_choose'])
 const today = ref(new Date())
-const year = ref(today.value.getFullYear())
-const month = ref(today.value.getMonth() + 1)
-const date = ref(today.value.getDate())
-const day = ref(today.value.getDay())
 let data: any[] = reactive([])
 let dataGrouped: any[] = reactive([])
-console.log('init 1,', year.value, month.value, date.value, day.value)
+
 const getDates = (year: number, month: number) => {
   const isRunYear =
     year % 100 == 0
@@ -51,35 +47,32 @@ const getDates = (year: number, month: number) => {
 const initData = () => {
   data.splice(0, data.length)
   data.push({
-    // value: today.value,
-    year: year.value,
-    month: month.value,
-    date: date.value,
-    day: day.value,
+    value: today.value,
     choose: true,
+    inMonth: true,
   })
-  let daytmp = day.value - 1
-  for (let i = date.value - 1; i > 0; i--) {
+  let datetmp = today.value.getDate()
+  for (let i = datetmp - 1; i > 0; i--) {
     data.unshift({
-      // value: new Date(),
-      year: year.value,
-      month: month.value,
-      date: i,
-      day: daytmp < 0 ? (daytmp = 6) : daytmp--,
+      value: new Date(
+        today.value.valueOf() - 24 * 60 * 60 * 1000 * (datetmp - i)
+      ),
       choose: false,
+      inMonth: true,
     })
   }
-  daytmp = day.value + 1
-  for (let i = date.value + 1; i <= getDates(year.value, month.value); i++) {
+  for (
+    let i = datetmp + 1;
+    i <= getDates(today.value.getFullYear(), today.value.getMonth() + 1);
+    i++
+  ) {
     data.push({
-      // value: new Date(),
-      year: year.value,
-      month: month.value,
-      date: i,
-      day: daytmp > 6 ? (daytmp = 0) : daytmp,
+      value: new Date(
+        today.value.valueOf() + 24 * 60 * 60 * 1000 * (i - datetmp)
+      ),
       choose: false,
+      inMonth: true,
     })
-    daytmp++
   }
 }
 const groupByWeek = () => {
@@ -87,37 +80,77 @@ const groupByWeek = () => {
   let t = []
   for (let i = 0; i < data.length; i++) {
     t.push(data[i])
-    if (data[i].day == 6 || i == data.length - 1) {
+    if (data[i].value.getDay() == 6 || i == data.length - 1) {
       dataGrouped.push([...t])
       t = []
+    }
+  }
+  if (dataGrouped[0].length < 7) {
+    let n = dataGrouped[0].length
+    let first = dataGrouped[0][0].value.valueOf()
+    for (let i = 1; i <= 7 - n; i++) {
+      dataGrouped[0].unshift({
+        value: new Date(first - i * 24 * 60 * 60 * 1000),
+        inMonth: false,
+      })
+    }
+  }
+  if (dataGrouped[dataGrouped.length - 1].length < 7) {
+    let n = dataGrouped[dataGrouped.length - 1].length
+    let last = dataGrouped[dataGrouped.length - 1][n - 1].value.valueOf()
+    for (let i = 1; i <= 7 - n; i++) {
+      dataGrouped[dataGrouped.length - 1].push({
+        value: new Date(last + i * 24 * 60 * 60 * 1000),
+        inMonth: false,
+      })
     }
   }
 }
 initData()
 groupByWeek()
-data.forEach((date) => {
-  console.log(date)
-})
-dataGrouped.forEach((week) => {
-  week.forEach((date: any) => {
-    console.log(date)
-  })
-  console.log('----')
-})
-// console.log(data[0])
+
+const choose = (date: any) => {
+  if (!date.choose) {
+    if (date.value.getMonth() !== today.value.getMonth()) {
+      today.value = new Date(date.value)
+      initData()
+      groupByWeek()
+    } else {
+      dataGrouped.forEach((week) => {
+        week.forEach((date: any) => {
+          date.choose = false
+        })
+      })
+      date.choose = true
+    }
+    emit('c_choose', date.value)
+  }
+}
+
 const classNameDate = (date: any) => {
   return `
     c-date-btn
     ${date.choose ? 'c-date-btn__choose' : ''}
+    ${date.inMonth ? '' : 'c-date-btn__outmonth'}
   `
 }
 </script>
 <template>
-  <div>
-    <div>year-month panel</div>
+  <div class="c-datepanel">
+    <div>{{ today.getFullYear() }} {{ today.getMonth() + 1 }}</div>
+    <div
+      v-for="day in ['日', '一', '二', '三', '四', '五', '六']"
+      class="c-weekpanel"
+    >
+      {{ day }}
+    </div>
     <div v-for="week in dataGrouped">
-      <div v-for="date in week" :class="classNameDate(date)">
-        {{ date.date }}
+      <div
+        v-for="date in week"
+        :class="classNameDate(date)"
+        @click="() => choose(date)"
+      >
+        {{ date.value.getDate() }}
       </div>
     </div>
   </div>

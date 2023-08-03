@@ -21,7 +21,8 @@
         <div style="display: block">
           ------------------datepicker-------------------
           <br />
-          <CDatePicker v-model="datevalue"></CDatePicker>
+          {{ datevalue }}
+          <CDatePicker v-model:value="datevalue"></CDatePicker>
         </div>
         <div style="display: block">
           ------------------loading-------------------

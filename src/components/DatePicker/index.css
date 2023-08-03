@@ -1,10 +1,29 @@
-.c-date-btn {
+.c-datepanel {
+  width: 280px;
+  max-width: 280px;
+}
+.c-weekpanel {
   display: inline-block;
-  width: 30px;
-  height: 30px;
-  line-height: 30px;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
   text-align: center;
 }
+.c-date-btn {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 50%;
+}
+.c-date-btn:hover {
+  background-color: var(--c-color-primary-4);
+}
 .c-date-btn__choose {
-  background-color: aqua;
+  background-color: var(--c-color-primary-3);
+}
+.c-date-btn__outmonth {
+  opacity: 0.3;
 }

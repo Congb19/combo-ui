@@ -11,7 +11,7 @@ import { computed, ref } from 'vue-demi'
 import './index.css'
 
 interface Props {
-  value?: Date | number | string
+  value?: Date | number | string | any
   placement?:
     | 'top'
     | 'bottom'
@@ -28,16 +28,31 @@ interface Props {
   disabled?: boolean
   // maxHeight?: number
 }
-let initDate = new Date()
 const props = withDefaults(defineProps<Props>(), {
-  value: 'initDate',
+  value: new Date(),
   disabled: false,
   placement: 'bottom',
   // maxHeight: 100,
 })
+const emit = defineEmits(['update:value'])
+
+const getFullMonthOrDate = (date: Date, type: string) => {
+  let t = type == 'month' ? date.getMonth() + 1 : date.getDate()
+  if (t < 10) return '0' + t
+  else return t + ''
+}
+
 const input = ref()
-const showDropdown = ref(true)
+const showDropdown = ref(false)
 const currentValue = ref(props.value)
+let displayValue = computed(
+  () =>
+    currentValue.value.getFullYear() +
+    '/' +
+    getFullMonthOrDate(currentValue.value, 'month') +
+    '/' +
+    getFullMonthOrDate(currentValue.value, 'date')
+)
 
 const expand = () => {
   if (props.disabled) return
@@ -49,9 +64,15 @@ const collapse = () => {
   showDropdown.value = false
 }
 const blur = () => {
+  console.log('blur')
   collapse()
 }
-const choose = (date: Date) => {}
+const choose = (date: Date) => {
+  console.log('choose!', date)
+  currentValue.value = date
+  emit('update:value', date)
+  blur()
+}
 const className = computed(() => {
   return `
     c-date-picker
@@ -59,12 +80,17 @@ const className = computed(() => {
 })
 </script>
 <template>
-  <div :class="className">
-    <CInput ref="input" @c_click="expand" @c_blur="blur"> </CInput>
+  <div :class="className" @blur="blur">
+    <CInput
+      ref="input"
+      @c_click="expand"
+      @c_blur="() => {}"
+      :value="displayValue"
+    ></CInput>
     <CDropdown
       :show="showDropdown"
       :parent="input"
-      :max-height="200"
+      :max-height="320"
       :placement="props.placement"
     >
       <CDatePanel @c_choose="choose" />
